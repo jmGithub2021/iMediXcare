@@ -1,0 +1,21 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- The Country Name values are as per ISO-3166-1 alpha-3 -->
+
+
+
+
+<xs:element name="Country_Name_in_English">
+<!-- Reference value for its Metadata (G02.02-01)-->
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:pattern value="[A-Z]{1,50}"/>
+</xs:restriction>
+
+</xs:simpleType>
+</xs:element>
+</xs:schema>
+
+
+
+

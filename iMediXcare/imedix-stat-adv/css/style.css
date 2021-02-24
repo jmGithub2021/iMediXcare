@@ -1,0 +1,65 @@
+/* 
+    Document   : style
+    Created on : Jun 9, 2014, 9:13:08 PM
+    Author     : Kanishka
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+#nav {
+    width: 100%;
+    float: left;
+    margin: auto;
+    padding: 0;
+    list-style:none;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc; 
+    border-top: 1px solid #ccc; 
+    left:20%;
+}
+
+#nav li {
+    float: left;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+#nav li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #069;
+    border-right: 1px solid #ccc; 
+}
+
+#nav li a:hover {
+    color: #c00;
+    background-color: #fff; 
+}
+
+h1
+{
+    color: #30A3D1;
+    text-shadow:
+        1px 1px 0 #CCC,
+        2px 2px 0 #CCC, /* end of 2 level deep grey shadow */
+        3px 3px 0 #444,
+        4px 4px 0 #444,
+        5px 5px 0 #444,
+        6px 6px 0 #444; /* end of 4 level deep dark shadow */
+    text-align: center;
+    font-size: 35px;
+    text-decoration: none;
+}
+
+#checkbox{
+    border: 4px inset tan;
+    width: auto;
+    float:left;
+}

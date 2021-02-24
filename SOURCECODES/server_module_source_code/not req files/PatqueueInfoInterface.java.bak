@@ -1,0 +1,32 @@
+package imedix;
+/**
+ * @author Saikat Ray
+ **/
+  
+import java.rmi.*;
+import java.sql.*;
+
+//remote interface
+public interface PatqueueInfoInterface extends Remote {
+	    
+     public Object getLPatqueueAdmin(String ccode )throws RemoteException,SQLException;
+     
+     public Object getLPatqueueDoc(String dreg) throws RemoteException,SQLException;
+     public Object getLPatqueueOP(String ccode) throws RemoteException,SQLException;
+     
+     public Object getRPatqueueAdmin(String lcode,String rcode)throws RemoteException,SQLException ;
+	 public Object getRPatwaitqueueAdmin(String lcode,String rcode)throws RemoteException,SQLException;
+
+	////test////
+	public Object test123(String test)throws RemoteException,SQLException;
+
+     public Object getRPatqueueDoc(String rcode, String dreg) throws RemoteException,SQLException;
+     public Object getRPatqueueOP(String lcode,String rcode) throws RemoteException,SQLException;
+     
+     public String getTotalLPatAdmin(String ccode) throws RemoteException,SQLException;
+     public String getTotalRPatAdmin(String lcode,String rcode) throws RemoteException,SQLException;
+     
+     public String getTotalLPatDoc(String ccode,String dreg) throws RemoteException,SQLException;
+     public String getTotalRPatDoc(String rcode,String dreg) throws RemoteException,SQLException;
+                  
+}

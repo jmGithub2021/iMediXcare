@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name= "Language_Code">
+<!-- Reference value for its Metadata (G00.05-02)-->
+<xs:simpleType>
+<xs:restriction base= "xs:string">
+<xs:maxLength value="20"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name= "LanguageCodeISO">
+<!-- Reference value for its Metadata (G00.05-03)-->
+<!-- As per ISO-639-3 code -->
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ISOLanguageCode" type="xs:string" maxOccurs="3"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ISOCode">
+<xs:simpleType>
+<xs:restriction base= "xs:string">
+<xs:enumeration value = "1- asm"/>
+<xs:enumeration value = "2-ben"/> 
+<xs:enumeration value = "3-brx"/>
+<xs:enumeration value = "4-doi "/>
+<xs:enumeration value = "5-guj"/>
+<xs:enumeration value = "6-hin"/>
+<xs:enumeration value = "7-kan "/>
+<xs:enumeration value = "8-kas "/>
+<xs:enumeration value = "9-koi"/>
+<xs:enumeration value = "10-mai"/>
+<xs:enumeration value = "11-mal"/>
+<xs:enumeration value = "12-mai"/>
+<xs:enumeration value = "13-mar"/>
+<xs:enumeration value = "14-nep"/>
+<xs:enumeration value = "15-ori"/>
+<xs:enumeration value = "16-pan"/>
+<xs:enumeration value = "17-san"/>
+<xs:enumeration value = "18-sat"/>
+<xs:enumeration value = "19-snd"/>
+<xs:enumeration value = "20-tam"/>
+<xs:enumeration value = "21-tel"/>
+<xs:enumeration value = "22-urd"/>
+<xs:enumeration value = "99-OtherLanguages(eng)"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="LanguageCode" >
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ORGILanguageCode" type="xs:integer" maxOccurs="2"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="ORGICode">
+<!-- Reference value for its Metadata (G00.05-01)-->
+<!-- As per ORGI -->
+<xs:simpleType>
+<xs:restriction base= "xs:string">
+<xs:enumeration value = "1-Assamese"/>
+<xs:enumeration value = "2-Bengali"/> 
+<xs:enumeration value = "3-Bodo"/>
+<xs:enumeration value = "4-Dogri "/>
+<xs:enumeration value = "5-Gujarati"/>
+<xs:enumeration value = "6-Hindi"/>
+<xs:enumeration value = "7-Kannada "/>
+<xs:enumeration value = "8-Kashmiri "/>
+<xs:enumeration value = "9-Konkani"/>
+<xs:enumeration value = "10-Maithili"/>
+<xs:enumeration value = "11-Malayalam"/>
+<xs:enumeration value = "12-Manipuri"/>
+<xs:enumeration value = "13-Marathi"/>
+<xs:enumeration value = "14-Nepali"/>
+<xs:enumeration value = "15-Oriya"/>
+<xs:enumeration value = "16-Punjabi"/>
+<xs:enumeration value = "17-Sanskrit"/>
+<xs:enumeration value = "18-Santali"/>
+<xs:enumeration value = "19-Sindhi"/>
+<xs:enumeration value = "20-Tamil"/>
+<xs:enumeration value = "21-Telugu"/>
+<xs:enumeration value = "22-Urdu"/>
+<xs:enumeration value = "99-OtherLanguages(English)"/>
+
+
+</xs:restriction>
+</xs:simpleType>
+
+</xs:element>
+</xs:schema>

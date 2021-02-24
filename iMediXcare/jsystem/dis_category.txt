@@ -1,0 +1,33 @@
+General Medical
+General Surgery
+Cardiothoracic surgical 
+Cardiothoracic surgery 
+Cardiovascular medical
+Clinical Pathology
+Dental 
+Dermatological
+Acupuncture
+Endocrine
+ENT
+Eye 
+Genitourinary
+GI/Hepatobiliary 
+Hematological
+Immunological
+Musculoskeletal 
+Neurological
+Neurosurgical
+OBG 
+Oncological
+Orthopedic
+Pediatric
+Pediatric HIV
+Pediatric surgical
+Plastic surgical
+Psychiatric
+Radiotherapy
+Thoracic And Chest diseases
+Tuberculosis
+Urosurgery
+Other
+All Patients

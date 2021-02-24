@@ -1,0 +1,59 @@
+div.tabArea {
+		  font-size: 80%;
+		  font-weight: bold;
+		}
+
+		a.tab {
+		  font-family: tahoma, arial, sans-serif;
+		  font-size: 12px;
+		  background-color: #BDECBF;
+		  border: 1px solid #336600;
+		  border-bottom-width: 1px;
+		  padding: 2px 1em 2px 1em;
+		  position: relative;
+		  text-decoration: none;
+		  top: -1px;
+		  z-index: 100;
+		  color: #000000;
+		}
+
+		a.tab, a.tab:visited {
+		  color: #000000;
+		}
+
+		a.tab:hover {
+		  background-color: #36AF30;
+		  color: #FFFFFF;
+		}
+		
+		a.tab.activeTab, a.tab.activeTab:hover, a.tab.activeTab:visited {
+		  background-color: #336600;
+		  color: #FFFFFF;
+		  z-index: 102;
+		}
+
+		div.tabMain {
+		  background-color: #336600;
+		  border: 1px solid #336600;
+		  padding: 1em;
+		  position: relative;
+		  z-index: 101;
+		}
+
+		div.tabIframeWrapper {
+			 width: 100%;
+			 
+		}
+		
+		iframe.tabContent {
+		  background-color: #FFFFFF;
+		  border: 1px solid #336600;
+		  width: 100%;
+		  
+		}
+
+		 a.class_name[title] {position: relative;}
+		 a.class_name[title]:hover:after {content: attr(title);
+		 position: absolute; left: 50%; top: 0.5em; width: 10em;
+		 font-size: smaller; border: 1px solid;
+		 background: yellow; color: red;}

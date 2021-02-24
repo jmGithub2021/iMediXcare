@@ -1,0 +1,23 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="Version_No">
+<!-- Reference value for its Metadata (G00.08)-->
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Version" type="xs:string" maxOccurs="5"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="VersionPattern">
+<xs:simpleType>
+<xs:restriction base= "xs:integer">
+<xs:pattern value="[0-9]{2}\.[0-9]{2}"/>
+</xs:restriction>
+
+</xs:simpleType>
+
+</xs:element>
+
+</xs:schema>

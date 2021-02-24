@@ -1,0 +1,16 @@
+#inner-container2{
+    /* height: calc(100vh - 100px); */
+    height:400px; 
+}
+#inner-container1{
+    /*height: calc(100vh - 25px);
+    margin-bottom: 10px;*/
+    
+}
+
+a.offline{
+    color: red;
+}
+a.online{
+    color: green;
+}

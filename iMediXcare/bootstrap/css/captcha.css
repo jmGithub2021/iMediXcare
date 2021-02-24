@@ -1,0 +1,61 @@
+.captchaField {
+    margin: 0 auto;
+    padding: 15px;
+
+}
+.CaptchaWrap { position: relative; }
+
+#CaptchaImageCode {
+  text-align:center;
+  margin-top: 15px;
+  padding: 0px 0;
+  width: 90%;
+  overflow: hidden;
+}
+.capcode {
+  width:100%;
+  font-size: 36px;
+  display: block;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  letter-spacing: 1px;
+  color: #ccc;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 100;
+  font-style: italic;
+}
+.ReloadBtn {
+  background:url('../images/recaptcha.png') left top no-repeat;
+  background-size : 100%;
+  width: 32px;
+  height: 32px;
+  border: 0px; outline none;
+  position: absolute;
+  bottom: 30px;
+  left: 92%;
+  outline: none;
+  cursor: pointer; /**/
+}
+.btnSubmit {
+  margin-top: 15px;
+  border: 0px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: #1285c4;
+  color: #fff;
+  cursor: pointer;
+}
+.error {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+.success {
+  color: green;
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: none;
+}

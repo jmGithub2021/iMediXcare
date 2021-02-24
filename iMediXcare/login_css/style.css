@@ -1,0 +1,53 @@
+
+.skndu{
+	margin: auto;
+    display: table;
+    margin-bottom: 20px;
+}
+.inner-div {
+  padding: 8% 0 0;
+  margin: auto;
+}
+.imedix-logo{
+	margin:auto;
+	display:table;
+	}
+	.imedix-logo img{border-radius:10px;opacity:0.7;}
+	.imedix-logo img:hover{opacity:0.9;}
+.im-login-form {
+  position: relative;
+  z-index: 1;
+  background: rgba(80, 161, 208, 0.33);
+  border-radius: 15%;
+  
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.inpt-bx{
+  background: #E8EFF5;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.subm-btn {
+  text-transform: uppercase;
+  width: 100%;
+  border: 0;
+  padding: 12px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.message a{color:#fff;text-decoration:none;}
+.message{padding-top:15px;}
+body {
+  background: #6ABEEF;
+}

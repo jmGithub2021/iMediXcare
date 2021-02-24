@@ -1,0 +1,17 @@
+gblcentercode = EXTR
+gbldbjdbccriver = com.mysql.jdbc.Driver
+gbldburl = jdbc:mysql://127.0.0.1:3306/imedixdb4?characterEncoding=latin1
+gbldbusername = root
+gbldbpasswd = 1234
+blport = 1099
+tempdatadir = /serverApp/temp
+ftphost = 127.0.0.1
+ftpuser = imedixftp
+ftppasswd = imedixftp
+ftpdocsendpath = doc/Send
+ps_home = http://127.0.0.1:8080
+CenterTypeMSPS = PS
+SystemLogger = yes
+SystemLoggerPath = /serverApp/SystemLog
+GeneralSqlLog = yes
+GeneralSqlLogPath = /serverApp/GenSqlLog

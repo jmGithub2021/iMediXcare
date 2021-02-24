@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>   
+	<TITLE>h09</TITLE>
+<link rel="stylesheet" type="text/css" href="../style/style2.css">
+<SCRIPT>
+// Function to show and hide layers
+function SHOWLAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'visible';
+			document.getElementById("main").style.visibility= 'hidden';
+}
+function HIDELAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'hidden';
+			document.getElementById("main").style.visibility= 'visible';
+
+}
+// End of functions
+</SCRIPT>
+
+</head>
+<BODY>
+
+
+<form name="h09">
+<DIV id="main" ALIGN="center" border=2 style="left:50;top:80;position:absolute;visibility:visible;">
+<CENTER><H3>Neonatal History & Complaints</H3>
+</CENTER>
+
+<TABLE BORDER=0 ALIGN=center class='tableb'>
+<TR><TD>Delivery</TD><TD><INPUT NAME=delivery size=15 maxlength=50></INPUT></TD></TR>
+<TR><TD>Chief Complaints</TD><TD><TEXTAREA NAME=tbxchief_complaints rows=2 cols=50 wrap=virtual></TEXTAREA></TD></TR>
+<TR><TD>Presenting Illness</TD><TD><TEXTAREA NAME=tbxpresenting_illness rows=2 cols=50 wrap=virtual></TEXTAREA></TD></TR>
+
+<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('h10')" value="Maternal"></TD></TR>
+<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('h11')" value="Antenatal & Family"></TD></TR>
+
+
+<TR><TD>Any other</TD><TD><TEXTAREA NAME=tbxanyother rows=2 cols=50 wrap=virtual></TEXTAREA></TD></TR>
+<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp rows=2 cols=50 wrap=virtual></TEXTAREA></TD></TR>
+<TR><TD>Test date</TD><TD><INPUT NAME=testdate size=8 maxlength=8></INPUT></TD></TR>
+<TR><TD>Entry date</TD><TD><INPUT name=entrydate size=8 maxlength=8></INPUT></TD></TR>
+
+</TABLE>
+</div>
+
+
+<!-- Div for h10 -->
+<DIV id="h10" ALIGN="center" border=2 style="position:absolute; left:50;top:80;visibility:hidden;">
+<H3>Maternal History</H3>
+<H4>Past Obstetric History</H4>
+
+<TABLE ALIGN=center BORDER=1 class='tableb'>
+		
+	<TR><TD>Para</TD><TD colspan=2><INPUT NAME=pa_ra size=30 maxlength=50></INPUT></TD>
+		<TD>Gravida</TD><TD><INPUT NAME=gravida size=30 maxlength=50></INPUT></TD></TR>
+	<TR>
+	<TD>Sl. No.</TD>
+	<TD><CENTER>1st</CENTER></TD>
+	<TD><CENTER>2nd</CENTER></TD>
+	<TD><CENTER>3rd</CENTER></TD>
+	<TD><CENTER>4th</CENTER></TD></TR>
+	<TR>
+	<TD>Date(ddmmyyyy)</TD>
+	<TD><INPUT NAME=date1 size=8 maxlength=8></INPUT></TD>
+	<TD><INPUT NAME=date2 size=8 maxlength=8></INPUT></TD>
+	<TD><INPUT NAME=date3 size=8 maxlength=8></INPUT></TD>
+	<TD><INPUT NAME=date4 size=8 maxlength=8></INPUT></TD></TR>
+	
+	<TR>
+	<TD>Gestation</TD>
+	<TD><INPUT NAME=gestation1 size=20 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=gestation2 size=20 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=gestation3 size=20 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=gestation4 size=20 maxlength=50></INPUT></TD></TR>
+	<TR>
+	<TD>Mode of delivery</TD>
+	<TD><INPUT NAME=mode_of_delivery1 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=mode_of_delivery2 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=mode_of_delivery3 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=mode_of_delivery4 size=10 maxlength=50></INPUT></TD></TR>
+	<TR>
+	<TD>Delivery at</TD>
+	<TD><INPUT NAME=delivery_at1 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=delivery_at2 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=delivery_at3 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=delivery_at4 size=10 maxlength=50></INPUT></TD></TR>
+	<TR>
+	<TD>Alive/Dead</TD>
+	<TD><INPUT NAME=alive_dead1 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=alive_dead2 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=alive_dead3 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=alive_dead4 size=10 maxlength=50></INPUT></TD></TR>
+	<TR>
+	<TD>Weight</TD>
+	<TD><INPUT NAME=weight1 size=6 maxlength=6>gms</INPUT></TD>
+	<TD><INPUT NAME=weight2 size=6 maxlength=6>gms</INPUT></TD>
+	<TD><INPUT NAME=weight3 size=6 maxlength=6 >gms</INPUT></TD>
+	<TD><INPUT NAME=weight4 size=6 maxlength=6>gms</INPUT></TD></TR>
+
+	<TR>
+	<TD>Sex</TD>
+	<TD><INPUT NAME=sex1 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=sex2 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=sex3 size=10 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=sex4 size=10 maxlength=50></INPUT></TD></TR>
+
+	<TR>
+	<TD>Other</TD>
+	<TD><INPUT NAME=other1 size=20 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=other2 size=20 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=other3 size=20 maxlength=50></INPUT></TD>
+	<TD><INPUT NAME=other4 size=20 maxlength=50></INPUT></TD></TR>
+ 	<TR><TD colspan=5><CENTER><INPUT TYPE="button" value='OK' onclick="HIDELAYER('h10')"></CENTER></TD></TR>
+</TABLE>
+</div>
+
+<!-- Div for h11 -->
+
+<DIV id="h11" ALIGN="center" border=2 style="position:absolute; left:50;top:80;visibility:hidden;">
+
+<H3>Antenatal & Family History</H3>
+<TABLE BORDER=1 ALIGN=center class='tableb'>
+
+<TR><TD>
+<TABLE BORDER=1 ALIGN=center>
+<TR><TD><H4>Antenatal History</H4></TD></TR>
+<TR><TD>EDD (date, ddmmyyyy)</TD><TD><INPUT NAME=edd_date size=8 maxlength=8></INPUT></TD></TR>
+<TR><TD>Antenatal Care</TD><TD><INPUT NAME=antenatal_care size=8 maxlength=50></INPUT></TD></TR>
+<TR><TD>Maternal prob</TD><TD><INPUT NAME=maternal_prob size=35 maxlength=50></INPUT></TD></TR>
+<TR><TD>Other relevant points</TD><TD><INPUT NAME=other_relevant_points size=35 maxlength=50></INPUT></TD></TR>
+<TR><TD><H4>Details of Labour</H4></TD><TD><INPUT NAME=details_labour size=35 maxlength=50></INPUT></TD></TR>
+<TR><TD>Apgar Score at 1 min</TD><TD><INPUT NAME=apgar_score size=4 maxlength=50></INPUT></TD></TR>
+<TR><TD>At 5 min</TD><TD><INPUT NAME=at_min size=4 maxlength=50></INPUT></TD></TR>
+</CENTER>
+</TABLE>
+</TD>
+<TD VALIGN=TOP>
+<TABLE BORDER=1 ALIGN=center>
+<TR><TD><H4>Family History</H4></TD></TR>
+<TR><TD>TB</TD><TD><INPUT NAME=tb size=8 maxlength=50></INPUT></TD></TR>
+<TR><TD>Diabetes</TD><TD><INPUT NAME=diabetes size=8 maxlength=50></INPUT></TD></TR>
+<TR><TD>Twin</TD><TD><INPUT NAME=twin size=8 maxlength=50></INPUT></TD></TR>
+<TR><TD>Congenital malformations</TD><TD><INPUT NAME=congenital_malformations size=8 maxlength=50></INPUT></TD></TR>
+</CENTER>
+</TABLE>
+</TD></TR>
+<TR><TD colspan=5><CENTER><INPUT TYPE="button" value='OK' onclick="HIDELAYER('h11')"></CENTER></TD></TR>
+</TABLE>
+</div>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,17 @@
+gblcentercode = AAAA
+gbldbjdbccriver = com.mysql.jdbc.Driver
+gbldburl = jdbc:mysql://localhost:3306/imedixdbnew
+gbldbusername = root
+gbldbpasswd = teleadmin
+blport = 1099
+tempdatadir = /home/mithun/iMediX/iMediX-BL/server_module/temp
+ftphost = 127.0.0.1
+ftpuser = imedixftp
+ftppasswd = imedixftp
+ftpdocsendpath = doc/Send
+ps_home = https://127.0.0.1
+CenterTypeMSPS = PS
+SystemLogger = yes
+SystemLoggerPath = /home/mithun/iMediX/SOURCECODES/server_module_source_code/SystemLog
+GeneralSqlLog = yes
+GeneralSqlLogPath = /home/mithun/iMediX/SOURCECODES/server_module_source_code/GenSqlLog

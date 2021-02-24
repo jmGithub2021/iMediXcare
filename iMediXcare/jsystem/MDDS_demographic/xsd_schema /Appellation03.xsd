@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Maximum of two Appellations are allowed as prefix to the name. The sequence of display/printing of  multiple applications
+ would be as follows: Attained Professional Appellation, followed by the Gender and Marital status ,Appellation within brackets.    
+ The Code directory for Appellation should be multilingual for all the Official Recognized Languages-->
+
+
+
+<xs:element name="Appellation_Code">
+
+<!-- Reference value for its Metadata (G01.05-01)-->
+
+<xs:simpleType>
+
+
+<xs:restriction base= "xs:string">
+
+<xs:maxLength value="15"/>
+
+
+<xs:enumeration value = "1- Mr."/>
+<xs:enumeration value = "2-Mrs."/>
+<xs:enumeration value = "3-Ms."/>
+<xs:enumeration value = "4-Shri."/>
+<xs:enumeration value = "11-Dr."/>
+<xs:enumeration value = "12-CA"/>
+<xs:enumeration value = "13-Er."/>
+<xs:enumeration value = "14-Prof."/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:schema>
+
+

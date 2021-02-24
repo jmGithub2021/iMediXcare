@@ -1,0 +1,185 @@
+
+[
+    {
+        "id" : "1",
+        "placeholder" : "Subject name",
+        "checklist" : [],
+        "condition" : false,
+        "regx" : "^[a-zA-Z\\\\s]+$"
+    },
+    {
+        "id" : "2",
+        "placeholder" : "Subject Address",
+        "checklist" : [],
+        "condition" : false,
+        "regx" : "^[a-zA-Z0-9,.\\\\-!? ]*$"
+    },
+    {
+        "id" : "3",
+        "placeholder" : "Subject Phone no",
+        "checklist" : [],
+        "condition" : false,
+        "regx" : "^[7-9][0-9]{9}$"
+    },    
+    {
+        "id" : "4",
+        "placeholder" : "Subject age",
+        "checklist" : [],
+        "condition" : false,
+        "regx" : "^(110|[1-9][0-9]?)$"
+    },
+    {
+        "id" : "5",
+        "placeholder" : "Subject gender",
+        "checklist" : ["Male","Female"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "6",
+        "placeholder" : "Have you traveled abroad during a period up to Feb. 2019?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "7",
+        "placeholder" : "Have you traveled to any state other than your home state in the last 2 weeks?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "8",
+        "placeholder" : "Have you come in contact with any person who has been diagnosed to be COVID-19 positive?", 
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "9",
+        "placeholder" : "Do you think you have come in contact with a person who is symptomatic but has not been tested?",
+        "checklist" : ["YES","NO"],
+        "condition" : true,
+        "regx" : "^[A-Za-z]+$",
+        "YES" : {
+                "id" : "901",
+                "placeholder" : "Describe the nature of the contact",
+                "checklist" : [],
+                "condition" : false,
+                "regx" : "^(?!-)(?!.*-)[A-Za-z0-9-\\\\s]+(?<!-)$"
+        }
+    },
+    {
+        "id" : "10",
+        "placeholder" : "Do you have a fever?",
+        "checklist" : ["YES","NO"],
+        "condition" : true,
+        "regx" : "^[A-Za-z]+$",
+        "YES" : {
+                "id" : "1001",
+                "placeholder" : "For how many days?",
+                "checklist" : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+                "condition" : false,
+                "regx" : "^(30|[1-9][0-9]?)$"
+        }
+    },		
+    {
+        "id" : "11",
+        "placeholder" : "Are you coughing?",
+        "checklist" : ["YES","NO"],
+        "condition" : true,
+        "regx" : "^[A-Za-z]+$",
+        "YES" : {
+                "id" : "1101",
+                "placeholder" : "Do you have sputum?",
+                "checklist" : ["YES","NO"],
+                "condition" : false,
+                "regx" : "^[A-Za-z]+$"
+        }
+    },		
+    {
+        "id" : "12",
+        "placeholder" : "Do you have sore-throat?",
+        "checklist" : ["YES","NO"],
+        "condition" : true,
+        "regx" : "^[A-Za-z]+$",
+        "YES" : {
+                "id" : "1201",
+                "placeholder" : "Do you have any difficulty in swallowing?",
+                "checklist" : ["YES","NO"],
+                "condition" : false,
+                "regx" : "^[A-Za-z]+$"
+        }
+    },
+    {
+        "id" : "13",
+        "placeholder" : "Shortness of breath?",
+        "checklist" : ["YES","NO"],
+        "condition" : true,
+        "regx" : "^[A-Za-z]+$",
+        "YES" : {
+                "id" : "1301",
+                "placeholder" : "Is it only on exertion, or even at rest?",
+                "checklist" : ["E","R"],
+                "condition" : false,
+                "regx" : "^[A-Za-z]+$"
+        }
+    },
+    {
+        "id" : "14",
+        "placeholder" : "Have you noticed any decrease in your sense of smell?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "15",
+        "placeholder" : "Have you noticed any decrease in your sense of taste?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },    
+    {
+        "id" : "16",
+        "placeholder" : "Any watery discharge through the nose?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "17",
+        "placeholder" : "Pain in your ears?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "18",
+        "placeholder" : "Difficulty in hearing?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "19",
+        "placeholder" : "Chest pain?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "20",
+        "placeholder" : "Fatigue?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    },
+    {
+        "id" : "21",
+        "placeholder" : "Headache?",
+        "checklist" : ["YES","NO"],
+        "condition" : false,
+        "regx" : "^[A-Za-z]+$"
+    }	
+]

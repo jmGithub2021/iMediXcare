@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Relationship of other Persons with the Head of the family will have to be revised, in case   the head of the family in a house hold changes, due to any reason.-->
+<xs:element name ="Relation_Type">
+<!-- Reference value for its Metadata (G01.07-01)-->
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="25"/>
+<xs:enumeration value= "H-Head of household"/>
+<xs:enumeration value="N-Not Head of household"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:schema>

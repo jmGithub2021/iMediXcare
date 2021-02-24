@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pattern>
+  <table id="cd4" caption="CD4/Viral Load" table_name="s32" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="CD4 Count" unit=""/>
+      <th caption="CD4 Percent" unit=""/>
+      <th caption="CD8 Count" unit=""/>
+      <th caption="Viral Load" unit=""/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="cd4_count" field_type="" normal_range="25-75" style=""/>
+      <td id="3" field_name="cd4_percent" field_type="" normal_range="25-75" style=""/>
+      <td id="4" field_name="cd8_count" field_type="" normal_range="25-75" style=""/>
+      <td id="5" field_name="viralload" field_type="" normal_range="70000-80000" style=""/>
+    </tr>
+  </table>
+
+  <table id="rbc" caption="Red Cell Count" table_name="s36" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="ESR 1st Hr" unit="/cc"/>
+      <th caption="Haemoglobin" unit="% dl"/>
+      <th caption="RBC" unit="cu.mm"/>
+      <th caption="Hematocrit" unit="%"/>
+      <th caption="MCV" unit="fl"/>
+      <th caption="MCHC" unit="g/dl"/>
+      <th caption="RDW" unit="%"/>
+      <th caption="MCH" unit="%"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="esr" field_type="" normal_range="20-60" style=""/>
+      <td id="3" field_name="haemoglobin" field_type="" normal_range="20-60" style=""/>
+      <td id="4" field_name="rbc" field_type="" normal_range="20-60" style=""/>
+      <td id="5" field_name="hematocrit" field_type="" normal_range="12-50" style=""/>
+      <td id="6" field_name="mcv" field_type="" normal_range="25-75" style=""/>
+      <td id="7" field_name="mchc" field_type="" normal_range="25-75" style=""/>
+      <td id="8" field_name="rdw" field_type="" normal_range="25-75" style=""/>
+      <td id="9" field_name="mch" field_type="" normal_range="25-75" style=""/>
+    </tr>
+  </table>
+
+  <table id="wbc" caption="White Cell Count" table_name="s36" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="Lymphocytes" unit="%"/>
+      <th caption="Leucocutes" unit="%"/>
+      <th caption="Eosinophils" unit="%"/>
+      <th caption="Basophils" unit="%"/>
+      <th caption="Monocytes" unit="%"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="lymphocyte" field_type="" normal_range="25-75" style=""/>
+      <td id="3" field_name="leucocute" field_type="" normal_range="25-75" style=""/>
+      <td id="4" field_name="eosinophil" field_type="" normal_range="25-75" style=""/>
+      <td id="5" field_name="basophil" field_type="" normal_range="25-75" style=""/>
+      <td id="6" field_name="monoocyte" field_type="" normal_range="25-75" style=""/>
+    </tr>
+  </table>
+  
+  <table id="plt" caption="Platelets" table_name="s36" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="Platelets" unit="%"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="platelet" field_type="" normal_range="40-75" style=""/>
+    </tr>
+  </table>
+  
+  <table id="lft" caption="Liver Function Test" table_name="s11" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="Bilirubin" unit="mg/dl"/>
+      <th caption="Direct" unit="mg/dl"/>
+      <th caption="Indirect" unit="mg/dl"/>
+      <th caption="SGOT" unit="U/L"/>
+      <th caption="SGPT" unit="U/L"/>
+      <th caption="ALP" unit="U/L"/>
+      <th caption="GGT" unit="U/L"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="f_bilirubin" field_type="" normal_range="25-75" style=""/>
+      <td id="3" field_name="f_con_bili" field_type="" normal_range="25-75" style=""/>
+      <td id="4" field_name="f_un_bili" field_type="" normal_range="25-75" style=""/>
+      <td id="5" field_name="f_sgot" field_type="" normal_range="25-75" style=""/>
+      <td id="6" field_name="f_sgpt" field_type="" normal_range="25-75" style=""/>
+      <td id="7" field_name="f_alk_phos" field_type="" normal_range="25-75" style=""/>
+      <td id="8" field_name="f_ggt" field_type="" normal_range="25-75" style=""/>
+    </tr>
+  </table>
+
+  <table id="glu" caption="Glucose" table_name="s08" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="Fasting" unit="mg/dl"/>
+      <th caption="Postprandial" unit="mg/dl"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="f_bs_fasting" field_type="" normal_range="25-75" style=""/>
+      <td id="3" field_name="f_bs_pp" field_type="" normal_range="25-75" style=""/>
+    </tr>
+  </table>
+
+  <table id="lpd" caption="Lipid" table_name="s10" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="Cholesterol" unit="mg/dl"/>
+      <th caption="HDL-cholesterol" unit="mg/dl"/>
+      <th caption="LDL-cholesterol" unit="mg/dl"/>
+      <th caption="VLDL-cholesterol" unit="mg/dl"/>
+      <th caption="Triglycerides" unit="mg/dl"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="f_cholesterol" field_type="" normal_range="25-75" style=""/>
+      <td id="3" field_name="f_hdl_choles" field_type="" normal_range="25-75" style=""/>
+      <td id="4" field_name="f_ldl_choles" field_type="" normal_range="25-75" style=""/>
+      <td id="5" field_name="f_vldl_choles" field_type="" normal_range="25-75" style=""/>
+      <td id="6" field_name="f_triglycerides" field_type="" normal_range="25-75" style=""/>
+    </tr>
+  </table>
+
+  <table id="enz" caption="Enzymes" table_name="s12" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="ALT(SGPT)" unit="mg/dl"/>
+      <th caption="NTP" unit="mg/dl"/>
+      <th caption="ALP" unit="mg/dl"/>
+      <th caption="GGT" unit="mg/dl"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="altsgpt" field_type="" normal_range="25-75" style=""/>
+      <td id="3" field_name="ntp" field_type="" normal_range="25-75" style=""/>
+      <td id="4" field_name="alp" field_type="" normal_range="25-75" style=""/>
+      <td id="5" field_name="ggt" field_type="" normal_range="25-75" style=""/>
+    </tr>
+  </table>
+
+  <table id="elc" caption="Electrolyte" table_name="s13" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="Sodium" unit="mmol/L"/>
+      <th caption="Potassium" unit="mmol/L"/>
+      <th caption="Calcium" unit="mmol/L"/>
+      <th caption="Chloride" unit="mmol/L"/>
+      <th caption="Bicarbonate" unit="mmol/L"/>
+      <th caption="Phosphorus" unit="mmol/L"/>
+      <th caption="Magnesium" unit="mmol/L"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="f_sodium" field_type="" normal_range="25-75" style=""/>
+      <td id="3" field_name="f_potassium" field_type="" normal_range="25-75" style=""/>
+      <td id="4" field_name="f_calcium" field_type="" normal_range="25-75" style=""/>
+      <td id="5" field_name="f_chloride" field_type="" normal_range="25-75" style=""/>
+      <td id="6" field_name="f_bicarbonate" field_type="" normal_range="25-75" style=""/>
+      <td id="7" field_name="f_phosphorus" field_type="" normal_range="25-75" style=""/>
+      <td id="8" field_name="f_magnesium" field_type="" normal_range="25-75" style=""/>
+    </tr>
+  </table>
+
+  <table id="rnl" caption="Renal" table_name="s09" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="Blood Urea" unit="mg/dl"/>
+      <th caption="BUN" unit="mg/dl"/>
+      <th caption="Creatinine" unit="mg/dl"/>
+      <th caption="Uric Acid" unit="mg/dl"/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="f_urea" field_type="" normal_range="25-75" style=""/>
+      <td id="3" field_name="f_nitrogen" field_type="" normal_range="25-75" style=""/>
+      <td id="4" field_name="f_creatinine" field_type="" normal_range="25-75" style=""/>
+      <td id="5" field_name="f_uricacid" field_type="" normal_range="25-75" style=""/>
+    </tr>
+  </table>
+
+  <table id="ser" caption="Serology" table_name="s34" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="agent" unit=""/>
+      <th caption="Specimen" unit=""/>
+      <th caption="Method" unit=""/>
+      <th caption="TITRE" unit=""/>
+      <th caption="Result" unit=""/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="identify_agent" field_type="" style="text-align:left"/>
+      <td id="3" field_name="specimen" field_type="" style="text-align:left"/>
+      <td id="4" field_name="test_method" field_type="" style="text-align:left"/>
+      <td id="5" field_name="titre" field_type="" normal_range="25-75" style=""/>
+      <td id="6" field_name="result" field_type="" style="text-align:left"/>
+    </tr>
+  </table>
+  <table id="pth" caption="Pathology" table_name="s35" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Test Date"/>
+      <th caption="Test Name" unit=""/>
+      <th caption="Test Specimen" unit=""/>
+      <th caption="Purpose of Study" unit=""/>
+      <th caption="Test Report" unit=""/>
+    </tr>
+    <tr repeat="testdate">
+      <td id="1" field_name="testdate" field_type="Date" style="" />
+      <td id="2" field_name="name_test" field_type="" style="text-align:left"/>
+      <td id="3" field_name="test_specimen" field_type="" style="text-align:left"/>
+      <td id="4" field_name="purpose_study" field_type="" style="text-align:left"/>
+      <td id="5" field_name="report" field_type="" style="text-align:left"/>
+    </tr>
+  </table>
+</pattern>

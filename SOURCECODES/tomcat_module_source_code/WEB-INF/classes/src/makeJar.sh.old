@@ -1,0 +1,16 @@
+cp -r /home/mithun/iMediX/SOURCECODES/server_module_source_code/imedix `pwd`
+
+/usr/local/jdk18/bin/javac -d `pwd` *.java
+
+/usr/local/jdk18/bin/javac -d `pwd` /src_servlet *.java
+cp -r `pwd`/src_servlet/imedixservlets/* `pwd`/imedixservlets
+
+/usr/local/jdk18/bin/jar -cf  imedix.jar imedix/*.class
+/usr/local/jdk18/bin/jar -cf  tuberculosis.jar tuberculosis/*.class
+/usr/local/jdk18/bin/jar -cf  phiv.jar phiv/*.class
+/usr/local/jdk18/bin/jar -cf  onlinegc.jar onlinegc/*.class
+/usr/local/jdk18/bin/jar -cf  logger.jar logger/*.class
+/usr/local/jdk18/bin/jar -cf  imedixservlets.jar imedixservlets/*.class
+cp -r *.jar /home/mithun/iMediX/tomcat7/webapps/iMediX/WEB-INF/lib
+
+echo done

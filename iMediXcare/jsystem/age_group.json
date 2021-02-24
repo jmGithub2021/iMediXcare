@@ -1,0 +1,8 @@
+[
+{"minage":19,"maxage":125,"unit":"year","agegroup":"A","name":"Adult"},
+{"minage":13,"maxage":18,"unit":"year","agegroup":"E","name":"Teen"},
+{"minage":5,"maxage":12,"unit":"year","agegroup":"C","name":"Child"},
+{"minage":2,"maxage":4,"unit":"year","agegroup":"T","name":"Toddler"},
+{"minage":1,"maxage":23,"unit":"month","agegroup":"I","name":" Infant "},
+{"minage":0,"maxage":28,"unit":"day","agegroup":"N","name":"Neonate"}
+]

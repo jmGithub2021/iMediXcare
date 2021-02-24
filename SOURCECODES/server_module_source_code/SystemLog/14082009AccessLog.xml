@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<imedixlog>
+<log>
+<datetime>Fri Aug 14 14:30:51 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090814143051</entrydate>
+</key>
+<description>
+<table>s13</table>
+<details>Electrolyte estimation</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 15:51:30 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090814155130</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 15:51:35 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090814155135</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 15:51:40 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090814155140</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:10:11 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>extrdoc</userid>
+<usertype>doc</usertype>
+<key>
+<patid>EXTR2307090007</patid>
+<row_id>29</row_id>
+</key>
+<description>
+<table>k02</table>
+<details>Update Pill Count</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:16:09 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>extrdoc</userid>
+<usertype/>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090814161608</entrydate>
+</key>
+<description>
+<table>patimages</table>
+<details>images Uploaded (SKP)</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:17:16 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>extrdoc</userid>
+<usertype/>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090814161716</entrydate>
+</key>
+<description>
+<table>refimages</table>
+<details>Refimage Saved (DCM)</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:37:28 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR0708090000</patid>
+<entrydate>20090814163728</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:37:31 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR0708090000</patid>
+<entrydate>20090814163731</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:37:56 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR3107090000</patid>
+<entrydate>20090814163756</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:38:00 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR3107090000</patid>
+<entrydate>20090814163800</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:38:04 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR3107090000</patid>
+<entrydate>20090814163804</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:51:20 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR3107090000</patid>
+<entrydate>20090814165120</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:51:25 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR3107090000</patid>
+<entrydate>20090814165125</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:51:28 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR3107090000</patid>
+<entrydate>20090814165128</entrydate>
+</key>
+<description>
+<table>z00</table>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:51:33 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR3107090000</patid>
+<serno>4,3,2</serno>
+</key>
+<description>
+<table>z00</table>
+<status>y</status>
+<outset>2009/08/14</outset>
+<details>Problem List</details>
+</description>
+</log>
+<log>
+<datetime>Fri Aug 14 16:55:24 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR3107090000</patid>
+<entrydate>20090814165524</entrydate>
+</key>
+<description>
+<table>tpatq</table>
+<details>Teleconsultation Request</details>
+</description>
+</log>
+</imedixlog>

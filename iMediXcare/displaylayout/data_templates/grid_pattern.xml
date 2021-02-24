@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pattern>
+  <table caption="Patint Queue" style="">
+    <tr> 
+      <th caption="Sl. No."/>
+      <th caption="Patient ID"/>
+      <th caption="Disease Category"/>
+      <th caption="Entry date"/>
+      <th caption="Assigned Doctor"/>
+      <th caption="Select"/>
+    </tr>
+    <tr perpage="10" clause="user_id=@uid and assoc_doc=@assoc_doc" order="(med.entrydate) desc, (med.discat) asc">
+      <td field_name="autoincrement" field_type="" style="" />
+      <td field_name="med.pat_id" field_type="" linkpage="somepage.aspx" linkparam="patid=(med.pat_id)"  style=""/>
+      <td field_name="med.discat" field_type="" style=""/>
+      <td field_name="med.entrydate" field_type="" style=""/>
+      <td field_name="med.assoc_doc" field_type="" style=""/>
+      <td input_type="checkbox" input_name="med.id" default_value=""  style=""/>
+    </tr>
+  </table>
+</pattern>

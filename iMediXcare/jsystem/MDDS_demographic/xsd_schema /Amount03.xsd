@@ -1,0 +1,18 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name= "Amount">
+<!-- Reference value for its Metadata (G00.04)-->
+<xs:simpleType>
+<xs:restriction base= "xs:decimal">
+
+<!-- The maximum size has been taken as per Banking application, for other it can be customized / standardized by domain applications as per their specific requirements. -->
+<xs:totalDigits value="20"/>
+<xs:fractionDigits value="2"/>	
+<xs:pattern value="[0-9]{1,16}[\.][0-9]{2}"/>
+
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:schema>
+
+

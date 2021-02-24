@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pattern>
+  <table caption="Lipid profile" style="">
+    <tr><td field_name="s10.f_cholesterol" field_type="" caption="Total cholesterol" style="" /></tr>
+    <tr><td field_name="s10.f_hdl_choles" field_type="" caption="HDL-cholesterol" style=""/></tr>
+    <tr><td field_name="s10.f_ldl_choles" field_type="" caption="LDL-cholesterol" style=""/></tr>
+    <tr><td field_name="s10.f_vldl_choles" field_type="" caption="VLDL-cholesterol" style=""/></tr>
+    <tr><td field_name="s10.f_triglycerides" field_type="" caption="Triglycerides" style=""/></tr>
+    <tr><td field_name="s10.others" field_type="" caption="Triglycerides" style=""/></tr>
+    <tr><td field_name="s10.tbxgeneralimp" field_type="" caption="General Impression" style=""/></tr>
+  </table>
+</pattern>

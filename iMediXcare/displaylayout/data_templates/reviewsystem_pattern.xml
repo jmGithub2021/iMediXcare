@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pattern>
+  <table id="gen" caption="General" table_name="a30" fld_list="fever,activity,wt_loss,app_loss,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Fevers"/>
+      <th caption="Change in Activity"/>
+      <th caption="Weight Loss"/>
+      <th caption="Loss of appetite"/>
+       <th caption="Comments"/>
+	  <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+  <table id="hnt" caption="HEENT" table_name="a31" fld_list="ear,vision,odynophagia,thinorchea,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Ear Discharge"/>
+      <th caption="Change in Vision"/>
+      <th caption="Odynophagia"/>
+      <th caption="Thinorchea"/>
+      <th caption="Comments"/>
+	  <th caption="Entry Date"/>
+     </tr>
+  </table>
+
+  <table id="skn" caption="Skin" table_name="a32" fld_list="rash,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Rash"/>
+      <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+  
+  <table id="res" caption="Respiratory" table_name="a33" fld_list="cough,breath,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Cough"/>
+	  <th caption="Shortness of Breath"/>
+      <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+  <table id="car" caption="Cardiovascular" table_name="a34" fld_list="chest,breath,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Chest Pain"/>
+	  <th caption="Difficulty in Breathing"/>
+      <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+   <table id="gas" caption="Gastrointestinal" table_name="a35" fld_list="diarrhea,constipation,stools,abdominal,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Diarrhea"/>
+	  <th caption="Constipation"/>
+	  <th caption="Bloody Stools"/>
+	  <th caption="Abdominal Pain"/>
+      <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+   <table id="pan" caption="Pain" table_name="a41" fld_list="pain,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Pain"/>
+	  <th caption="Comments"/>
+	  <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+  <table id="end" caption="Endocrine" table_name="a36" fld_list="growth,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Change in Growth"/>
+	  <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+   <table id="nem" caption="Heme/lymph" table_name="a37" fld_list="lumps,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Any Lumps/Bumps"/>
+      <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+   <table id="gen" caption="Genitourinary" table_name="a38" fld_list="diff_urin,burn_urin,blood_urin,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Difficulty with Urination"/>
+	  <th caption="Burning with Urination"/>
+	  <th caption="Blood in Urin"/>
+      <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+  <table id="neu" caption="Neurology" table_name="a39" fld_list="weakness,fail,numbness,speaking,walking,tbxcomments,entrydate"  border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Weakness"/>
+	  <th caption="Fail"/>
+	  <th caption="Numbness"/>
+	  <th caption="Difficulty in Speaking"/>
+	  <th caption="Difficulty in Walking"/>
+      <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+
+  <table id="psy" caption="Psychological" table_name="a40" fld_list="school,withdrawn,sad,tbxcomments,entrydate" border="1" cellspacing="2" cellpadding="2" style="">
+    <tr>
+      <th caption="Change in School Perfance"/>
+	  <th caption="Withdrawn"/>
+	  <th caption="Sad"/>
+	  <th caption="Comments"/>
+      <th caption="Entry Date"/>
+    </tr>
+  </table>
+ </pattern>

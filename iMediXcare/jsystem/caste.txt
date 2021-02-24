@@ -1,0 +1,6 @@
+general>General
+obc>OBC (Creamy Layer)
+obncl>OBC (Non Creamy Layer)
+sc>Schedule Caste
+st>Shedule Tribe
+notst>Not Stated

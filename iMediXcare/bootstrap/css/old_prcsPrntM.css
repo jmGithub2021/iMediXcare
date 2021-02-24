@@ -1,0 +1,109 @@
+@media print{
+.prescription-ajax{
+    border:none !important;
+    -webkit-print-color-adjust: exact;
+    padding: 10px;
+    font-size:12px !important;
+}
+}
+@media print{
+.title{
+	    font-size: 14px !important;
+    border: 1px solid #4daaf5;
+    -webkit-print-color-adjust: exact;
+    color: #000;
+    font-weight: 600;
+    padding: 4px;
+    margin: 4px;
+}}
+@media print{
+.diagn,.advice,.medinice{
+    margin: 5px 0;
+}}
+@media print{
+fieldset{
+    border: 1px solid #ddd;
+    -webkit-print-color-adjust: exact;
+}}
+@media print{
+.diagn-report,advice-field{
+	padding: 8px;
+}}
+@media print{
+table{
+	width: 100%;padding:5x 0;
+}}
+@media print{
+.center{text-align:center;}
+}
+@media print{
+.col-sm-6{
+	width: 50%;
+	float: left;
+	position: relative;
+    min-height: 1px;
+}
+}
+@media print{
+.list-group{
+	padding-left: 0;
+    margin-bottom: 20px;
+}
+}
+@media print{
+.list-group-item{
+	border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+	position: relative;
+    display: block;
+    padding: 6px 10px !important;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}}
+@media print{
+	.pat-info-prcs,.pres-heading{display:block}
+}
+@media print{
+	.dispres fieldset{border: 1px solid #5ba9ec !important;}
+	.list-group{margin-bottom:0px;}
+	.dispres > div{margin-bottom:12px;}
+	.hospitalName-div{display:none;}
+	.pres-heading{
+		min-height:100px;
+	}
+	.heading-title{  
+		width: 58.33333333%;
+		float: left;
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+		font-size: 16px;
+		font-weight: 600;
+		text-align: left;
+    }
+    .heading-title > span{display:block;}
+    .pres-logo{
+        width: 41.66666667%;
+		float: right;
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;        
+    }
+    .pres-logo img{
+		position: absolute;
+		width: 100px;
+		height: 80px;
+		float: right;
+		padding: 6px;
+		right: 0px;
+		top:-60px;
+    }
+    .pull-right{float:right !important;}
+    .pull-left{float:left !important;}
+    .align-right{text-align:right;text-align: -webkit-right;}
+}
+
+

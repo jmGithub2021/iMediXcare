@@ -1,0 +1,608 @@
+<%@page contentType="text/html" %>
+<%@ include file="..//chkcook.jsp" %>
+<%
+	//MyWebFunctions thisObj = new MyWebFunctions();
+	String  referring_doc,ccode="";
+	referring_doc = request.getParameter("reg");
+	//ccode = thisObj.getCookieValue("center", request.getCookies());
+%>
+
+<HTML>
+<link rel="stylesheet" href="style1.css" type="text/css" media="screen" />
+
+<HEAD>
+<TITLE>PATIENTS DATA-MED FORM....
+</TITLE>
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+//var error=0;
+
+function chkblnk(fieldname,Label){
+	var fdval=document.getElementById(fieldname).value;
+	//alert(fdval);
+	var temp=fdval.toString();
+	//if(error==0)
+	//{
+	if(temp.length==0)
+	{
+		//error=1;
+		document.getElementById(fieldname).focus();
+		alert("The "+ Label +" field cannot be left blank");
+		document.getElementById(fieldname).select();
+		//error=0;
+		return false;
+	}
+	//}
+return true;
+}
+
+
+function putentrydate(){
+
+if(!chkblnk("pat_name","Name"))
+{ return false; }
+if(!checkdigit('phone','phone'))
+{ return false; }
+if(!checkdigit('pin','pin'))
+{ return false; }
+
+
+if(document.med.type.value=='A'&& document.med.ageyy.value<19 )
+	{	
+	alert("An adult is above 18 years.");	
+	return false;
+	}
+
+if(document.med.type.value=='E'&&(document.med.ageyy.value>18 || document.med.ageyy.value<12))
+	{
+	alert("A teen-ager is between 12 years to below 19 years.");	
+	return false;
+	}
+	
+if(document.med.type.value=='C'&&((document.med.ageyy.value>11 || document.med.ageyy.value<5)|| document.med.agemm.value>11))
+	{
+	alert("A child is between 5 years to below 12 years.");	
+	return false;
+	}
+
+if(document.med.type.value=='T'&&((document.med.ageyy.value>4 ||document.med.ageyy.value<2)|| document.med.agemm.value>11 ))
+	{
+	alert("A todler is between 2 years to below 5 years.");	
+	return false;
+	}
+
+if(document.med.type.value=='I'&&((document.med.agedd.value>29)||(document.med.agemm.value>23)||(document.med.agemm.value<1)))
+	{
+	alert("An infant is  from 1 month to below 2 years.");	
+	return false;
+	}
+
+if(document.med.type.value=='N'&&(document.med.agedd.value>29 || document.med.agedd.value<1))
+	{
+	alert("An neonate is below 1 month.");	
+	return false;
+	}
+//alert(document.med.type.value);
+if(document.med.type.value=='A'|| document.med.type.value=='E'|| document.med.type.value=='T'|| document.med.type.value=='C')
+{
+//alert(document.med.ageyy.value);
+	if(!chkblnk("ageyy","Year")) return false;
+	if(!checkdigit("ageyy","Year")) return false;
+}
+
+if(document.med.type.value=='T'|| document.med.type.value=='C'|| document.med.type.value=='I')
+{
+//alert(document.med.agemm.value);
+	if(!chkblnk("agemm","Month")) return false;
+	if(!checkdigit("agemm","Month")) return false;
+}
+if(document.med.type.value=='N'|| document.med.type.value=='I')
+{
+//alert(document.med.agedd.value);
+	if(!chkblnk("agedd","Day")) return false;
+	if(!checkdigit("agedd","Day")) return false;
+}
+
+//merge the agedd,agemm,ageyy to create the age field
+document.med.age.value=document.med.ageyy.value +","+document.med.agemm.value +","+ document.med.agedd.value;
+//alert(document.med.age.value);
+
+
+return true;
+//return false;
+}
+
+function checkdigit(fdnam,label)
+{
+	var tnum,tmp,fdval;
+	fdval = document.getElementById(fdnam).value
+	//alert(fdval)
+	for(i=0;i<fdval.length;i++)
+	{
+	 tmp=fdval.substring (i,i+1);
+	tnum=parseInt(tmp);
+	if (tnum>=0 && tnum<=9)
+		continue;
+	else {
+		alert('Please enter Number in the '+label+' field');
+		document.getElementById(fdnam).select();
+		return false;
+		}
+	}
+	return true;
+}
+
+
+function checkPositive(fdnam, num)
+{
+	var fdval;
+	fdval = document.med.elements[num].value;
+	if (parseInt(fdval) <= 0 ){
+		alert(fdnam +" Entered is not a positive number");
+		return false;
+	}
+	else 
+	{ return true;}
+}
+function adjust()
+{
+	val =document.med.type.value;
+	if(val=='A'|| val=='E')
+	{
+		document.med.ageyy.style.visibility="hidden";document.med.ageyy.value="";
+		document.med.agemm.style.visibility="hidden";document.med.agemm.value="";
+		document.med.agedd.style.visibility="hidden";document.med.agedd.value="";
+		document.med.ageyy.style.visibility="";
+	}
+	if(val=="T"|| val=="C")
+	{
+		document.med.ageyy.style.visibility="hidden";document.med.ageyy.value="";
+		document.med.agemm.style.visibility="hidden";document.med.agemm.value="";
+		document.med.agedd.style.visibility="hidden";document.med.agedd.value="";
+		document.med.ageyy.style.visibility="";
+		document.med.agemm.style.visibility="";
+	}
+	if(val=="I")
+	{
+		document.med.ageyy.style.visibility="hidden";document.med.ageyy.value="";
+		document.med.agemm.style.visibility="hidden";document.med.agemm.value="";
+		document.med.agedd.style.visibility="hidden";document.med.agedd.value="";
+		document.med.agemm.style.visibility="";
+		document.med.agedd.style.visibility="";
+	}
+	if(val=="N")
+	{
+		document.med.ageyy.style.visibility="hidden";document.med.ageyy.value="";
+		document.med.agemm.style.visibility="hidden";document.med.agemm.value="";
+		document.med.agedd.style.visibility="hidden";document.med.agedd.value="";
+		document.med.agedd.style.visibility="";
+	}
+}
+function doit()
+{
+		document.med.ageyy.style.visibility="hidden";
+		document.med.agemm.style.visibility="hidden";
+		document.med.agedd.style.visibility="hidden";
+		document.med.ageyy.style.visibility="";
+
+}
+function doc()
+{
+document.med.referring_doctor.value=document.med.comdoctor.options[document.med.comdoctor.selectedIndex].value;
+}
+
+</SCRIPT>
+</HEAD>
+<body onLoad='doit()' >
+<%
+String action = "..//jspfiles//genid.jsp";
+//<%=action
+%>
+<FORM METHOD=Get ACTION="<%=action%>" name="med" onSubmit='return putentrydate();' >
+<CENTER>
+<br>
+<div id="shadow1">
+<H3><CENTER>PATIENT'S INFORMATION </CENTER></H3>
+</div>
+</CENTER>
+<br><br>
+
+<CENTER>
+<div id="shadow1">
+<div id="table1">
+
+<table Border=0 style="border-collapse: collapse" bordercolor="#111111" cellspacing="0">
+	<tr>
+	<td align=right width=100><fONT size=2>Prefix</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250>
+	
+	<select NAME=pre>
+		<option>Mr </option>
+		<option>Mrs </option>
+		<option>Ms</option>
+		<option>Mas</option>
+		<option>Dr</option>
+		<option>Prof</option>
+	</select>
+	</td>
+	<td align=center width=15>  </td>
+
+	<td align=right width=100><fONT size=2>Age group</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250>
+	<SELECT name=type onChange="adjust();">
+		<option value="">  </option>
+		<option value=A selected> Adult </option>
+		<option value=E> Teen </option>
+		<option value=C> Child </option>
+		<option value=T> Toddler </option>
+		<option value=I> Infant </option>
+		<option value=N> Neonate </option>
+	</select>
+	<INPUT TYPE="hidden" name=age>
+	<!-- its a hidden field which will contain ageyy,agemm,agedd -->
+	</td>
+	</tr>
+
+	<tr>
+	<td align=right width=100><fONT size=2>First Name</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250><input type="text" name="pat_name" size="50" maxlength="100"></td>
+	<td align=center width=15>  </td>
+	<td align=right width=100><fONT size=2>Age</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250>
+		<INPUT ID="ageyy" NAME="ageyy" SIZE=2 maxlength =3 > <fONT size=2> Year&nbsp;&nbsp;</FONT>
+		<INPUT ID="agemm" NAME="agemm" SIZE=2 maxlength =3 > <fONT size=2>Month&nbsp;&nbsp;</FONT>
+		<INPUT ID="agedd" NAME="agedd" SIZE=2 maxlength =3> <fONT size=2>Day</FONT>
+	</td>
+	</tr>
+
+	<tr>
+	<td align=right width=100><fONT size=2>Middle Name</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250><input type="text" name="m_name" size="50" maxlength="100"></td>
+	<td align=center width=15>  </td>
+	<td align=right width=100><fONT size=2>Date of Birth</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250><input type="text" name="dateofbirth" size="50" maxlength="100"></td>
+	</tr>
+
+	<tr>
+	<td align=right width=100><fONT size=2>Surname</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250><input type="text" name="l_name" size="50" maxlength="100"></td>
+	<td align=center width=15>  </td>
+	<td align=right width=100><fONT size=2>Sex</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250>
+		<Select NAME=sex >
+			<option Value="M">Male</Option>
+			<option Value="F">Female</Option>
+			<option Value="O">Other</Option>
+			<option Value="N">Not Stated</Option>
+		</Select>
+	</td>
+	</tr>
+
+	<tr>
+	<td align=right width=100><fONT size=2>Religion</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250>
+		<select NAME=religion>
+			<option>Hindu </option>
+			<option>Muslim </option>
+			<option>Christian</option>
+			<option>Sikh</option>
+			<option>Buddhist</option>
+			<option>Jain</option>
+			<option>Jew</option>
+			<option>Parsi</option>
+			<option>Bahai</option>
+			<option>Others</option>
+			<option>Atheist</option>
+			<option>Not Disclosed</option>
+			<option>Not Known</option>
+		</select>
+	</td>
+	<td align=center width=15>  </td>
+	<td align=right width=100><fONT size=2>Disease type</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250>
+	<SELECT name=class >
+	<%
+		/*
+		FileInputStream fin = new FileInputStream("//dis_category.txt");
+		int i;
+		String str="";
+		do{
+			i = fin.read();
+			if((char) i != '\n')
+				str = str + (char) i;
+			else {
+				out.println("<option value='" + str + "'>" + str + "</Option>");
+				str="";
+			}
+		}while(i != -1);
+
+		fin.close();
+		*/
+	%>
+	</SELECT>
+	
+	</td>
+	</tr>
+
+	<tr>
+	<td align=right width=100><fONT size=2>Marital status</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250>
+	<select NAME=m_status>
+		<option value=sing>Single
+		<option value=mard>Married
+		<option value=1mrd>First Marraige
+		<option value=2mcw>2nd Marraige Concurrent Wife
+		<option value=2mnw>2nd Marraige Non-Concurrent Wife
+		<option value=b2mc>Beyond 2nd Marraige Concurrent Wife
+		<option value=b2mn>Beyond 2nd Marraige Non-Concurrent Wife
+		<option value=sepd>Separated
+		<option value=dvcd>Divorced
+		<option value=widd>Widowed
+		<option value=ntst>Not Stated
+	</select>	
+	</td>
+	<td align=center width=15>  </td>
+	<td align=right width=100><fONT size=2>Race</FONT></td>
+	<td align=center width=10> : </td>
+	<td width=250>
+		<select NAME=race>
+			 <option>American Indian/Eskimo/Aleut</option>
+			<option>Asian or Pacific Islander</option>
+			<option>Black</option>
+			<option>White</option>
+			<option>Other</option>
+			<option>Unknown/Not Stated</option> 
+		</select>
+		
+	</td>
+	</tr>
+
+
+</table>
+</div>
+</div>
+
+<br>
+<div id="shadow1">
+<div id="table1">
+<table Border=0 style="border-collapse: collapse" bordercolor="#111111" cellspacing="0">
+<tr>
+	<td>Select Physician :</td>
+<td>
+<SELECT name="comdoctor" OnChange='doc();'>
+<option value=NULL>select</option>
+<%
+
+/*
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet RSet = null;
+		String sqlQuery, uid="", dname="",reg="";
+		int count=1;
+		sqlQuery = "Select UID,NAME,RG_NO from LOGIN where upper(CENTER)='"+ccode.toUpperCase()+"' and TYPE = 'doc' and ACTIVE!='N'";
+		try {
+			Class.forName(gbldbjdbcDriver);
+			conn = DriverManager.getConnection(gbldbURL, gbldbusername, gbldbpasswd);
+			stmt = conn.createStatement();
+			RSet=stmt.executeQuery(sqlQuery);
+			while (RSet.next()) {
+				uid = RSet.getString("UID");
+				dname = RSet.getString("NAME");
+				reg = RSet.getString("RG_NO");
+				out.println("<Option value='" + reg + "'>"+dname+"</Option>");
+				
+			}
+			
+			RSet.close();
+			conn.close();
+			stmt.close();
+		}
+		catch (Exception e) {
+			out.println("Error:<B>"+e+"</B>");
+			
+		}
+
+*/
+
+%>
+</SELECT>
+ </td> 
+</tr>
+</table>
+</div>
+</div>
+<br>
+<table Border=0 style="border-collapse: collapse" bordercolor="#111111" cellspacing="0">
+<tr>
+	<td>
+		<div id="shadow2"> <center><b>Patient's Details</b></center>
+		<br>
+		<div id="table2">
+			<table Border=0 style="border-collapse: collapse" bordercolor="#111111" cellspacing="0">
+				<tr>
+				<td align=right width=100><fONT size=2>Address</FONT></td>
+				<td align=center width=10> : </td>
+				<td width=250><input type="text" name="addline1" size="50" maxlength="100"></td>
+				</tr>
+				<tr>
+				<td align=right width=100><fONT size=2></FONT></td>
+				<td align=center width=10>  </td>
+				<td width=250><input type="text" name="addline2" size="50" maxlength="100"></td>
+				</tr>
+				<tr>
+				<td align=right width=100><fONT size=2>Police Stn.</FONT></td>
+				<td align=center width=10> : </td>
+				<td width=250><input type="text" name="policestn" size="50" maxlength="100"></td>
+				</tr>
+				<tr>
+				<td align=right width=100><fONT size=2>Phone</FONT></td>
+				<td align=center width=10> : </td>
+				<td width=250><input type="text" name="phone" size="50" maxlength="100"></td>
+				</tr>
+				<tr>
+				<td align=right width=100><fONT size=2>City</FONT></td>
+				<td align=center width=10> : </td>
+				<td width=250><input type="text" name="city" size="50" maxlength="100"></td>
+				</tr>
+				<tr>
+				<td align=right width=100><fONT size=2>District</FONT></td>
+				<td align=center width=10> : </td>
+				<td width=250><input type="text" name="dist" size="50" maxlength="100"></td>
+				</tr>
+				<tr>
+				<td align=right width=100><fONT size=2>State</FONT></td>
+				<td align=center width=10> : </td>
+				<td width=250>
+					<Select name=state>
+						<option value=AN>Andaman & Nicobar
+						<option value=AP>Andhra Pradesh
+						<option value=AR>Arunachal Pradesh
+						<option value=AS>Assam
+						<option value=BH>Bihar
+						<option value=CH>Chandigarh
+						<option value=CT>Chhattisgarh
+						<option value=DD>Daman Diu
+						<option value=DL>Delhi
+						<option value=GA>Goa
+						<option value=GJ>Gujarat
+						<option value=HR>Haryana
+						<option value=HP>Himachal Pradesh
+						<option value=JK>Jannu & Kashmir
+						<option value=JH>Jharkand
+						<option value=KA>Karnataka
+						<option value=KL>Kerala
+						<option value=LA>Lakshadweep
+						<option value=MP>Madhya Pradesh
+						<option value=MH>Maharashtra
+						<option value=MN>Manipur
+						<option value=ME>Meghalaya
+						<option value=MZ>Mizoram
+						<option value=NL>Nagaland
+						<option value=OR>Orissa
+						<option value=PY>Pondicherry
+						<option value=PB>Panjab
+						<option value=RJ>Rajasthan
+						<option value=SI>Sikkim
+						<option value=TN>Tamil Nadu
+						<option value=TR>Tripura
+						<option value=UP>Uttar Pradesh
+						<option value=UT>Uttaranchal
+						<option value=WB selected>West Bengal
+					</select>
+				</td>
+				</tr>
+				<tr>
+				<td align=right width=100><fONT size=2>Country</FONT></td>
+				<td align=center width=10> : </td>
+				<td width=250>
+					<select name=country>
+						<option value=IN>India
+					</select>
+				</td>
+				</tr>
+				<tr>
+				<td align=right width=100><fONT size=2>Pin Code</FONT></td>
+				<td align=center width=10> : </td>
+				<td width=250><input type="text" name="pin" size="50" maxlength="100"></td>
+				</tr>
+			</table>
+		</div>
+		</div>
+	</td>
+
+	<td>
+		<div id="shadow2"> <center><b>Contact Person Details</b></center>
+		<br>
+		<div id="table2">
+		<table Border=0 style="border-collapse: collapse" bordercolor="#111111" cellspacing="0">
+			<tr>
+			<td align=right width=100><fONT size=2>Name</FONT></td>
+			<td align=center width=10> : </td>
+			<td width=250><input type="text" name="pat_person" size="50" maxlength="100"></td>
+			</tr>
+			<tr>
+			<td align=right width=100><fONT size=2>Relation</FONT></td>
+			<td align=center width=10> : </td>
+			<td width=250><input type="text" name="pat_relation" size="50" maxlength="100"></td>
+			</tr>
+			
+			<tr>
+			<td align=right width=100><fONT size=2>Address</FONT></td>
+			<td align=center width=10> : </td>
+			<td width=250 rowspan=4><TEXTAREA NAME="pat_person_add" ROWS="4" COLS="50" wrap=virtual onkeypress='return txtlength(this,200)' onblur='chkpest(this,200)'></TEXTAREA></td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		</div>
+		</div>
+	</td>
+</tr>
+</table>
+
+<div id="shadow1">
+<div id="table1">
+<table Border=0 style="border-collapse: collapse" bordercolor="#111111" cellspacing="0">
+<tr>
+	<td>
+	<input type="submit" value="Submit" style="background-color:'#D3CEC9'; color:'#000000'; font-weight:BOLD;">
+	<input type="reset" value="Reset" style="background-color:'#D3CEC9'; color:'#000000'; font-weight:BOLD;">
+	</td>
+</tr>
+</table>
+</div>
+</div>
+
+<INPUT TYPE="hidden" name=consent value=u> <!-- y for yes, u for null n for no -->
+<INPUT TYPE="hidden" name="referring_doctor" value="">
+<INPUT TYPE="hidden" name="serno" value="">
+
+</center>
+</FORM>
+</body >
+</html>
+
+

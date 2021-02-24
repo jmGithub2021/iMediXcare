@@ -1,0 +1,22 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- The Country Code values are as per ISO-3166-1 alpha-3 -->
+
+
+<xs:element name="Country_Short_Name_Code">
+<!-- Reference value for its Metadata (G02.01)-->
+<xs:complexType>
+<xs:sequence>
+<xs:element name ="ISOCode" type= "xs:string" maxOccurs="3"/>
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+
+</xs:schema>
+
+
+
+
+

@@ -1,0 +1,6 @@
+notst>Unknown/Not Stated 
+hopd>Hospital OPD Identity
+voter>Voter-Card
+aadhar>Aadhar-Card
+pan>PAN-Card
+driving>Driving-License

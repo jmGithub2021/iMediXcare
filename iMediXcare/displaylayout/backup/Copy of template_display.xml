@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<Display>
+	<FrameTable type="frame" rows="32, *">
+		<FrameRow>
+      <FrameData name="header2" orientation="horizontal" contenttype="menu" link="../displaylayout/header2menu.jsp" menuid="head2" style="head2" />
+		</FrameRow>
+		<FrameRow>
+			<FrameData>
+				<FrameTable type="frame" cols="140, *, 170">
+			<FrameRow>
+            <FrameData name="leftpanel" orientation="vertical" contenttype="menu" link="../displaylayout/lpanelmenu.jsp" menuid="lpanel1" style="lpanel1" />
+            <FrameData name="content2" orientation="horizontal" contenttype="page" link="summary.jsp" />
+            <FrameData name="rightpanel" orientation="vertical" contenttype="menu" link="../displaylayout/rpanelmenu.jsp" menuid="rpanel1" style="rpanel1" />
+					</FrameRow>
+				</FrameTable>
+			</FrameData>
+		</FrameRow>
+  </FrameTable>
+	<MenuList>
+    <menu id="head2" role="ADM">      
+      <item name="" caption="Summary" link="../jspfiles/totalsummary.jsp" target="content2" />
+      <item name="" menuid="lpanel1" caption="Records" link="lpanelmenu.jsp" target="leftpanel" />
+      <item name="" menuid="lpanel2" caption="Encounter" link="lpanelmenu.jsp" target="leftpanel" />
+      <item name="" menuid="lpanel7" caption="Investigations" link="lpanelmenu.jsp" target="leftpanel" />
+      <item name="" menuid="lpanel5" caption="Counsel" link="../phivjsp/ud.htm" target="content2" />
+      <item name="" menuid="lpanel6" caption="Other Tasks" link="lpanelmenu.jsp" target="leftpanel" />
+    </menu>
+
+    <menu id="head2" role="DOC">
+      <item name="" caption="Summary" link="../jspfiles/totalsummary.jsp" target="content2" />
+      <item name="" menuid="lpanel1" caption="Records" link="lpanelmenu.jsp" target="leftpanel" />
+      <item name="" menuid="lpanel2" caption="Encounter" link="lpanelmenu.jsp" target="leftpanel" />
+      <item name="" menuid="lpanel3" caption="Prescribe" link="lpanelmenu.jsp" target="leftpanel" />
+      <item name="" menuid="lpanel7" caption="Investigations" link="lpanelmenu.jsp" target="leftpanel" />
+      <item name="" menuid="lpanel5" caption="Counsel" link="../phivjsp/ud.htm" target="content2" />
+      <item name="" menuid="lpanel6" caption="Other Tasks" link="lpanelmenu.jsp" target="leftpanel" />
+    </menu>
+    <menu id="head2" role="USR">
+      <item name="" menuid="lpanel2" caption="Encounter" link="lpanelmenu.jsp" target="leftpanel" />
+      <item name="" menuid="lpanel7" caption="Investigations" link="lpanelmenu.jsp" target="leftpanel" />
+    </menu>
+    <menu id="lpanel1" role="ADM,DOC">
+      <item name="" caption="Complaints" link="../phivjsp/complaints.jsp" target="content2" />
+      <item name="" caption="Visit Summary" link="../phivjsp/visitsummary.jsp" target="content2" />
+      <item name="" caption="Family History" link="../servlet/familyhistory" target="content2" />
+      <item name="" caption="Visit Records" link="../jspfiles/recordmenu.jsp" target="rightpanel" />
+      <item name="" caption="Entry Records" link="../jspfiles/showlist.jsp" target="content2" />
+      <item name="" menuid="rpanel3" caption="Growth Curve" link="" target="rightpanel" />
+      <item name="" menuid="rpanel4" caption="CD4 Curve" link="" target="rightpanel" />
+      <item name="" caption="Gen. Graphs" link="../linegraph/gengraph.jsp" target="rightpanel" />
+      <item name="" caption="Gen. Information" link="../jspfiles/summary.jsp" target="content2" />
+      <item name="" caption="Gen. Impression" link="../jspfiles/generalimpression.jsp" target="content2" />
+      <item name="" caption="Immunization" link="../phivjsp/immuzination.jsp" target="content2" />
+      <item name="" caption="Phenotype" link="../phivjsp/phenotype.jsp" target="content2" />
+      <item name="" menuid="rpanel1" caption="Laboratory" link="" target="rightpanel" />
+      <item name="" caption="Radiology" link="../phivjsp/radiomenu.jsp" target="rightpanel" />
+      <item name="" caption="Medication" link="../phivjsp/medication.jsp" target="content2" />
+    </menu>
+    <menu id="lpanel2" role="DOC">
+      <item name="" caption="Chief Complaint" link="../forms/a14.jsp" target="content2" />
+      <item name="" caption="Past History" link="../forms/a21.jsp" target="content2" />
+      <item name="" caption="Birth History" link="../phivjsp/birth.jsp" target="content2" />
+      <item name="" menuid="rpanel5" caption="Family History" link="" target="rightpanel" />
+      <item name="" caption="Social History" link="../phivjsp/ud.htm" target="content2" />
+      <item name="" caption="Allergy History" link="../forms/h13.jsp" target="content2" />
+      <item name="" caption="Immunization" link="../forms/a13.jsp" target="content2" />
+      <separator/>
+      <item name="" menuid="rpanel6" caption="Physical Exam." link="" target="rightpanel" />
+      <separator/>
+      <item name="" caption="Procedure" link="../forms/a17.jsp" target="content2" />
+      <item name="" caption="Assessment" link="../forms/a15.jsp" target="content2" />
+      <item name="" caption="Problem List" link="../phivjsp/problemlist.jsp" target="content2" />
+	  <item name="" caption="Diagnosis" link="../forms/d03.jsp" target="content2" />
+    </menu>
+	<menu id="lpanel2" role="ADM">
+      <item name="" caption="Chief Complaint" link="../forms/a14.jsp" target="content2" />
+      <item name="" caption="Past History" link="../forms/a21.jsp" target="content2" />
+      <item name="" caption="Birth History" link="../phivjsp/birth.jsp" target="content2" />
+      <item name="" menuid="rpanel5" caption="Family History" link="" target="rightpanel" />
+      <item name="" caption="Social History" link="../phivjsp/ud.htm" target="content2" />
+      <item name="" caption="Allergy History" link="../forms/h13.jsp" target="content2" />
+      <item name="" caption="Immunization" link="../forms/a13.jsp" target="content2" />
+      <separator/>
+      <item name="" menuid="rpanel6" caption="Physical Exam." link="" target="rightpanel" />
+      <separator/>
+      <item name="" caption="Procedure" link="../forms/a17.jsp" target="content2" />
+      <item name="" caption="Assessment" link="../forms/a15.jsp" target="content2" />
+      <item name="" caption="Problem List" link="../phivjsp/problemlist.jsp" target="content2" />
+    </menu>
+	<menu id="lpanel2" role="USR">
+      <item name="" caption="Chief Complaint" link="../forms/a14.jsp" target="content2" />
+      <item name="" caption="Past History" link="../forms/a21.jsp" target="content2" />
+      <item name="" caption="Birth History" link="../phivjsp/birth.jsp" target="content2" />
+      <item name="" menuid="rpanel5" caption="Family History" link="" target="rightpanel" />
+      <item name="" caption="Social History" link="../phivjsp/ud.htm" target="content2" />
+      <item name="" caption="Allergy History" link="../forms/h13.jsp" target="content2" />
+      <item name="" caption="Immunization" link="../forms/a13.jsp" target="content2" />
+      <separator/>
+      <item name="" menuid="rpanel6" caption="Physical Exam." link="" target="rightpanel" />
+      <separator/>
+      <item name="" caption="Procedure" link="../forms/a17.jsp" target="content2" />
+      <item name="" caption="Assessment" link="../forms/a15.jsp" target="content2" />
+      <item name="" caption="Problem List" link="../phivjsp/problemlist.jsp" target="content2" />
+    </menu>
+
+    <menu id="lpanel3" role="DOC">
+      <item name="" caption="General" link="../jspfiles/pre_frame.jsp" target="content2" />
+      <item name="" caption="AntiRetrovirals" link="./../phivjsp/presantiretrovirals.jsp" target="content2" />
+      <item name="" caption="Pill Count" link="./../phivjsp/pillcount.jsp" target="content2" />
+    </menu>
+    <menu id="lpanel6" role="ADM,DOC">
+      <item name="" caption="Personal Info." link="../jspfiles/editmed.jsp" target="content2" />
+      <item name="" caption="Tele-Consultation" link="../jspfiles/telemedreq.jsp" target="content2" />
+      <item name="" caption="Next Visit" link="../jspfiles/editapp.jsp" target="content2" />
+      <item name="" caption="Report" link="../jspfiles/tsr.jsp" target="content2" />
+      <item name="" caption="Summary" link="../jspfiles/smr.jsp" target="content2" />
+      <item name="" caption="Mark Patch" link="../jspfiles/anatomylist.jsp" target="content2" />
+	  <item name="" caption="Give Consent" link="../forms/concent.jsp" target="content2" />
+    </menu>
+
+    <menu id="rpanel1" role="ADM,DOC">
+      <item name="" caption="CD4/Viral Load" link="../phivjsp/comparativestudy.jsp?rid=cd4" target="content2" />
+      <separator/>
+      <item name="" caption="Red Cell" link="../phivjsp/comparativestudy.jsp?rid=rbc" target="content2" />
+      <item name="" caption="White Cell" link="../phivjsp/comparativestudy.jsp?rid=wbc" target="content2" />
+      <item name="" caption="Platelets" link="../phivjsp/comparativestudy.jsp?rid=plt" target="content2" />
+      <item name="" caption="LFT" link="../phivjsp/comparativestudy.jsp?rid=lft" target="content2" />
+      <item name="" caption="Glucose" link="../phivjsp/comparativestudy.jsp?rid=glu" target="content2" />
+      <item name="" caption="Lipid" link="../phivjsp/comparativestudy.jsp?rid=lpd" target="content2" />
+      <item name="" caption="Enzyme" link="../phivjsp/comparativestudy.jsp?rid=enz" target="content2" />
+      <item name="" caption="Electrolyte" link="../phivjsp/comparativestudy.jsp?rid=elc" target="content2" />
+      <item name="" caption="Renal" link="../phivjsp/comparativestudy.jsp?rid=rnl" target="content2" />
+      <item name="" caption="Serology" link="../phivjsp/comparativestudy.jsp?rid=ser" target="content2" />
+      <item name="" caption="Pathology" link="../phivjsp/comparativestudy.jsp?rid=pth" target="content2" />
+    </menu>
+    <menu id="rpanel3" role="ADM,DOC">
+      <item name="" caption="Age vs. Height" link="../servlet/drawgraph?x=age&amp;y=Height" target="content2" />
+      <item name="" caption="Age vs. Weight" link="../servlet/drawgraph?x=age&amp;y=Weight" target="content2" />
+      <item name="" caption="Age vs. BMI" link="../servlet/drawgraph?x=age&amp;y=BMI" target="content2" />
+      <item name="" caption="Age vs. HC" link="../servlet/drawgraph?x=age&amp;y=HC" target="content2" />
+    </menu>
+    <menu id="rpanel4" role="ADM,DOC">
+      <item name="" caption="Age vs. CD4 Count" link="../servlet/drawgraph?x=age&amp;y=CD4Count" target="content2" />
+      <item name="" caption="Age vs. CD4 Percent" link="../servlet/drawgraph?x=age&amp;y=CD4Percent" target="content2" />
+    </menu>
+    <menu id="lpanel7" role="ALL">
+      <item name="" caption="CD4/Viral Load" link="../forms/s32.jsp" target="content2" />
+      <item name="" caption="Genotype" link="../phivjsp/genotype.jsp" target="content2" />
+      <item name="" caption="Hematology" link="../forms/s36.jsp" target="content2" />
+      <separator/>
+      <item name="" caption="Liver Tests" link="../forms/s11.jsp" target="content2" />
+      <item name="" caption="Renal Tests" link="../forms/s09.jsp" target="content2" />
+      <item name="" caption="Glycemia/Lipid" link="../forms/s10.jsp" target="content2" />
+      <item name="" caption="Glucose" link="../forms/s08.jsp" target="content2" />
+      <item name="" caption="Enzyme" link="../forms/s12.jsp" target="content2" />
+      <item name="" caption="Electrolyte" link="../forms/s13.jsp" target="content2" />
+      <item name="" caption="Pancreas" link="../forms/s14.jsp" target="content2" />
+      <item name="" caption="Serology" link="../forms/s34.jsp" target="content2" />
+      <item name="" caption="Pathology" link="../forms/s35.jsp" target="content2" />
+      <item name="" caption="Radiology" link="../forms/delimages.jsp?frm=i30" target="content2" />
+      <separator/>
+      <item name="" caption="File Upload" link="../forms/imageload.jsp" target="content2" />
+	  <item name="" caption="Large File Upload" link="../largefileupload/lfupload.jsp" target="content2" />
+    </menu>
+    <menu id="rpanel5" role="ALL">
+      <item name="" caption="Parent History" link="../forms/h12.jsp" target="content2" />
+      <item name="" caption="Sibling History" link="../forms/h14.jsp" target="content2" />
+    </menu>
+    <menu id="rpanel6" role="ALL">
+      <item name="" caption="Vital Signs" link="../phivjsp/ud.htm" target="content2" />
+      <item name="" caption="Growth Record" link="../forms/h15.jsp" target="content2" />
+      <item name="" caption="HEENT" link="../phivjsp/ud.htm" target="content2" />
+      <item name="" caption="Respiratory" link="../phivjsp/resp.jsp" target="content2" />
+      <item name="" caption="Cardiovascular" link="../forms/p18.jsp" target="content2" />
+      <item name="" caption="Abdomen" link="../phivjsp/abdomen.jsp" target="content2" />
+      <item name="" caption="Dermatology" link="../phivjsp/skin.jsp" target="content2" />
+      <item name="" caption="Nervous" link="../forms/p26.jsp" target="content2" />
+      <item name="" caption="Lymph Nodes" link="../phivjsp/ud.htm" target="content2" />
+      <item name="" caption="General" link="../forms/p00.jsp" target="content2" />
+    </menu>
+  </MenuList>
+</Display>

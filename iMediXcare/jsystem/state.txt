@@ -1,0 +1,34 @@
+AN>Andaman & Nicobar
+AP>Andhra Pradesh
+AR>Arunachal Pradesh
+AS>Assam
+BH>Bihar
+CH>Chandigarh
+CT>Chhattisgarh
+DD>Daman Diu
+DL>Delhi
+GA>Goa
+GJ>Gujarat
+HR>Haryana
+HP>Himachal Pradesh
+JK>Jannu & Kashmir
+JH>Jharkand
+KA>Karnataka
+KL>Kerala
+LA>Lakshadweep
+MP>Madhya Pradesh
+MH>Maharashtra
+MN>Manipur
+ME>Meghalaya
+MZ>Mizoram
+NL>Nagaland
+OR>Orissa
+PY>Pondicherry
+PB>Panjab
+RJ>Rajasthan
+SI>Sikkim
+TN>Tamil Nadu
+TR>Tripura
+UP>Uttar Pradesh
+UT>Uttaranchal
+WB>West Bengal

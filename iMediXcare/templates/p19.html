@@ -1,0 +1,188 @@
+<html>
+<head>   
+	<title>Gastrointestinal and hepatobiliary</title>
+<link rel="stylesheet" type="text/css" href="../style/style2.css">
+<SCRIPT>
+// Function to show and hide layers
+function SHOWLAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'visible';
+			document.getElementById("main").style.visibility= 'hidden';
+}
+function HIDELAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'hidden';
+			document.getElementById("main").style.visibility= 'visible';
+
+}
+// End of functions
+</SCRIPT>
+
+</head>
+<BODY>
+<form name="p19">
+<DIV id="main" ALIGN="center" border=2 style="left:60;top:90;position:absolute;visibility:visible;background-color:''">
+<h3>Gastrointestinal and hepatobiliary</h3>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="80%" class='tableb'>
+
+<TR><TD>
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD valign=top>
+<TABLE BORDER=0 ALIGN=center>
+<tr><td><tr><td><H4>History & presenting features <H4></td></tr>
+<tr><td><FONT COLOR="green">Mouth</FONT></td></tr>
+<tr><td>local inspection & palpation</td><td><INPUT NAME=palpation size=12 maxlength=50></td></tr>
+<tr><td><INPUT TYPE="button" onclick="SHOWLAYER('p20')" value="Pain" style=" color: black; font-weight:BOLD; font-style:oblique"></td></tr>
+<TR><TD>Dysphagia</TD><TD><INPUT NAME=dysphagia  size=18 maxlength=50></INPUT></TD></TR>
+<TR><TD>Redness</TD><TD><INPUT NAME=redness  size=18 maxlength=50></INPUT></TD></TR>
+<TR><TD>Swelling</TD><TD><INPUT NAME=swelling  size=18 maxlength=50></INPUT></TD></TR>
+<TR><TD>Ulcers</TD><TD><INPUT NAME=ulcers size=18 maxlength=50></INPUT></TD></TR>
+
+<TR><TD><H4>Investigation</H4></TD></TR>
+<TR><TD>Arteriography</TD><TD><INPUT NAME=arteriography size=8 maxlength=50></INPUT></TD></TR>
+<TR><TD>Interventional radiology</TD><TD><INPUT NAME=interventional size=8 maxlength=50></INPUT></TD></TR>
+<TR><TD>Secretory studies</TD><TD><INPUT NAME=secretory size=18 maxlength=50></INPUT></TD></TR>
+<TR><TD>Malabsorption tests</TD><TD><INPUT NAME=malabsorption size=8 maxlength=50></INPUT></TD></TR>
+<TR><TD>Breath tests</TD><TD><INPUT NAME=breath size=8 maxlength=8></INPUT></TD></TR>
+<TR><TD>Motility studies</TD><TD><INPUT NAME=motility size=18 maxlength=50></INPUT></TD></TR>
+<TR><TD>Paracentesis</TD><TD><INPUT NAME=paracentesis size=8 maxlength=50></INPUT></TD></TR>
+<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p21')" value="Endoscopy" style=" color: black; font-weight:BOLD; font-style:oblique"></TD></TR>
+</CENTER></TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD><FONT COLOR="green">Others</FONT></TD></TR>
+<TR><TD>Esophagus</TD><TD><INPUT NAME=esophagus size=12 maxlength=50></TD></TR>
+<TR><TD>Stomach</TD><TD><INPUT NAME=stomach size=12 maxlength=50></TD></TR>
+<TR><TD>Small intestines</TD><TD><INPUT NAME=s_intestines size=12 maxlength=50></TD></TR>
+<TR><TD>Large intestines</TD><TD><INPUT NAME=l_intestines size=12 maxlength=50></TD></TR>
+<TR><TD>Colon & Rectum</TD><TD><INPUT NAME=colon size=12 maxlength=50></TD></TR>
+<TR><TD>Liver and gall bladder</TD><TD><INPUT NAME=bladder size=12 maxlength=50></TD></TR>
+<TR><TD><H4>Abdominal Examination</H4></TD></TR>
+<TR><TD>Inspection</TD><TD><TEXTAREA NAME=tbxinspection rows=2 cols=15></textarea></TD></TR>
+<TR><TD>Palpation</TD><TD><TEXTAREA NAME=tbxpalpation rows=2 cols=15></textarea></TD></TR>
+<TR><TD>Percussion</TD><TD><TEXTAREA NAME=tbxpercussion rows=2 cols=15></textarea></TD></TR>
+<TR><TD>Auscultation</TD><TD><TEXTAREA NAME=tbxauscultation rows=2 cols=15></textarea></TD></TR>
+</CENTER>
+</TABLE></TD></TR>
+
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD>Any other tests</TD><TD><INPUT NAME=others size=65 maxlength=50></TD></TR>
+<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp rows=2 cols=50></textarea></TD></TR>
+</CENTER></TABLE>
+
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD>Test date</TD><TD><INPUT NAME=testdate size=8 maxlength=8></INPUT></TD>
+<TD>Entry date</TD><TD><INPUT name=entrydate size=8 maxlength=8></INPUT></TD></TR>
+</CENTER></TABLE>
+
+</TD></TR>
+</TABLE>
+</div>
+
+
+<!-- layer for p20 -->
+<DIV id="P20" ALIGN="center" border=2 style="position:absolute; left:60;top:90;visibility:hidden;background-color:''">
+<table border=1 class='tableb'>
+<tr><td>
+
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="80%" >
+<tr><td colspan=2>
+	<CENTER><H3>Pain</H3></CENTER>
+</TD></TR>
+
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Site</TD><TD><INPUT NAME=site size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Time of onset</TD><TD><INPUT NAME=time_onset size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mode of onset</TD><TD><INPUT NAME=mode_onset size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Shifting</TD><TD><INPUT NAME=shifting size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Radiation</TD><TD><INPUT NAME=radiation size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Referral</TD><TD><INPUT NAME=referral size=10 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Character</TD><TD><INPUT NAME=character1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Pressure</TD><TD><INPUT NAME=effect_pressure size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Walking</TD><TD><INPUT NAME=effect_walking size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Jolting</TD><TD><INPUT NAME=jolting size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Breathing</TD><TD><INPUT NAME=breathing size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Micturition</TD><TD><INPUT NAME=micturition size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Worsens by</TD><TD><INPUT NAME=worse size=10 maxlength=50></INPUT></TD></TR>		
+		<TR><TD>Relieved by</TD><TD><INPUT NAME=relieved size=10 maxlength=50></INPUT></TD></TR> 
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Any other feature</TD><TD><INPUT NAME=others1 size=40 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><INPUT NAME=tbxgeneralimp1 size=40 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p20')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+
+</table>
+</TD></TR>
+</table>
+</div>
+
+<!-- Div for p21 -->
+<DIV id="P21" ALIGN="center" border=2 style="position:absolute; left:60;top:90;visibility:hidden;background-color:' '">
+
+<TABLE ALIGN=center BORDER=2 class='tableb'>
+<tr><td colspan=2>
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="80%" >
+<tr><td colspan=2>
+	<CENTER><H3>Endoscopy</H3></CENTER>
+</TD></TR>
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Gastroscopy</TD><TD><INPUT NAME=gastroscopy size=15 maxlength=50></INPUT></TD></TR>
+		<TR><TD>ERCP</TD><TD><INPUT NAME=ercp size=15 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Proctoscopy & sigmoidoscopy</TD><TD><INPUT NAME=proctoscopy size=15 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Colonoscopy</TD><TD><INPUT NAME=colonoscopy size=15 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Esophagoscopy</TD><TD><INPUT NAME=esophagoscopy size=15 maxlength=50></INPUT></TD></TR>
+		<tr><td>Indirect laryngoscopy</td><td><INPUT name=laryngoscopy size=15 maxlength=20></td></tr>
+		<tr><td>Posterior Pharyngoscopy</td><td><INPUT name=Posterior size=15 maxlength=20></INPUT></td></tr>
+		<tr><td>Bronchoscopy</td><td><INPUT name=bronchoscopy size=15 maxlength=20></INPUT></td></tr>
+	</TABLE>
+</TD></TR>
+<tr><td colspan=2>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Laparoscopy</td><td><INPUT name=Laparoscopy size=50 maxlength=100></INPUT></td></tr>
+		<TR><TD>Any other tests</TD><TD><INPUT NAME=others2 size=50 maxlength=100></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><INPUT NAME=tbxgeneralimp2 size=50 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p21')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+
+</TD></TR>
+</TABLE>
+</DIV>
+
+</FORM>
+</BODY>
+</HTML>
+

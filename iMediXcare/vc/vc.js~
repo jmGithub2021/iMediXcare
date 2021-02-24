@@ -1,0 +1,238 @@
+    const domain = 'meet.jit.si';
+    var api = null;
+    var g_room = '';
+
+
+    var options = {
+        roomName: 'iMediX',
+        width: 600,
+        height: 400,
+        parentNode: document.querySelector('#meet')
+    };
+
+    function ShowVC()
+    {
+        $(".left-doclist").show();
+        $( "#dialog" ).dialog({
+            height: 600,
+            width: 800
+        });
+    }
+
+    function start() {    
+        var time = new Date().getTime();
+        var room = 'iMediX' + time;
+        options['roomName'] = room;
+        
+        $.post( "../vc/start-conf.jsp?room="+room, function( data ) {
+            let res = JSON.parse(data);
+            console.log(res);
+            console.log('Result: '+res.result);
+            if(res.result === "success"){
+                var con2_height = $('#inner-container2').innerHeight();
+                options['height'] = con2_height;
+                var con2_width = $('#inner-container2').innerWidth();
+                options['width'] = con2_width;
+                api = new JitsiMeetExternalAPI(domain, options);
+                $('#room').html(room);
+                g_room = room;
+                $(".btnStart").addClass("btnStarted");
+            }else{
+                alert(res.message);
+            }
+            
+            console.log('Room: '+ room);
+        });    
+    }
+    function stop(){
+        $.post( "../vc/stop-conf.jsp?room="+g_room, function( data ) {
+            let res = JSON.parse(data);
+            console.log(res);
+            console.log('Result: '+res.result);
+            if(res.result === "success"){
+                api.dispose();
+                $('#room').html('');
+                g_room = '';
+            }else{
+                alert(res.message);
+            }          
+        });
+    }
+
+    function selectItem(ele){
+        var active_a = $('#doctors a.active')
+        active_a.removeClass('active');
+        ele.classList.add('active');
+    }
+
+
+    // Declare variables
+    //function filterList() {}
+    $("#search-doctor").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#doctors li").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
+    // function clearSearch(){}
+    $("#clear-docbtn").on("click", function() {
+        $('#search-doctor').val('');
+        $('#search-doctor').trigger('keyup');
+    });
+
+    $("#send-msgbtn").on("click", function() {
+        var time = new Date();
+        var stime = time.toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+        msg = $('#mesg-txt').val();
+        $('#mesg-txt').val('');
+        result = "chat|"+docname+"|"+msg;
+        //writeToScreen("me>> " + msg);
+		writeToScreen(stime + " me >> "+msg);
+        doSend(result);
+       // $('#search-doctor').trigger('keyup');
+    });
+   
+    // Time Functions
+    function time_format(ts) {
+        var d = new Date(ts);
+        hours = format_two_digits(d.getHours());
+        minutes = format_two_digits(d.getMinutes());
+        seconds = format_two_digits(d.getSeconds());
+        return "<font color=darkgreen>" + hours + ":" + minutes + ":" + seconds + "</font> : <br>";
+    }
+    
+    function format_two_digits(n) {
+        return n < 10 ? '0' + n : n;
+    }
+
+    // websocket start
+   // var wsUri = "wss://<%= wsPath %>/endpoint";
+    var wsUri = "wss://" + $("#wsUri").html() + "/endpoint";
+    console.log("wsUri = " + wsUri);
+    var output;
+
+    function init()
+    {
+        output = document.getElementById("output");
+        testWebSocket();
+    }
+
+    function testWebSocket()
+    {
+        websocket = new WebSocket(wsUri);
+        websocket.onopen = function(evt) { onOpen(evt) };
+        websocket.onclose = function(evt) { onClose(evt) };
+        websocket.onmessage = function(evt) { onMessage(evt) };
+        websocket.onerror = function(evt) { onError(evt) };
+    }
+
+    function onOpen(evt)
+    {
+        console.log("WebSocket connected");
+        writeToScreen("<b><font color=blue>Connected!!</font></b>");
+        //doSend("WebSocket rocks");
+    }
+
+    function onClose(evt)
+    {
+        console.log("WebSocket disconnected");
+        //writeToScreen("DISCONNECTED");
+    }
+
+    function onMessage(evt)
+    { 
+        var time = new Date();
+        var stime = time.toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+        console.log("WebSocket message received:", evt);
+        var data = evt.data;
+        if(!data.endsWith('room')){
+            var items = data.split('|');
+			if(items[0] === 'inv'){				
+				if(docid === items[1].trim()){
+					console.log('Invitation from '+items[3]+"(Url: "+items[4]+")");
+					var link = '<a href="#" onClick="joinConference(\''+items[4].trim()+'\')">' + items[5] + ' - Invitation from '+ items[3]+'</a>';
+					console.log("Link: "+link);
+					writeToScreen(link); //time_format(evt.timeStamp) + " " + 
+				}
+            }else if(items[0] === 'chat'){
+				writeToScreen( stime + " <em><strong>" + items[1]+"</strong></em> >> "+items[2]); //"@" + time_format(evt.timeStamp) + 
+			}				
+        }
+        
+        //websocket.close();
+    }
+
+    function onError(evt)
+    {
+        writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+    }
+
+    function doSend(message)
+    {
+        //writeToScreen("SENT: " + message);
+        console.log("Sending: "+message);
+        websocket.send(message);
+    }
+
+    function writeToScreen(message)
+    {
+        var pre = document.createElement("p");
+        pre.style.margin = " 1px ";
+        pre.style.padding = " 1px ";    
+        pre.style.wordWrap = "break-word";
+        pre.innerHTML = message;
+        output.appendChild(pre);
+    }
+
+    window.addEventListener("load", init, false);
+
+    $(document).ready(function() {
+        $(document).on("click", "#sendbtn", function(){
+            var sendText = $("#inp").val();
+            doSend(sendText);
+        });
+    });
+
+    
+
+    function invite(){
+        var time = new Date();
+        var stime = time.toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+        
+        if(g_room === ''){
+            alert("Conference is not started yet");
+        }else{
+			var spancont= $("#doctors a.active span").text();
+            //var doctor_id = $("#doctors a.active p").text();
+            //var doctor_name = $("#doctors a.active h4").text();
+			var spanary = spancont.split('|');
+			var doctor_id = spanary[1];
+            var doctor_name = spanary[0];
+            if(doctor_id === '' || doctor_name === ''){
+                alert('Please select a doctor');
+                return;
+            }else{
+                //var docname ="dummy";
+                var msg = "inv|"+doctor_id + "|"+doctor_name+ "|"+docname+"|"+g_room +"|"+ stime;
+                doSend(msg);
+                //alert(msg);
+            }  
+            
+        }
+        
+    }
+
+    function joinConference(id){
+        var room = id;
+        options['roomName'] = room;
+        console.log("Joining to conference: "+room);
+        if(api != null)
+            api.dispose();
+        api = new JitsiMeetExternalAPI(domain, options);
+        $('#room').html(room);
+        g_room = room;            
+    }
+    // websocket end  

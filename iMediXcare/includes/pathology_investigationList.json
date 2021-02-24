@@ -1,0 +1,81 @@
+[
+	{	
+		"modality":"Bilirubin",
+		"testname":[
+				"Total Bilirubin",
+				"Direct Bilirubin",
+				"Indirect Bilirubin"
+		]
+	},
+	{
+		"modality":"Glucose",
+		"testname":[
+				"Glucose(Fasting)",
+				"Glucose(PP)",
+				"Glucose(Random)"
+			
+		]
+	},
+	{
+		"modality":"SGPT",
+		"testname":[
+				"SGPT"	
+		]
+	},
+	{
+		"modality":"SGOT",
+		"testname":[
+				"SGOT"		
+		]
+	},
+	{
+		"modality":"Creatinine",
+		"testname":[
+				"Creatinine"
+		]
+	},
+	{
+		"modality":"Uric Acid",
+		"testname":[
+				"Uric Acid"		
+		]
+	},
+	{
+		"modality":"Total Cholestrol",
+		"testname":[
+				"Total Cholestrol"		
+		]
+	},
+	{
+		"modality":"HDL",
+		"testname":[
+				"HDL"		
+		]
+	},
+	{
+		"modality":"LDL",
+		"testname":[
+				"LDL"		
+		]
+	},
+	{
+		"modality":"Triglyceride",
+		"testname":[
+				"Triglyceride"		
+		]
+	},
+	{
+		"modality":"Haemoglobin",
+		"testname":[
+				"Haemoglobin"		
+		]
+	},
+	{
+		"modality":"Urine",
+		"testname":[
+				"Urine RE 10P"		
+		]
+	}
+
+
+]

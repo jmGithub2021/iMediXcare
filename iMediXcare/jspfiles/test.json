@@ -1,0 +1,76 @@
+[
+	{
+		"fname": "Tayan", "mname": "Kumar", 
+		"lname": "Mahapatra", 
+		"code": "51060", 
+		"category": "Staff", 
+		"gender": "M", 
+		"district": "334", 
+		"state": "19", 
+		"country": "IN", 
+		"dob": "20121975", 
+		"emailid": "dyneuih0090.09@gmail.com", 
+		"phone": "9945089679", 
+		"familymembers": [
+			{
+				"fname": "Umaku",
+				"mname": "",
+				"lname": "Mahapatra",
+				"gender": "F",
+				"relation": "Wife",
+				"district": "334",
+				"state": "19",
+				"country": "IN",
+				"dob": "10051984"
+			},
+			{
+				"fname": "Vivek",
+				"mname": "",
+				"lname": "Mahapatra",
+				"gender": "M",
+				"relation": "Son",
+				"district": "334",
+				"state": "19",
+				"country": "IN",
+				"dob": "01042005"
+			}
+		]
+	},
+	{
+		"fname": "Kinesh", "mname": "Kumar", 
+		"lname": "Rahapatra", 
+		"code": "090230", 
+		"category": "Staff", 
+		"gender": "M", 
+		"district": "334", 
+		"state": "19", 
+		"country": "IN", 
+		"dob": "20121975", 
+		"emailid": "rin23uh099.0@gmail.com", 
+		"phone": "9970469599", 
+		"familymembers": [
+			{
+				"fname": "Uma ",
+				"mname": "",
+				"lname": "Mahapatra",
+				"gender": "F",
+				"relation": "Wife",
+				"district": "334",
+				"state": "19",
+				"country": "IN",
+				"dob": "10051984"
+			},
+			{
+				"fname": "Vivek",
+				"mname": "",
+				"lname": "Mahapatra",
+				"gender": "M",
+				"relation": "Son",
+				"district": "334",
+				"state": "19",
+				"country": "IN",
+				"dob": "01042005"
+			}
+		]
+	}	
+]

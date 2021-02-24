@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+
+
+<security-constraint>
+  <web-resource-collection>
+    <url-pattern>/data/*</url-pattern>
+    <http-method>GET</http-method>
+  </web-resource-collection>
+  <auth-constraint />
+</security-constraint>
+
+
+  <description>
+     Welcome to ImediX
+  </description>
+
+  <display-name>Welcome to ImediX</display-name>
+
+  
+  <servlet>
+	<servlet-name>uploadfilehttp</servlet-name>
+	<servlet-class>imedixservlets.uploadfilehttp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>uploadfilehttp</servlet-name>
+	<url-pattern>/servlet/uploadfilehttp</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>uploadPathologydata</servlet-name>
+	<servlet-class>imedixservlets.uploadPathologydata</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>uploadPathologydata</servlet-name>
+	<url-pattern>/servlet/uploadPathologydata</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>uploadfromfile</servlet-name>
+	<servlet-class>imedixservlets.uploadfromfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>uploadfromfile</servlet-name>
+	<url-pattern>/servlet/uploadfromfile</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>savepatch</servlet-name>
+	<servlet-class>imedixservlets.savepatch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>savepatch</servlet-name>
+	<url-pattern>/servlet/savepatch</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>imgmarkservlet</servlet-name>
+	<servlet-class>imedixservlets.imgmarkservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>imgmarkservlet</servlet-name>
+	<url-pattern>/servlet/imgmarkservlet</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+	<servlet-name>dicommarkservlet</servlet-name>
+	<servlet-class>imedixservlets.dicommarkservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>dicommarkservlet</servlet-name>
+	<url-pattern>/servlet/dicommarkservlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>getremoteftpinfo</servlet-name>
+	<servlet-class>imedixservlets.getremoteftpinfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>getremoteftpinfo</servlet-name>
+	<url-pattern>/servlet/getremoteftpinfo</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>saveregusers</servlet-name>
+	<servlet-class>imedixservlets.saveregusers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>saveregusers</servlet-name>
+	<url-pattern>/servlet/saveregusers</url-pattern>
+  </servlet-mapping>
+
+   <servlet>
+	<servlet-name>familyhistory</servlet-name>
+	<servlet-class>imedixservlets.familyhistory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>familyhistory</servlet-name>
+	<url-pattern>/servlet/familyhistory</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>drawgraph</servlet-name>
+	<servlet-class>imedixservlets.drawgraph</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>drawgraph</servlet-name>
+	<url-pattern>/servlet/drawgraph</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+	<servlet-name>gengraph</servlet-name>
+	<servlet-class>imedixservlets.gengraph</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>gengraph</servlet-name>
+	<url-pattern>/servlet/gengraph</url-pattern>
+  </servlet-mapping>
+	
+   <servlet>
+	<servlet-name>largefileupload</servlet-name>
+	<servlet-class>imedixservlets.largefileupload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>largefileupload</servlet-name>
+	<url-pattern>/servlet/largefileupload</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>SendSMS</servlet-name>
+	<servlet-class>imedixservlets.SendSMS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SendSMS</servlet-name>
+	<url-pattern>/servlet/SendSMS</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>SendEmail</servlet-name>
+	<servlet-class>imedixservlets.SendEmail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SendEmail</servlet-name>
+	<url-pattern>/servlet/SendEmail</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>SendEmailWA</servlet-name>
+	<servlet-class>imedixservlets.SendEmailWA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SendEmailWA</servlet-name>
+	<url-pattern>/servlet/SendEmailWA</url-pattern>
+  </servlet-mapping>  
+
+<!-- OnlineCommunicator Servlets -->
+
+	
+  <servlet>
+	<servlet-name>changestatus</servlet-name>
+	<servlet-class>onlinegc.changestatus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>changestatus</servlet-name>
+	<url-pattern>/servlet/changestatus</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>deleteonlineuser</servlet-name>
+	<servlet-class>onlinegc.deleteonlineuser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>deleteonlineuser</servlet-name>
+	<url-pattern>/servlet/deleteonlineuser</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>getconfmessage</servlet-name>
+	<servlet-class>onlinegc.getconfmessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>getconfmessage</servlet-name>
+	<url-pattern>/servlet/getconfmessage</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>getconfuserlist</servlet-name>
+	<servlet-class>onlinegc.getconfuserlist</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>getconfuserlist</servlet-name>
+	<url-pattern>/servlet/getconfuserlist</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>getonlinedoc</servlet-name>
+	<servlet-class>onlinegc.getonlinedoc</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>getonlinedoc</servlet-name>
+	<url-pattern>/servlet/getonlinedoc</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>getpatientqueue</servlet-name>
+	<servlet-class>onlinegc.getpatientqueue</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>getpatientqueue</servlet-name>
+	<url-pattern>/servlet/getpatientqueue</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>join4conf</servlet-name>
+	<servlet-class>onlinegc.join4conf</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>join4conf</servlet-name>
+	<url-pattern>/servlet/join4conf</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>onlinecommstatus</servlet-name>
+	<servlet-class>onlinegc.onlinecommstatus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>onlinecommstatus</servlet-name>
+	<url-pattern>/servlet/onlinecommstatus</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+	<servlet-name>putmessagetodb</servlet-name>
+	<servlet-class>onlinegc.putmessagetodb</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>putmessagetodb</servlet-name>
+	<url-pattern>/servlet/putmessagetodb</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>showimages</servlet-name>
+	<servlet-class>onlinegc.showimages</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>showimages</servlet-name>
+	<url-pattern>/servlet/showimages</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>Home</servlet-name>
+  <jsp-file>/jspfiles/index1.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+  <servlet-name>Home</servlet-name>
+  <url-pattern>/jspfiles/home</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>PatientHome</servlet-name>
+  <jsp-file>/jspfiles/patindex.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+  <servlet-name>PatientHome</servlet-name>
+  <url-pattern>/jspfiles/patient</url-pattern>
+  </servlet-mapping>
+
+
+
+</web-app>

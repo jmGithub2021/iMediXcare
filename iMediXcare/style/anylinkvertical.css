@@ -1,0 +1,29 @@
+.mainmenu{
+	position:relative;
+	border:1px solid #296488;
+	border-bottom-width: 0px;
+	font:normal 11px Verdana;
+	line-height: 11px;
+	z-index: 100;
+	background-color: #F6FAFE;
+	width: 100%;
+	text-indent: 10px;
+}
+
+.mainmenu a{
+	color: black;
+	width: 100%;
+	display: block;
+	text-indent: 10px;
+	border-bottom: 1px solid #296488;
+	padding: 2px 0;
+	text-decoration: none;
+	font-weight: bold;
+	text-indent: 10px;
+}
+
+.mainmenu a:hover{ /*hover background color*/
+	background-color: #DCE9F0;
+	color: #0000FF;
+}
+

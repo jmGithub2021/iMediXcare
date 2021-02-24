@@ -1,0 +1,8 @@
+"C:\Java\jdk1.6\bin\jar.exe" -cf  imedix.jar imedix/*.class 
+"C:\Java\jdk1.6\bin\jar.exe" -cf  tuberculosis.jar tuberculosis/*.class 
+"C:\Java\jdk1.6\bin\jar.exe" -cf  phiv.jar phiv/*.class
+"C:\Java\jdk1.6\bin\jar.exe" -cf  logger.jar logger/*.class
+"C:\Java\jdk1.6\bin\jar.exe" -cf  onlinegc.jar onlinegc/*.class
+"C:\Java\jdk1.6\bin\jar.exe" -cf  ftp.jar ftp/*.class 
+"C:\Java\jdk1.6\bin\jar.exe" -cmf imedixserver.txt iMediXBusinessLogic.jar imedixserver/*.class 
+pause

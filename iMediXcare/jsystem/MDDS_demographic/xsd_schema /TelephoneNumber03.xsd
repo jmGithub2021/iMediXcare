@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	
+	<xs:element name="Telephone_Number">
+<!-- Reference value for its Metadata (G00.06)-->
+<!-- for call within India -->
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Number" type="xs:integer" maxOccurs="11"/>
+</xs:sequence>
+</xs:complexType>		
+</xs:element>	
+
+
+<xs:element name="CallinIndia">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="(trunkPrefix-AreaCode-landLineNo)|(trunkPrefix-mobileNo)"/>
+<!-- for landLine number -->
+<xs:pattern value="[0]\-[0-9]{2,4}\-[0-9]{6,8}"/>
+<!-- for mobile number -->
+<xs:pattern value="[0]\-[0-9]{10}"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+
+
+<xs:element name="TelephoneNo">
+<!-- for calls to India from outside Country and vice versa -->
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Number" type="xs:integer" maxOccurs="15"/>
+</xs:sequence>
+</xs:complexType>		
+</xs:element>	
+
+
+<xs:element name="CallOutsideIndia">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="(internationalAccessCode-countryCode-areaCode-landLineNo)|(internationalAccessCode-countryCode-mobileNo)"/>
+<!-- for landLine number -->
+<xs:pattern value="[0-9]{2,3}\-[0-9]{2,3}\-[0-9]{2,4}\-[0-9]{6,8}"/>
+<!-- for mobile number -->
+<xs:pattern value="[0-9]{2,3}\-[0-9]{2,3}\-[0-9]{10}"/>
+
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>
+ 

@@ -1,0 +1,389 @@
+package imedix;
+
+import java.io.*;
+import java.sql.*;
+import java.util.Date;
+
+// Referenced classes of package imedix:
+//            dball, projinfo, myDate
+
+public class BackupUtility
+{
+
+    public BackupUtility(projinfo projinfo1, String s, String s1)
+    {
+        backupdir = "";
+        ccode = "";
+        backUpHome = "";
+        pinfo = projinfo1;
+        mydb = new dball(pinfo);
+        ccode = s;
+        backupdir = s1;
+    }
+
+    public String createBackup(String s)
+        throws Exception
+    {
+        Connection connection;
+        Statement statement;
+        backUpHome = (new StringBuilder()).append(pinfo.tempdatadir).append("/backup/").append(backupdir).append("/").append(s.toUpperCase()).toString();
+        String s1 = "";
+        connection = null;
+        statement = null;
+        String s2 = "Error";
+        String s3;
+        Class.forName(pinfo.gbldbjdbccriver);
+        connection = DriverManager.getConnection(pinfo.gbldburl, pinfo.gbldbusername, pinfo.gbldbpasswd);
+        statement = connection.createStatement();
+        String s4 = (new StringBuilder()).append("SELECT DISTINCT type FROM listofforms WHERE pat_id ='").append(s).append("' and type in (select name FROM forms)").toString();
+        ResultSet resultset;
+        String s5;
+        for(resultset = statement.executeQuery(s4); resultset.next(); getPatientFormData(s, s5))
+            s5 = resultset.getString("type");
+
+        getPatientBinaryData(s, "patimages");
+        getPatientBinaryData(s, "patdoc");
+        getPatientBinaryData(s, "patmovies");
+        getPatientBinaryData(s, "refimages");
+        getPatientBinaryData(s, "consent");
+        getPatientOtherData(s, "patientvisit");
+        getPatientOtherData(s, "listofforms");
+        resultset.close();
+        s3 = "Done";
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_299;
+        Exception exception;
+        exception;
+        System.out.println(exception.toString());
+        s3 = "Error";
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_299;
+        Exception exception1;
+        exception1;
+        statement.close();
+        connection.close();
+        throw exception1;
+        return s3;
+    }
+
+    private void getPatientFormData(String s, String s1)
+        throws Exception
+    {
+        Connection connection;
+        Statement statement;
+        String s2;
+        connection = null;
+        statement = null;
+        s2 = (new StringBuilder()).append(backUpHome).append("/forms").toString();
+        File file = new File(s2);
+        if(!file.exists())
+            file.mkdirs();
+        Class.forName(pinfo.gbldbjdbccriver);
+        connection = DriverManager.getConnection(pinfo.gbldburl, pinfo.gbldbusername, pinfo.gbldbpasswd);
+        statement = connection.createStatement();
+        String s3 = (new StringBuilder()).append("Select * from ").append(s1).append(" Where pat_id='").append(s).append("'").toString();
+        ResultSet resultset = statement.executeQuery(s3);
+        ResultSetMetaData resultsetmetadata = resultset.getMetaData();
+        int i = resultsetmetadata.getColumnCount();
+        System.out.println((new StringBuilder()).append("\n").append(s1).append(" >> columnCount : ").append(i).toString());
+        FileOutputStream fileoutputstream;
+        for(; resultset.next(); fileoutputstream.close())
+        {
+            String s4 = "";
+            String s5 = "";
+            String s6 = "";
+            for(int j = 1; j <= i; j++)
+            {
+                Object obj = resultset.getObject(j);
+                String s8 = resultsetmetadata.getColumnLabel(j);
+                String s9 = resultset.getString(j);
+                if((obj instanceof Date) && obj != null)
+                    s9 = myDate.dateFormat("yyyyMMddHHmmss", (Date)obj);
+                if(s8.equalsIgnoreCase("entrydate"))
+                    s4 = s9;
+                if(s1.startsWith("k") || s1.startsWith("K"))
+                {
+                    if(s8.equalsIgnoreCase("row_id"))
+                        s5 = s9;
+                } else
+                if(s8.equalsIgnoreCase("serno"))
+                    s5 = s9;
+                if(s9 == null)
+                {
+                    s6 = (new StringBuilder()).append(s6).append(s8).append("=").append("\r\n").toString();
+                } else
+                {
+                    s9 = s9.replaceAll("\r\n", "\\\\r\\\\n");
+                    s6 = (new StringBuilder()).append(s6).append(s8).append("=").append(s9).append("\r\n").toString();
+                }
+            }
+
+            String s7 = (new StringBuilder()).append(s2).append("/").append(s).append("-").append(s4).append("-").append(s1).append("-").append(s5).append(".ikx").toString();
+            fileoutputstream = new FileOutputStream(s7);
+            byte abyte0[] = new byte[s6.length()];
+            s6.getBytes(0, abyte0.length, abyte0, 0);
+            fileoutputstream.write(abyte0);
+        }
+
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_614;
+        Exception exception;
+        exception;
+        System.out.println(exception.toString());
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_614;
+        Exception exception1;
+        exception1;
+        statement.close();
+        connection.close();
+        throw exception1;
+    }
+
+    private void getPatientBinaryData(String s, String s1)
+        throws Exception
+    {
+        String s2;
+        Connection connection;
+        Statement statement;
+        s2 = "";
+        if(s1.equalsIgnoreCase("patimages"))
+            s2 = (new StringBuilder()).append(backUpHome).append("/images").toString();
+        else
+        if(s1.equalsIgnoreCase("patdoc"))
+            s2 = (new StringBuilder()).append(backUpHome).append("/docs").toString();
+        else
+        if(s1.equalsIgnoreCase("patmovies"))
+            s2 = (new StringBuilder()).append(backUpHome).append("/movies").toString();
+        else
+        if(s1.equalsIgnoreCase("refimages"))
+            s2 = (new StringBuilder()).append(backUpHome).append("/refimages").toString();
+        File file = new File(s2);
+        if(!file.exists())
+            file.mkdirs();
+        connection = null;
+        statement = null;
+        Class.forName(pinfo.gbldbjdbccriver);
+        connection = DriverManager.getConnection(pinfo.gbldburl, pinfo.gbldbusername, pinfo.gbldbpasswd);
+        statement = connection.createStatement();
+        String s3 = (new StringBuilder()).append("Select * from ").append(s1).append(" Where pat_id='").append(s).append("'").toString();
+        ResultSet resultset = statement.executeQuery(s3);
+        ResultSetMetaData resultsetmetadata = resultset.getMetaData();
+        int i = resultsetmetadata.getColumnCount();
+        System.out.println((new StringBuilder()).append("\n").append(s1).append(" >> columnCount : ").append(i).toString());
+        do
+        {
+            if(!resultset.next())
+                break;
+            String s4 = "";
+            String s5 = "";
+            String s6 = "";
+            String s7 = "";
+            String s8 = "";
+            byte abyte0[] = null;
+            for(int j = 1; j <= i; j++)
+            {
+                Object obj = resultset.getObject(j);
+                String s10 = resultsetmetadata.getColumnLabel(j);
+                String s11 = resultset.getString(j);
+                if((obj instanceof byte[]) && obj != null)
+                {
+                    abyte0 = (byte[])(byte[])obj;
+                    continue;
+                }
+                if(s10.equalsIgnoreCase("patpic") || s10.equalsIgnoreCase("patmov") || s10.equalsIgnoreCase("patdoc") || s10.equalsIgnoreCase("form"))
+                    continue;
+                if((obj instanceof Date) && obj != null)
+                    s11 = myDate.dateFormat("yyyyMMddHHmmss", (Date)obj);
+                if(s10.equalsIgnoreCase("entrydate"))
+                    s4 = s11;
+                if(s10.equalsIgnoreCase("serno"))
+                    s5 = s11;
+                if(s10.equalsIgnoreCase("ext"))
+                    s6 = s11;
+                if(s10.equalsIgnoreCase("type"))
+                    s8 = s11;
+                if(s11 == null)
+                    s7 = (new StringBuilder()).append(s7).append(s10).append("=").append("\r\n").toString();
+                else
+                    s7 = (new StringBuilder()).append(s7).append(s10).append("=").append(s11).append("\r\n").toString();
+            }
+
+            String s9 = (new StringBuilder()).append(s2).append("/").append(s).append("-").append(s4).append("-").append(s8).append("-").append(s5).append(".").append(s6).append(".ikx").toString();
+            FileOutputStream fileoutputstream = new FileOutputStream(s9);
+            byte abyte1[] = new byte[s7.length()];
+            s7.getBytes(0, abyte1.length, abyte1, 0);
+            fileoutputstream.write(abyte1);
+            fileoutputstream.close();
+            if(abyte0 != null)
+            {
+                String s12 = (new StringBuilder()).append(s2).append("/").append(s).append("-").append(s4).append("-").append(s8).append("-").append(s5).append(".").append(s6).toString();
+                RandomAccessFile randomaccessfile = new RandomAccessFile(s12, "rw");
+                randomaccessfile.write(abyte0);
+                randomaccessfile.close();
+            }
+        } while(true);
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_902;
+        Exception exception;
+        exception;
+        System.out.println(exception.toString());
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_902;
+        Exception exception1;
+        exception1;
+        statement.close();
+        connection.close();
+        throw exception1;
+    }
+
+    private void getPatientOtherData(String s, String s1)
+        throws Exception
+    {
+        Connection connection;
+        Statement statement;
+        connection = null;
+        statement = null;
+        Class.forName(pinfo.gbldbjdbccriver);
+        connection = DriverManager.getConnection(pinfo.gbldburl, pinfo.gbldbusername, pinfo.gbldbpasswd);
+        statement = connection.createStatement();
+        String s2 = (new StringBuilder()).append("Select * from ").append(s1).append(" Where pat_id='").append(s).append("'").toString();
+        ResultSet resultset = statement.executeQuery(s2);
+        ResultSetMetaData resultsetmetadata = resultset.getMetaData();
+        int i = resultsetmetadata.getColumnCount();
+        String s3;
+        String s4;
+        for(s3 = ""; resultset.next(); s3 = (new StringBuilder()).append(s3).append(s4).append("\r\n").toString())
+        {
+            s4 = "";
+            for(int j = 1; j <= i; j++)
+            {
+                Object obj = resultset.getObject(j);
+                String s6 = resultset.getString(j);
+                if((obj instanceof Date) && obj != null)
+                    s6 = myDate.dateFormat("yyyyMMddHHmmss", (Date)obj);
+                if(obj != null)
+                    s4 = (new StringBuilder()).append(s4).append(",'").append(s6).append("' ").toString();
+                else
+                    s4 = (new StringBuilder()).append(s4).append(",").append(s6).append("").toString();
+            }
+
+            s4 = s4.substring(1);
+        }
+
+        String s5 = (new StringBuilder()).append(backUpHome).append("/").append(s).append("-").append(s1).append(".ikx").toString();
+        FileOutputStream fileoutputstream = new FileOutputStream(s5);
+        byte abyte0[] = new byte[s3.length()];
+        s3.getBytes(0, abyte0.length, abyte0, 0);
+        fileoutputstream.write(abyte0);
+        fileoutputstream.close();
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_453;
+        Exception exception;
+        exception;
+        System.out.println(exception.toString());
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_453;
+        Exception exception1;
+        exception1;
+        statement.close();
+        connection.close();
+        throw exception1;
+    }
+
+    public static String delAllRecords(String s, projinfo projinfo1)
+        throws Exception
+    {
+        Connection connection;
+        Statement statement;
+        connection = null;
+        statement = null;
+        String s1 = "Error";
+        String s3 = "";
+        String s2;
+        Class.forName(projinfo1.gbldbjdbccriver);
+        connection = DriverManager.getConnection(projinfo1.gbldburl, projinfo1.gbldbusername, projinfo1.gbldbpasswd);
+        statement = connection.createStatement();
+        String s6 = (new StringBuilder()).append("SELECT DISTINCT type FROM listofforms WHERE pat_id ='").append(s).append("'").toString();
+        String s4;
+        for(ResultSet resultset = statement.executeQuery(s6); resultset.next(); ExecuteSql(s4, projinfo1))
+        {
+            String s7 = resultset.getString("type");
+            s4 = (new StringBuilder()).append("Delete from ").append(s7).append(" WHERE pat_id ='").append(s).append("'").toString();
+        }
+
+        String s5 = (new StringBuilder()).append("Delete from patientvisit WHERE pat_id ='").append(s).append("'").toString();
+        ExecuteSql(s5, projinfo1);
+        s5 = (new StringBuilder()).append("Delete from listofforms WHERE pat_id ='").append(s).append("'").toString();
+        ExecuteSql(s5, projinfo1);
+        s5 = (new StringBuilder()).append("Delete from lpatq WHERE pat_id ='").append(s).append("'").toString();
+        ExecuteSql(s5, projinfo1);
+        s5 = (new StringBuilder()).append("Delete from tpatq WHERE pat_id ='").append(s).append("'").toString();
+        ExecuteSql(s5, projinfo1);
+        s2 = "Done";
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_346;
+        Exception exception;
+        exception;
+        System.out.println(exception.toString());
+        s2 = "Error";
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_346;
+        Exception exception1;
+        exception1;
+        statement.close();
+        connection.close();
+        throw exception1;
+        return s2;
+    }
+
+    private static String ExecuteSql(String s, projinfo projinfo1)
+        throws Exception
+    {
+        Connection connection;
+        Statement statement;
+        String s1 = "Error";
+        connection = null;
+        statement = null;
+        String s2;
+        Class.forName(projinfo1.gbldbjdbccriver);
+        connection = DriverManager.getConnection(projinfo1.gbldburl, projinfo1.gbldbusername, projinfo1.gbldbpasswd);
+        statement = connection.createStatement();
+        int i = statement.executeUpdate(s);
+        if(i == 0)
+            s2 = "Error";
+        else
+            s2 = "Done";
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_157;
+        Exception exception;
+        exception;
+        System.out.println((new StringBuilder()).append("Error ExecuteSql >> ::  ").append(exception.toString()).append("\n").append(s).toString());
+        s2 = "Error";
+        statement.close();
+        connection.close();
+        break MISSING_BLOCK_LABEL_157;
+        Exception exception1;
+        exception1;
+        statement.close();
+        connection.close();
+        throw exception1;
+        return s2;
+    }
+
+    projinfo pinfo;
+    dball mydb;
+    String backupdir;
+    String ccode;
+    String backUpHome;
+}

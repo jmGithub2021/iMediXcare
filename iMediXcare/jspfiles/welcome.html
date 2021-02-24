@@ -1,0 +1,23 @@
+<%@page contentType="text/html" import="imedix.cook" %>
+<HTML>
+<BODY>
+<BR><BR><BR><BR><BR>
+<center>
+<font color=DARKGREEN>
+<h2>
+	<%
+	String ccode="",cname;
+	String path = request.getRealPath("/");
+	cook cookx = new cook(request.getRealPath("/"));
+	ccode = cookx.getCookieValue("center", request.getCookies ());
+	cname = cookx.getCookieValue("centername", request.getCookies ());
+	cname = cname.substring(0,cname.lastIndexOf(" "));
+	String str= "WELLCOME TO "+canme+" Telemedicine Online Center";
+	out.println(str);
+	%>
+	
+</h2>
+</font>
+</center>
+</BODY>
+</HTML>

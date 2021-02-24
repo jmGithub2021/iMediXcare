@@ -1,0 +1,48 @@
+[
+ {"fname":"Prasanta","mname":"Kumar","lname":"Das","code":"87034","category":"Staff","gender":"M","district":"345","state":"19","country":"IN","dob":"18041962","emailid":"","phone":"",
+  "familymembers":[
+    {"fname":"Gargi","mname":"","lname":"Das","gender":"F","relation":"Wife","district":"345","state":"19","country":"IN","dob":"10071965"
+	},
+    {"fname": "Ritopa","mname": "","lname": "Das","gender": "F","relation":"Daughter","district":"345","state":"19","country":"IN","dob":"06051991"
+	}
+	{"fname": "Pratyoy","mname": "","lname": "Das","gender": "M","relation":"Son","district":"345","state":"19","country":"IN","dob":"18081997"
+	}
+	]
+  }
+  
+  {"fname":"Arun","mname":"Kumar","lname":"Majumder","code":"10016","category":"Staff","gender":"M","district":"335","state":"19","country":"IN","dob":"22011965","emailid":"","phone":"",
+  "familymembers":[
+    {"fname":"Susmita","mname":"","lname":"Majumder","gender":"F","relation":"Wife","district":"335","state":"19","country":"IN","dob":"30121970"
+	},
+    {"fname": "Ayan","mname": "","lname": "Majumder","gender": "M","relation":"Daughter","district":"335","state":"19","country":"IN","dob":"10061996"
+	}
+	{"fname": "Monalisa","mname": "","lname": "Majumder","gender": "F","relation":"Son","district":"335","state":"19","country":"IN","dob":"07122006"
+	}
+	]
+  }
+  
+  {"fname":"Aradhna","mname":"","lname":"Malik","code":"9050","category":"Staff","gender":"F","district":"24","state":"02","country":"IN","dob":"13111973","emailid":"","phone":"",
+  "familymembers":[]
+  }
+  
+  {"fname":"Prabina","mname":"","lname":"Rajib","code":"104","category":"Staff","gender":"F","district":"381","state":"21","country":"IN","dob":"04071968","emailid":"","phone":"",
+  "familymembers":[]
+  }
+  
+  {"fname":"Biswajit","mname":"","lname":"Mahanty","code":"90077","category":"Staff","gender":"M","district":"337","state":"19","country":"IN","dob":"14011961","emailid":"","phone":"",
+  "familymembers":[
+    {"fname":"Amita","mname":"","lname":"Mahanty","gender":"F","relation":"Wife","district":"337","state":"19","country":"IN","dob":"25051965"
+	}
+    {"fname":"Avrangshu","mname":"","lname":"Mahanty","gender":"M","relation":"Son","district":"337","state":"19","country":"IN","dob":"22051997"
+	}
+	{"fname":"Bhakta","mname":"Ranjan","lname":"Mahanty","gender":"M","relation":"Father","district":"337","state":"19","country":"IN","dob":""
+	}
+	{"fname":"Bela","mname":"Rani","lname":"Mahanty","gender":"F","relation":"Mother","district":"337","state":"19","country":"IN","dob":""
+	}
+	]
+  }
+  
+  
+  
+  
+]

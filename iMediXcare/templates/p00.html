@@ -1,0 +1,453 @@
+<HTML>
+<HEAD>   
+	<TITLE>General survey</TITLE>
+<link rel="stylesheet" type="text/css" href="../style/style2.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function SHOWLAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'visible';
+			document.getElementById("main").style.visibility= 'hidden';
+}
+function HIDELAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'hidden';
+			document.getElementById("main").style.visibility= 'visible';
+
+}
+function SHOWLAYER1(nam,nam1)
+{
+			document.getElementById(nam).style.visibility= 'visible';
+			document.getElementById("main").style.visibility= 'hidden';
+			document.getElementById(nam1).style.visibility= 'hidden';
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM name="p00">
+<DIV id="main" ALIGN="center" border=2 style="left:50;top:95;position:absolute;visibility:visible;">
+<CENTER><H3>General Survey</H3>
+</CENTER>
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="95%" class='tableb'>
+<TR><TD>&nbsp;</TD></TR>
+
+<TR><TD valign=top>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD><H4>CT Scan</H4></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p01')" value="Any obvious Swelling" style=" color: black; font-weight:BOLD; font-style:oblique"></TD><TD></TD></TR>
+		<TR><TD>Level of consciousness</TD><TD><INPUT NAME=consciousness size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Decubitus</TD><TD><INPUT NAME=decubitus size=20 maxlength=20></INPUT></TD></TR>
+		<TR><TD>Appearance & expression</TD><TD><INPUT NAME=appearance size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Build & nutrition</TD><TD><INPUT NAME=build size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p03')" value="Anemia" style="color: black; font-weight:BOLD; font-style:oblique"></TD>
+		<TD><INPUT NAME=anemia size=20 maxlength=50></INPUT>
+		<TR><TD>Skin color, texture & pigmentation</TD><TD><INPUT NAME=skin_texture size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Hair & Nails</TD><TD><INPUT NAME=hair size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Cyanosis</TD><TD><INPUT NAME=cyanosis size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p04')" value="Jaundice" style=" color: black; font-weight:BOLD; font-style:oblique"></TD>
+		<TD><INPUT NAME=jaundice size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Facies</TD><TD><INPUT NAME=facies size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p05')" value="Lymph nodes and Spleen" style=" color: black; font-weight:BOLD; font-style:oblique"></td>
+		<td><INPUT NAME=neckglands size=20 maxlength=20></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p07')" value="Fever" style=" color: black; font-weight:BOLD; font-style:oblique"></TD>
+		<TD><INPUT NAME=fever size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><INPUT TYPE="button" value="wekness" onclick="SHOWLAYER('p08')" style=" color: black; font-weight:BOLD; font-style:oblique"></TD>
+		<TD><INPUT NAME=weak  size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Haemorrhage</TD><TD><INPUT NAME=haemorrhage size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Pulse</TD><TD><INPUT NAME=pulse size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>BP</TD><TD><INPUT NAME=bp size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Respiration</TD><TD><INPUT NAME=respiration size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Tempature</TD><TD><INPUT NAME=tempature size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Weight</TD><TD><INPUT NAME=wt size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Height</TD><TD><INPUT NAME=ht size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Any other</TD><TD><INPUT NAME=other size=32 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impassion</tD><TD><TEXTAREA NAme=tbxgeneralimp rows=3 cols=25></TEXTAREA></TD></TR>
+		<TR><TD>Test date</TD><TD><INPUT NAME=testdate size=8 maxlength=8></INPUT></TD></TR>
+		<TR><TD>Entry date</TD><TD><INPUT name=entrydate size=8 maxlength=8></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+
+</TABLE>
+</div>
+
+<!-- layer for p01 -->
+<DIV id="p01" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=0 class='tableb'>
+<TR><TD>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 >
+<TR><TD colspan=2>
+<CENTER><H3>Swelling</H3></CENTER>
+</TD></TR>
+<TR><TD valign=top>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD><FONT COLOR="green">Lump or swelling (history)</FONT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mode of onset</TD><TD><INPUT NAME=mode_onset1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER1('p02','p01')" value="Pain" style=" color: black; font-weight:BOLD; font-style:oblique">
+		</td><td><INPUT NAME=pain1 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Progress of swelling</TD><TD><INPUT NAME=progress_swelling1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Presence of other lumps</TD><TD><INPUT NAME=presence1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Secondary changes</TD><TD><INPUT NAME=secondary_change1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><FONT COLOR="green">Recurrence of the swelling</FONT></TD></TR>
+		<TR><TD>Loss of body weight & appetite</TD><TD><INPUT NAME=l_weight_appetite1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><FONT COLOR="green">Exact site</FONT></TD></TR>
+		<TR><TD>Upper left</TD><TD><INPUT NAME=upper_l1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Upper right</TD><TD><INPUT NAME=upper_r1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Lower left<td><INPUT NAME=lower_l1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Lower right</TD><TD><INPUT NAME=lower_r1 size=20 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD><FONT COLOR="green">Physical examination</FONT></TD></TR>
+		<TR><TD>Inspection</TD><TD><INPUT NAME=inspection1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><FONT COLOR="green">Palpation</FONT></TD></TR>
+		<TR><TD>Temperature</TD><TD><INPUT NAME=temperature1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Tenderness</TD><TD><INPUT NAME=tenderness1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Size</TD><TD><INPUT NAME=size1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Shape & extent</TD><TD><INPUT NAME=shape_extent1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Surface</TD><TD><INPUT NAME=surface1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Edge</TD><TD><INPUT NAME=edge1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Consistency</TD><TD><INPUT NAME=consistency1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Fluctuation</TD><TD><INPUT NAME=fluctuation1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Fluid thrill</TD><TD><INPUT NAME=fluid_thrill1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Translucency</TD><TD><INPUT NAME=translucency1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Impulse on coughing</TD><TD><INPUT NAME=impulse_coughing1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Reducibility</TD><TD><INPUT NAME=reducibility1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Compressibility</TD><TD><INPUT NAME=compressibility1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Pulsatility</TD><TD><INPUT NAME=pulsatility1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Fixity</TD><TD><INPUT NAME=fixity1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Regional lymph nodes</TD><TD><INPUT NAME=r_egional_lymph1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD><FONT COLOR="green">Percussion</FONT></TD></TR>
+		<TR><TD>Auscultation</TD><TD><INPUT NAME=auscultation1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Measurements</TD><TD><INPUT NAME=measurements1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Movements</TD><TD><INPUT NAME=movements1 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Pressure effects</TD><TD><INPUT NAME=pressure1 size=20 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+	<TABLE ALIGN=center>
+		<TR><TD>Any other findings</TD><TD><INPUT NAME=others1 size=58 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp1 rows=2 cols=50></TEXTAREA></TD></TR>
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+	<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p01')" style="color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+</TABLE>
+
+
+</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- Div for p02 -->
+<DIV id="p02" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=0 class='tableb'>
+<TR><TD>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="60%">
+<TR><TD colspan=2>
+	<CENTER><H3>Pain</H3></CENTER>
+</TD></TR>
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Site</TD><TD><INPUT NAME=site2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Time of onset</TD><TD><INPUT NAME=time_onset2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mode of onset</TD><TD><INPUT NAME=mode_onset2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Shifting</TD><TD><INPUT NAME=shifting2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Radiation</TD><TD><INPUT NAME=radiation2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Referral</TD><TD><INPUT NAME=referral2 size=10 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Character</TD><TD><INPUT NAME=character2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Pressure</TD><TD><INPUT NAME=effect_pressure2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Walking</TD><TD><INPUT NAME=effect_walking2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Jolting</TD><TD><INPUT NAME=jolting2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Breathing</TD><TD><INPUT NAME=breathing2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Micturition</TD><TD><INPUT NAME=micturition2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Worsens by</TD><TD><INPUT NAME=worse2 size=10 maxlength=50></INPUT></TD></TR>		
+		<TR><TD>Relieved by</TD><TD><INPUT NAME=relieved2 size=10 maxlength=50></INPUT></TD></TR> 
+	</TABLE>
+</TD></TR>
+
+<TR><TD colspan=2>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Any other feature</TD><TD><INPUT NAME=others2 size=40 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><INPUT NAME=tbxgeneralimp2 size=40 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p02')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+</TABLE>
+
+</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- Div for p03 -->
+<DIV id="p03" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=0 class='tableb'>
+<TR><TD>
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="90%" >
+<TR><TD  colspan=1>
+	<H3>Anemia</H3>
+</TD></TR>
+
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Onset</TD><TD><INPUT NAME=onset3 size=16 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration3 size=16 maxlength=50></TD></TR>
+		<TR><TD>Severity</TD><TD><INPUT NAME=severity3 size=16 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Progress</TD><TD><INPUT NAME=progress3 size=16 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Proportionate to the amount of blood loss</TD><TD><INPUT NAME=proportionate3 size=16 maxlength=50></INPUT>
+		</TD></TR>
+		<TR><TD>Related to exposure to drugs/chemicals/toxins</TD><TD><INPUT NAME=drugs3 size=16 maxlength=50></INPUT>
+		</TD></TR>
+		<TR><TD>Family history of similar illness</TD><TD><INPUT NAME=familyhis3 size=16 maxlength=50></INPUT>
+		</TD></TR>
+		<TR><TD>Intestinal parasitic infection</TD><TD><INPUT NAME=parasitic3 size=16 maxlength=16></INPUT>
+		</TD></TR>
+		<TR><TD>Recent illness preceding the previous one</TD><TD><INPUT NAME=previous3 size=16 maxlength=50></INPUT>
+	</TABLE>
+</TD></TR>
+<TR><TD  colspan=2>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Any other</TD><TD><INPUT NAME=anyother3 size=55 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp3 rows=2 cols=50></TEXTAREA></TD></TR>
+	</TABLE>
+</TD></TR>
+
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p03')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+</TABLE>
+
+</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- Div for p04 -->
+<DIV id="p04" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=0 class='tableb'>
+<TR><TD>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="90%" >
+<TR><TD colspan=2>
+	<CENTER><H3>Jaundice</H3></CENTER>
+</TD></TR>
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Onset</TD><TD><INPUT NAME=onset4 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration4 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Severity</TD><TD><INPUT NAME=severity4 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Progress</TD><TD><INPUT NAME=progress4 size=18 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Following blood tranfusion</TD><TD><INPUT NAME=blood_tranf4 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Following other parenteral administration</TD><TD><INPUT NAME=parenteral4 size=18 maxlength=50></INPUT>
+		</TD></TR>
+		<TR><TD>History of alcoholism</TD><TD><INPUT NAME=alcoholism4 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Family history of similar illness</TD><TD><INPUT NAME=family_his4 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Details</TD><TD><input NAME=details4 size=18 maxlength=50></TD></TR>
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Any other tests</TD><TD><INPUT NAME=others4 size=40 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp4 rows=2 cols=30></TEXTAREA></TD></TR>
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p04')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+</TABLE>
+
+</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- Div for p05 -->
+<DIV id="p05" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=0 class='tableb'>
+<TR><TD>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="85%" >
+<TR><TD colspan=2>
+	<CENTER><H3>Lymph nodes and Spleen</H3></CENTER>
+</TD></TR>
+<TR><TD valign=top>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD><H4>Lymph nodes</H4></TD></TR>
+		<TR><TD>Site</TD><TD><INPUT NAME=site5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>Onset of swelling</TD><TD><INPUT NAME=onset5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration5 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Progress</TD><TD><INPUT NAME=progress5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>With fever</TD><TD><INPUT NAME=fever5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>With pain/tenderness</TD><TD><INPUT NAME=tenderness5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>Size</TD><TD><INPUT NAME=txtsize5 size=20 maxlength=50></TD></TR>
+		<TR><TD>Consistency</TD><TD><INPUT NAME=consistency5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER1('p06','p05')" value="Discharge" style=" color: black; font-weight:BOLD; font-style:oblique"></TD>
+		<TD><INPUT NAME=discharge5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>Sinus formation</TD><TD><INPUT NAME=sinus5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>Adherence to other tissues</TD><TD><INPUT NAME=adherenceto5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>Associated with (details)</TD><TD><input NAME=associat5 SIZE=20 maxlength=50></TD></TR>
+		<TR><TD>Treatment received</TD><TD><INPUT NAME=treatment5 size=20 maxlength=16></INPUT></TD></TR>
+		<TR><TD>Response to treatment</TD><TD><INPUT NAME=response5 size=20 maxlength=16></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+	<TR><TD><H4>Spleen</H4></TD></TR>
+		<tr><td>Inspection</td><td><TEXTAREA NAME=tbxinspection5 rows=2 cols=20></textarea></td></tr>
+		<TR><TD>Palpation</td><td><TEXTAREA NAME=tbxpalpation5 rows=2 cols=20></textarea></td></tr>
+		<tr><td>Percussion</td><td><TEXTAREA NAME=tbxpercussion5 rows=2 cols=20></textarea></td></tr>
+		<tr><td>Auscultation</td><td><TEXTAREA NAME=tbxauscultation5 rows=2 cols=20></textarea></td></tr>
+		<TR><TD>Any other tests</TD><TD><TEXTAREA NAME=tbxothers5 rows=2 cols=20></TEXTAREA></TD></TR>
+		<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp5 rows=2 cols=20></TEXTAREA></TD></TR>
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p05')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+
+</TABLE>
+</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- Div for p06 -->
+<DIV id="p06" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=0 class='tableb'>
+<TR><TD>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="60%" >
+<TR><TD colspan=2>
+	<CENTER><H3>Discharge</H3></CENTER>
+</TD></TR>
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Site</TD><TD><INPUT NAME=site6 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Character</TD><TD><INPUT NAME=character6 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Time of onset</TD><TD><INPUT NAME=time_onset6 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mode of onset</TD><TD><INPUT NAME=mode_onset6 size=20 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration6 size=20 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Worsens by</TD><TD><INPUT NAME=worse6 size=20 maxlength=50></INPUT></TD></TR>		
+		<TR><TD>Relieved by</TD><TD><INPUT NAME=relieved6 size=20 maxlength=50></INPUT></TD></TR> 
+		<TR><TD>Culture/Sensitivity</TD><TD><INPUT NAME=culture6 size=20 maxlength=50></TD></TR>	
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Any other feature</TD><TD><INPUT NAME=anyoth6 size=50 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><INPUT NAME=tbxgeneralimp6 size=50 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p06')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+
+</TABLE>
+</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- layer for p07 -->
+<DIV id="p07" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center border=0 class='tableb'>
+<tr><td>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="85%" >
+<TR><TD colspan=2>
+	<CENTER><H3>Fever</H3></CENTER>
+</TD></TR>
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Onset</TD><TD><INPUT NAME=onset7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>With chill and rigor</TD><TD><INPUT NAME=chill_rigor7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Frequency</TD><TD><INPUT NAME=frequency7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Diurnal variations</TD><TD><INPUT NAME=variations7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Any other test</TD><TD><TEXTAREA NAME=tbxany7 rows=2 cols=20></TEXTAREA></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Nature</TD><TD><INPUT NAME=nature7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Related to blood transfusion</TD><TD><INPUT NAME=relatedblood7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Remission</TD><TD><INPUT NAME=remission7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Treatment received</TD><TD><INPUT NAME=treatment7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Response to treatment</TD><TD><INPUT NAME=response7 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp7 rows=2 cols=20></TEXTAREA></TD></TR>
+	</TABLE>
+</TD></TR>
+<tr><td colspan=2>
+	<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p07')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</td></tr>
+</Table>
+</td></tr>
+</table>
+</DIV>
+
+<!-- layer for p08  -->
+<DIV id="p08" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=0 class='tableb'>
+<TR><TD>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="80%" >
+<TR><TD colspan=1>
+	<CENTER><H3>Weakness</H3></CENTER>
+</TD></TR>
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Onset</TD><TD><INPUT NAME=onset8 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration8 size=18 maxlength=50></TD></TR>
+		<TR><TD>Severity</TD><TD><INPUT NAME=severity8 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Progress</TD><TD><INPUT NAME=progress8 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Following infection</TD><TD><INPUT NAME=infection8 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Following exposure to chemicals,toxins or radiation</TD><TD><INPUT NAME=toxins8 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Morbidity</TD><TD><INPUT NAME=morbidity8 size=18 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Any other tests</TD><TD><INPUT NAME=others8 size=30 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp8 rows=2 cols=30></TEXTAREA></TD></TR>
+</TABLE></TD></TR><tr><td colspan=1><CENTER>
+<INPUT TYPE="button" value='Close' onclick="HIDELAYER('p08')" style=" color: black; font-weight:BOLD; font-style:oblique"></CENTER></td></tr>
+</table></TD></TR></TABLE></DIV></FORM></BODY>
+</HTML>
+

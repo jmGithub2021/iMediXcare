@@ -1,0 +1,6 @@
+American Indian/Eskimo/Aleut>American Indian/Eskimo/Aleut
+Asian or Pacific Islander>Asian or Pacific Islander
+Black>Black
+White>White
+Other>Other
+Unknown/Not Stated>Unknown/Not Stated

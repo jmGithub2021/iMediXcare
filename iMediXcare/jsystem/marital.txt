@@ -1,0 +1,6 @@
+1>Nevermarried
+2>Currentlymarried
+3>widow/widower
+4>Divorced
+5>Separted
+

@@ -1,0 +1,45 @@
+// Decompiled by DJ v3.5.5.77 Copyright 2003 Atanas Neshkov  Date: 3/18/2008 3:14:48 PM
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   JSObject.java
+
+package netscape.javascript;
+
+import java.applet.Applet;
+
+public final class JSObject
+{
+
+    private static native void initClass();
+
+    private JSObject()
+    {
+    }
+
+    public native Object getMember(String s);
+
+    public native Object getSlot(int i);
+
+    public native void setMember(String s, Object obj);
+
+    public native void setSlot(int i, Object obj);
+
+    public native void removeMember(String s);
+
+    public native Object call(String s, Object aobj[]);
+
+    public native Object eval(String s);
+
+    public native String toString();
+
+    public static native JSObject getWindow(Applet applet);
+
+    protected native void finalize();
+
+    private int internal;
+
+    static 
+    {
+        initClass();
+    }
+}

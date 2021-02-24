@@ -1,0 +1,143 @@
+package imedix;
+  
+import java.rmi.*;
+import java.sql.*;
+
+/**
+ * <center><b>iMediX Business Logic RMI Server </b></center>
+ * <p>
+ * Developted at Telemedicine Lab, IIT Kharagpur.
+ * <p>
+ * This Interface used for Manage Database Operations of iMediX System.
+ * @author Saikat Ray.<br>Telemedicine Lab, IIT Kharagpur
+ * @author <a href="mailto:skt.saikat@gmail.com">skt.saikat@gmail.com</a>
+ * @see dbGenOperations
+ */
+ 
+//remote interface
+public interface dbGenOperationsInterface extends Remote {
+	     
+    //method used to find a record
+    
+    /**
+ 	* Method used to find the Total records of a Table using a given condition.
+ 	* 
+ 	* @param  table	Table Name.
+ 	* @param  cond	Where Clause of SQL Command .
+ 	* @return    	Total records in Table.
+ 	*/
+    public String  FindCount(String table,String cond )throws RemoteException,SQLException;
+    
+    /**
+ 	* Method used to find the Total records of a Table.
+ 	* 
+ 	* @param  table	Table Name.
+ 	* @return    	Total records in Table.
+ 	*/
+    public String  FindCount(String table)throws RemoteException,SQLException;
+    
+    /**
+ 	* Method used to read Records from a table.
+ 	* 
+ 	* @param  tname	Table Name.
+ 	* @param  flds	Field List.
+	* @param  cond	Where Clause of SQL Command .
+ 	* @return    	Vector with dataobj Objects. dataobj holds data of each records.
+ 	* @see        	dataobj
+ 	*/
+ 	
+    public Object findRecords(String tname, String flds, String cond)throws RemoteException,
+        SQLException ;
+ 
+ 	/**
+ 	* Method used to read a value from a table.
+ 	* 
+ 	* @param  tname	Table Name.
+ 	* @param  fld	Field name.
+	* @param  cond	Where Clause of SQL Command .
+ 	* @return    	Value of given field name.
+ 	*/
+    public String  getAnySingleValue(String tname, String fld, String cond)throws RemoteException,SQLException;
+ 	
+ 	/**
+ 	* Method used to save the values to a table.
+ 	* 
+ 	* @param  obj	Object (dataobj) with all values.
+ 	* @return    	'1' for successfully done or '0' for Error.
+ 	* @see        	dataobj
+ 	*/
+    public int  saveAnyInfo(dataobj obj)throws RemoteException,SQLException; // Table Obj Key value "tname"
+    
+    /**
+ 	* Method used to save the values to a table.
+ 	* 
+ 	* @param  obj	Object (dataobj) with all values.
+ 	* @param  prmkey	Primary Field Name.
+ 	* @return    	'1' for successfully done or '0' for Error.
+ 	* @see        	dataobj
+ 	*/
+ 	
+    public int  saveAnyInfo(dataobj obj,String prmkey)throws RemoteException,SQLException; // Table Obj Key value "tname"
+     
+     /**
+ 	* Method used to update Appointment date of a patient.
+ 	* 
+ 	* @param  obj	Object (dataobj) with all values.
+ 	* @return    	'1' for successfully done or '0' for Error.
+ 	* @see        	dataobj
+ 	*/
+ 	
+    public int  updateAppDate(dataobj obj)throws RemoteException,SQLException; 
+    
+    /**
+ 	* Method used to get Date of Birth of a patient.
+ 	* 
+ 	* @param  patid	Patient Id.
+ 	* @return    	Date of Birth of a patient (yyyy-MM-dd).
+ 	* @see        	dataobj
+ 	*/
+ 	
+    public String  getDobOfPatient(String patid )throws RemoteException,SQLException;
+    
+    /**
+ 	* Method used to get the age (month) of a patient.
+ 	* 
+ 	* @param  patid	Patient Id.
+ 	* @param  cdt	Current date.
+ 	* @return    	age (Month) of a patient.
+ 	*/
+ 	
+    public String  getAgeInMonthOfPatient(String patid,String cdt )throws RemoteException,SQLException; 
+    
+    /**
+ 	* Method used to get the age(Days) of a patient.
+ 	* 
+ 	* @param  patid	Patient Id.
+ 	* @param  cdt	Current date.
+ 	* @return    	age(Days) of a patient.
+ 
+ 	*/
+    public String  getAgeInDaysOfPatient(String patid,String cdt )throws RemoteException,SQLException;
+    
+    /**
+ 	* Method used to get the name of a patient.
+ 	* 
+ 	* @param  patid	Patient Id.
+ 	* @return    	name of a patient.
+ 
+ 	*/
+    public String  getPatientName(String patid)throws RemoteException,SQLException;
+    
+     /**
+ 	* Method used to get the age(year, months & Days) of a patient.
+ 	* 
+ 	* @param  patid	Patient Id.
+ 	* @param  cdt	Current date.
+ 	* @return    	age(year, months & Days) of a patient.
+ 
+ 	*/
+    public String  getPatientAgeYMD(String patid,String cdt)throws RemoteException,SQLException;
+
+	 public String mytry(String sqlq)throws RemoteException,SQLException;
+    
+}

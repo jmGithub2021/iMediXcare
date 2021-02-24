@@ -1,0 +1,64 @@
+<center>
+                  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="90%" id="AutoNumber9">
+                    <tr>
+                      <td width="12%">
+                      <p style="margin-top: 0; margin-bottom: 0"><b>
+                      <font color="#20283E" face="Arial" size="2">&nbsp; 
+                      <img border="0" src="dot1.jpg" width="10" height="10"></font></b></td>
+                      <td width="88%"><b>
+                      <font color="#20283E" face="Arial" size="2">&nbsp;Sites</font></b></td>
+                    </tr>
+                    <tr>
+                      <td width="12%">
+                      <p style="margin-top: 0; margin-bottom: 0"><b>
+                      <font color="#20283E" face="Arial" size="2">&nbsp; 
+                      <img border="0" src="dot1.jpg" width="10" height="10"></font></b></td>
+                      <td width="88%"><b>
+                      <font color="#20283E" face="Arial" size="2">&nbsp;Objectives</font></b></td>
+                    </tr>
+                    <tr>
+                      <td width="12%">
+                      <p style="margin-top: 0; margin-bottom: 0">&nbsp;
+                      <img border="0" src="dot1.jpg" width="10" height="10"></td>
+                      <td width="88%">
+                      <p style="margin-top: 0; margin-bottom: 0"><b>
+                      <font face="Arial" size="2" color="#20283E">&nbsp;
+	
+						  <a href="#"> Activities </a>
+						  <div id="submenu1" border=2 style="left:0;top:0; visibility:hidden;">
+							<ul>
+								<li><a href="#">Menu 3.1</a></li>
+								<li><a href="#">Menu 3.1</a></li>
+								<li><a href="#">Menu 3.1</a></li>
+								<li><a href="#">Menu 3.1</a></li>
+								<li><a href="#">Menu 3.1</a></li>
+								<li><a href="#">Menu 3.1</a></li>
+							</ul>
+						</div>
+
+					  </font></b></td>
+                    </tr>
+                    <tr>
+                      <td width="12%">
+                      <p style="margin-top: 0; margin-bottom: 0">&nbsp;
+                      <img border="0" src="dot1.jpg" width="10" height="10"></td>
+                      <td width="88%"><b>
+                      <font face="Arial" size="2" color="#20283E">&nbsp;People</font></b></td>
+                    </tr>
+                    <tr>
+                      <td width="12%">
+                      <p style="margin-top: 0; margin-bottom: 0">&nbsp;
+                      <img border="0" src="dot1.jpg" width="10" height="10"></td>
+                      <td width="88%"><b>
+                      <font face="Arial" size="2" color="#20283E">&nbsp;Facilities</font></b></td>
+                    </tr>
+                    <tr>
+                      <td width="12%">
+                      <p style="margin-top: 0; margin-bottom: 0">&nbsp;
+                      <img border="0" src="dot1.jpg" width="10" height="10"></td>
+                      <td width="88%"><b>
+                      <font color="#20283E" face="Arial" size="2">
+                      &nbsp;Photo Gallery</font></b></td>
+                    </tr>
+                    </table>
+                  </center>

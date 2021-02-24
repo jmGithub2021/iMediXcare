@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<imedixlog>
+<log>
+<datetime>Thu Aug 20 12:06:41 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Thu Aug 20 12:07:28 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090003</patid>
+<entrydate>20090820120728</entrydate>
+</key>
+<description>
+<table>s34</table>
+<details>Serology</details>
+</description>
+</log>
+<log>
+<datetime>Thu Aug 20 12:07:52 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090003</patid>
+<entrydate>20090820120752</entrydate>
+</key>
+<description>
+<table>a17</table>
+<details>Clinical Procedure</details>
+</description>
+</log>
+<log>
+<datetime>Thu Aug 20 12:08:04 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090003</patid>
+<entrydate>20090820120804</entrydate>
+</key>
+<description>
+<table>a15</table>
+<details>Observation</details>
+</description>
+</log>
+</imedixlog>

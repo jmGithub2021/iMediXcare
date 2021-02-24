@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<Display>
+  <FrameTable type="frame" rows="60,*">
+    <FrameRow>
+      <FrameData name="header1"  orientation="horizontal" contenttype="menu" link="" />
+    </FrameRow>
+    <FrameRow>
+      <FrameData name="content1" orientation="horizontal" contenttype="page" link="welcome.html" />
+    </FrameRow>
+    <FrameRow>
+      <FrameData name="footer1" orientation="horizontal" contenttype="page" link="" />
+    </FrameRow>
+  </FrameTable>
+
+  <MenuList>
+      <menu id="head1" role="SUP">
+      <item name="" caption="Local Pat Q" link="browse.jsp" target="content1" />
+	  <item name="" caption="Tele Pat Wait Q" link="telewaitbrowse.jsp" target="content1" />
+      <item name="" caption="Tele Pat Q" link="telebrowse.jsp" target="content1" />
+      <item name="" caption="Pat Search" link="searchpatient.jsp" target="content1" />
+      <item name="" caption="Admin Job" link="jobadmin.jsp" target="content1" />
+      <item name="" caption="Edit Profile" link="editprofile.jsp" target="content1" />
+      <item name="" caption="Log Out" link="logout.jsp" target="_parent" />
+    </menu>
+    <menu id="head1" role="ADM">
+	  <item name="" caption="Dash Board" link="dashb.jsp" target="content1" />
+      <item name="" caption="Registration" link="select.jsp" target="content1" />
+      <item name="" caption="Data Entry" link="oldpat.jsp" target="content1" />
+      <item name="" caption="Local Patient" link="browse.jsp" target="content1" />
+	  <item name="" caption="Tele Referred Status" link="telepatrefstatus.jsp" target="content1" />
+	  <item name="" caption="Tele Patient" link="telebrowse.jsp" target="content1" />
+      <item name="" caption="Patient Search" link="searchpatient.jsp" target="content1" />
+      <item name="" caption="Admin Jobs" link="jobadmin.jsp" target="content1" />
+      <item name="" caption="Edit Profile" link="editprofile.jsp" target="content1" />
+      <item name="" caption="Log Out" link="logout.jsp" target="_parent" />
+    </menu>
+
+	 <menu id="head1" role="CON">
+      <item name="" caption="Local Patient" link="browse.jsp" target="content1" />
+	  <item name="" caption="Tele Pat Wait Q" link="telewaitbrowse.jsp" target="content1" />
+      <item name="" caption="Tele Patient" link="telebrowse.jsp" target="content1" />
+      <item name="" caption="Patient Search" link="searchpatient.jsp" target="content1" />
+      <item name="" caption="Edit Profile" link="editprofile.jsp" target="content1" />
+      <item name="" caption="Log Out" link="logout.jsp" target="_parent" />
+    </menu>
+
+    <menu id="head1" role="DOC">
+      <item name="" caption="Local Patient" link="browse.jsp" target="content1" />
+	  <item name="" caption="Tele Referred Status" link="telepatrefstatus.jsp" target="content1" />
+	  <item name="" caption="Tele Pat Wait Q" link="telewaitbrowse.jsp" target="content1" />
+      <item name="" caption="Tele Patient" link="telebrowse.jsp" target="content1" />
+      <!--item name="" caption="Online Communicator" link="showonlineconf.jsp" target="content1" / -->
+      <item name="" caption="Edit Profile" link="editprofile.jsp" target="content1" />
+      <item name="" caption="Log Out" link="logout.jsp" target="_parent" />
+    </menu>
+    <menu id="head1" role="USR">
+      <item name="" caption="Registration" link="select.jsp" target="content1" />
+      <item name="" caption="Data Entry" link="oldpat.jsp" target="content1" />
+      <item name="" caption="Local Patient" link="browse.jsp" target="content1" />
+      <item name="" caption="Edit Profile" link="editprofile.jsp" target="content1" />
+      <item name="" caption="Log Out" link="logout.jsp" target="_parent" />
+    </menu>
+    <menu id="head1" role="PAT">
+      <item name="" caption="Edit Profile" link="editprofile.jsp" target="content1" />
+      <item name="" caption="Log Out" link="logout.jsp" target="_parent" />
+    </menu>	
+	<!--<menu id="head1" role="rOP">
+		<item name="" caption="Pending Test" link="getStudyUID.jsp" target="content1" />
+		<item name="" caption="Performed Test" link="activeStudyUID.jsp" target="content1" />		
+		<item name="" caption="Edit Profile" link="editprofile.jsp" target="content1" />
+		<item name="" caption="Log Out" link="logout.jsp" target="_parent" />
+	</menu>-->
+
+	<menu id="head1" role="pOP">
+		<item name="" caption="Pending Test" link="getPendingPatientPatho.jsp" target="content1" />
+		<!--<item name="" caption="Pathology from HaemurEx" link="arogyam.jsp" target="content1" />-->
+		<item name="" caption="Edit Profile" link="editprofile.jsp" target="content1" />
+		<item name="" caption="Log Out" link="logout.jsp" target="_parent" />
+	</menu>
+	
+	<menu id="left" role="ADM">
+		<item name="" caption="Patient Registration" link="setvisitdate.jsp" target="content1" submit="ajax" />
+		<item name="" caption="Visit Patient" link="patientAlldata.jsp" target="content1" submit="ajax" />
+		<item name="" caption="Patient Profile" link="displaymed.jsp?login='N'" target="content1" submit="ajax" />		
+		<item name="" caption="Tele-Consultation" link="telemedreq.jsp" target="content1" submit="iframe" />
+		<!--<item name="" caption="File Upload" link="../forms/imageload.jsp" target="content1" submit="iframe" />-->
+		<!--<item name="" caption="Patient Search" link="searchpatient.jsp" target="content1" submit="iframe" />-->
+	</menu>
+	
+	<menu id="left" role="DOC">
+		<item name="" caption="Visit Patient" link="patientAlldata.jsp" target="content1" submit="ajax" />
+		<item name="" caption="Patient Profile" link="displaymed.jsp?login='N'" target="content1" submit="ajax" />		
+		<item name="" caption="Tele-Consultation" link="telemedreq.jsp" target="content1" submit="iframe" />
+		<item name="" caption="File Upload" link="../forms/imageload.jsp" target="content1" submit="iframe" />
+		
+		<!-- <item name="" caption="Video Conference" link="javascript:void(0);" target="content1" submit="ajax" /> -->
+		<!--<item name="" caption="Prescribe" link="pre_frame.jsp" target="content1" submit="iframe" />-->
+		<!--<item name="" caption="Patient Search" link="searchpatient.jsp" target="content1" submit="iframe" />-->
+	</menu>
+	<menu id="left" role="CON">
+		<item name="" caption="Visit Patient" link="patientAlldata.jsp" target="content1" submit="ajax" />
+		<item name="" caption="Patient Profile" link="displaymed.jsp?login='N'" target="content1" submit="ajax" />		
+		<item name="" caption="Tele-Consultation" link="telemedreq.jsp" target="content1" submit="iframe" />
+		<!--<item name="" caption="File Upload" link="../forms/imageload.jsp" target="content1" submit="iframe" />-->
+		<!--<item name="" caption="Patient Search" link="searchpatient.jsp" target="content1" submit="iframe" />-->
+	</menu>
+	<menu id="left" role="USR">
+		<item name="" caption="Patient Registration" link="setvisitdate.jsp" target="content1" submit="ajax" />	
+		<item name="" caption="Visit Patient" link="patientAlldata.jsp" target="content1" submit="ajax" />
+		<item name="" caption="Patient Profile" link="displaymed.jsp?login='N'" target="content1" submit="ajax" />		
+		<item name="" caption="Tele-Consultation" link="telemedreq.jsp" target="content1" submit="iframe" />
+		<!--<item name="" caption="COVID19-Questionnaire" link="covidIndex.jsp" target="content1" submit="iframe" />-->
+		<!--<item name="" caption="File Upload" link="../forms/imageload.jsp" target="content1" submit="iframe" />-->
+		<!--<item name="" caption="Patient Search" link="searchpatient.jsp" target="content1" submit="iframe" />-->
+	</menu>	
+	<!--<menu id="left" role="OPR">
+		<item name="" caption="Pending Test" link="" target="content1" submit="ajax" />
+		<item name="" caption="Active Test" link="" target="content1" submit="ajax" />
+		<item name="" caption="Others" link="" target="content1" submit="iframe" />
+		<item name="" caption="File Upload" link="" target="content1" submit="iframe" />-->
+		<!--<item name="" caption="Patient Search" link="searchpatient.jsp" target="content1" submit="iframe" />-->
+	<!--</menu>-->
+  </MenuList>
+</Display>

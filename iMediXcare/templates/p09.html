@@ -1,0 +1,237 @@
+<html>
+<head>   
+	<title>Ophthalmology</title>
+<link rel="stylesheet" type="text/css" href="../style/style2.css">
+<SCRIPT>
+// Function to show and hide layers
+function SHOWLAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'visible';
+			document.getElementById("main").style.visibility= 'hidden';
+}
+function HIDELAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'hidden';
+			document.getElementById("main").style.visibility= 'visible';
+
+}
+// End of functions
+</SCRIPT>
+
+</head>
+<BODY>
+<form name="p09">
+<DIV id="main" ALIGN="Left" border=2 style="left:25;top:95;position:absolute;visibility:visible;">
+<CENTER><h3>Ophthalmology</h3></CENTER>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 class='tableb'>
+<TR><TD>
+
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD valign=top>
+	<TABLE BORDER=0 ALIGN=center>
+		<tr><td><H4>History & Present complaints</H4></td></tr>
+		<tr><td>Dimness of vision</td><td><INPUT NAME=dimness size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Mode of onset</td><td><INPUT NAME=onset size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Duration</td><td><INPUT NAME=duration size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>previous use of glasses</td><td><INPUT NAME=glasses size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Power</td><td><INPUT NAME=power size=14 maxlength=8></INPUT></td></tr>
+		<tr><td>Dimness for</td><td><INPUT NAME=dimnessf size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Diplopia</td><td><INPUT NAME=diplopia size=14 maxlength=50></INPUT></td></tr>
+		<tr><td><INPUT TYPE="button" onclick="SHOWLAYER('p10')" value="Pain" style="color: black; font-weight:BOLD; font-style:oblique"></td></tr>
+		<tr><td><H4>Past history</H4></td></tr>
+		<tr><td>Redness</td><td><INPUT NAME=p_redness size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Treatment of eyes</td><td><INPUT NAME=p_t_eyes size=14 maxlength=50></input></td></tr>
+		<tr><td>General illnesses</td><td><INPUT NAME=p_g_illnesses size=14 maxlength=50></INPUT></td></tr>
+
+		<tr><td><H4>Watering of eyes</H4></td></tr>
+		<tr><td>Duration</td><td><INPUT NAME=e_duration size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>persistence</td><td><INPUT NAME=e_persistence size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Aggravated with</td><td><INPUT NAME=e_aggravated size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Associated redness</td><td><INPUT NAME=e_a_redness size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Discharge from eyes</td><td><INPUT NAME=e_discharge size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Photophobia</td><td><INPUT NAME=e_photophobia size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Trauma history</td><td><INPUT NAME=e_trauma size=14 maxlength=50></INPUT></td></tr>
+
+
+		<tr><td><H4>Headache</H4></td></tr>
+		<tr><td>Location</td><td><INPUT NAME=location size=14 maxlength=8></INPUT></td></tr>
+		<tr><td>Time of day when worse</td><td><INPUT NAME=ti_me size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Degree</td><td><INPUT NAME=degree size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Frequency</td><td><INPUT NAME=frequency size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Aggravated with</td><td><INPUT NAME=aggravated size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Associated features</td><td><INPUT NAME=features size=18 maxlength=50></INPUT></td></tr>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<tr><td><H4>Examination</H4></td></tr>
+		<tr><td><FONT COLOR="green">General</FONT></td></tr>
+		<tr><td>Head</td><td><INPUT NAME=head size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Face</td><td><INPUT NAME=face size=14 maxlength=50></INPUT></td></tr>
+		<tr><td><FONT COLOR="green">Eye</FONT></td></tr>
+		<tr><td>Eyebrows</td><td><INPUT NAME=eyebrows size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Palpebral fissure</td><td><INPUT NAME=palpebral size=14 maxlength=50></INPUT></td></tr>
+		<tr><td><FONT COLOR="green">Eyelids' movements</FONT></td></tr>
+		<tr><td>Upper</td><td><INPUT NAME=upper size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Lower</td><td><INPUT NAME=lower size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Size</td><td><INPUT NAME=e_size size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Position</td><td><INPUT NAME=posi_tion size=14 maxlength=50></INPUT></td></tr>
+		<tr><td>Squint</td><td><INPUT NAME=squint size=14 maxlength=50></INPUT></td></tr>
+
+		<tr><td>Pulsating</td><td><INPUT NAME=pulsating size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Nystagmus</td><td><TEXTAREA NAME=tbxnystagmus rows=2 cols=10></TEXTAREA></td></tr>
+		<tr><td>Orbits</td><td><INPUT NAME=orbits size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Eyelids</td><td><INPUT NAME=eyelids size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Lacrimal sacs</td><td><INPUT NAME=lacrimal size=18 maxlength=50></INPUT></td></tr>
+		<tr><td><FONT COLOR="green">Conjunctiva</FONT></td></tr>
+		<tr><td>Bulbar</td><td><INPUT NAME=bulbar size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Upper tarsal</td><td><INPUT NAME=u_tarsal size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Lower tarsal</td><td><INPUT NAME=l_tarsal size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Limbus</td><td><INPUT NAME=limbus size=18 maxlength=50></INPUT></td></tr>
+		<tr><td><FONT COLOR="green">Cornea</FONT></td></tr>
+		<tr><td>Diameter</td><td><INPUT NAME=diameter size=10 maxlength=10>mm</INPUT></td></tr>
+		<tr><td>curvature</td><td><INPUT NAME=curvature size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>surface</td><td><INPUT NAME=surface size=18 maxlength=50></INPUT></td></tr> 
+		<tr><td>Opacity</td><td><INPUT NAME=opacity size=10 maxlength=8></INPUT></td></tr>
+		<tr><td>Density</td><td><INPUT NAME=density size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Position to pupil</td><td><INPUT NAME=pupil size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Pigmentation</td><td><INPUT NAME=pigmentation size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Iris adhesion</td><td><INPUT NAME=adhesion size=18 maxlength=50></INPUT></td></tr> 
+		<tr><td>Presence of</td><td><INPUT NAME=presence size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Keratic precipitates</td><td><INPUT NAME=keratic size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Corneal sensation</td><td><INPUT NAME=corneal size=18 maxlength=50></INPUT></td></tr>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=1 ALIGN=center>
+		<tr><td><FONT COLOR="green">Anterior chamber</FONT></td></tr>
+		<tr><td>Depth</td><td><INPUT NAME=depth size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Extraneous matter</td><td><INPUT NAME=extraneous size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Angle</td><td><INPUT NAME=angle size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Pupils</td><td><INPUT NAME=pupils size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Size</td><td><INPUT NAME=size size=10 maxlength=50></INPUT>mm</td></tr>
+		<tr><td>Shape</td><td><INPUT NAME=shape size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Position</td><td><INPUT NAME=position size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Margin</td><td><INPUT NAME=margin size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Aperture</td><td><INPUT NAME=aperture size=18 maxlength=50></INPUT></td></tr>
+		<tr><td><FONT COLOR="green">Reflexes</FONT></td></tr>
+		<tr><td>Light Reflex</td><td><INPUT NAME=reflex1 size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Accommodation</td><td><INPUT NAME=accommodation size=18 maxlength=50></INPUT></td></tr>
+		<tr><td><FONT COLOR="green">Iris</FONT></td></tr>
+		<tr><td>Pattern</td><td><INPUT NAME=pattern  size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Color</td><td><INPUT NAME=color size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>New vessels</td><td><INPUT NAME=r_vessels size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Atrophic patch</td><td><INPUT NAME=atrophic size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Gap or hole in iris</td><td><INPUT NAME=iris size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Iridodonesis</td><td><INPUT NAME=iridodonesis size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Iridodialysis</td><td><INPUT NAME=iridodialysis size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Anterior synechia</td><td><INPUT NAME=synechia size=18 maxlength=50></INPUT></td></tr>
+		<tr><td><FONT COLOR="green">Lens</FONT></td></tr>
+		<tr><td>Color</td><td><INPUT NAME=l_color size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Opacity</td><td><INPUT NAME=l_opacity size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Displacement</td><td><INPUT NAME=displacement size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>3rd and 4th P-S images</td><td><INPUT NAME=images size=18 maxlength=50></INPUT></td></tr>
+
+		<tr><td>Any other</td><td><INPUT NAME=other size=10 maxlength=8></INPUT></td></tr>
+
+		<tr><td><FONT COLOR="green">IOT</FONT></td></tr>
+		<tr><td>Tonometry</td><td><INPUT NAME=tonometry size=18 maxlength=50></INPUT></td></tr>
+
+		<tr><td><FONT COLOR="green">Functional tests</FONT></td></tr>
+		<tr><td><FONT COLOR="green">2nd cranial nerve </FONT></td></tr>
+		<tr><td>visual field</td><td><INPUT NAME=visual size=18 maxlength=50></INPUT></td></tr>
+		   
+			
+			<tr><td>visual acuity (far)</td><td>
+			<INPUT NAME=acuity_f size=18 maxlength=50></INPUT></td></tr> 
+
+		<tr><td>visual acuity (near)</td><td>
+			<INPUT NAME=acuity_n size=18 maxlength=16></INPUT></td></tr>
+		<tr><td>color vision</td><td><INPUT NAME=c_vision size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>3rd, 4th, 6th cranial nerves</td><td><INPUT NAME=cranial_nerves size=10 maxlength=50></INPUT></td></tr>
+		<tr><td><FONT COLOR="green">Ophthalmoscopy</FONT></td><td><INPUT NAME=ophthalmoscopy size=18 maxlength=50></INPUT></td></tr>
+		<tr><td>Optic disk</td><td><INPUT NAME=optic size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Macular area</td><td><INPUT NAME=macular size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Retinal blood vessels</td><td><INPUT NAME=vessels size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Appearance of fundus</td><td><INPUT NAME=appearance size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Choroidal vessels</td><td><INPUT NAME=choroidal size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Red-free lt. fundus</td><td><INPUT NAME=red_free size=10 maxlength=50></INPUT></td></tr>
+		<tr><td>Details of fundal lesions</td><td><INPUT NAME=lesions size=10 maxlength=50></INPUT></td></tr>
+	</TABLE>
+</TD></TR>
+<tr><td colspan=3>
+	<TABLE BORDER=0 ALIGN=center>
+		<tr><td>Any other tests</td><td><INPUT NAME=others size=60 maxlength=50></td></tr>
+		<tr><td>General impression</td><td><TEXTAREA NAME=tbxgeneralimp rows=2 cols=50></TEXTAREA></td></tr>
+	</TABLE>
+</TD></TR>
+<tr><td colspan=3>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Test date</TD><TD><INPUT NAME=testdate size=8 maxlength=8></INPUT></TD>
+		<TD>Entry date</TD><TD><INPUT name=entrydate size=8 maxlength=8></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+</div>
+
+<!-- layer for p10 -->
+<DIV id="p10" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;">
+
+<TABLE ALIGN=center border=2>
+<TR><TD>
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="50%">
+<TR><TD>
+	<CENTER><H3>Pain</H3></CENTER>
+</TD></TR>
+<TR><TD>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Site</TD><TD><INPUT NAME=site1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Time of onset</TD><TD><INPUT NAME=time_onset1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mode of onset</TD><TD><INPUT NAME=mode_onset1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Shifting</TD><TD><INPUT NAME=shifting1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Radiation</TD><TD><INPUT NAME=radiation1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Referral</TD><TD><INPUT NAME=referral1 size=10 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Character</TD><TD><INPUT NAME=character1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Pressure</TD><TD><INPUT NAME=effect_pressure1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Walking</TD><TD><INPUT NAME=effect_walking1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Jolting</TD><TD><INPUT NAME=jolting1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Breathing</TD><TD><INPUT NAME=breathing1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Micturition</TD><TD><INPUT NAME=micturition1 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Worsens by</TD><TD><INPUT NAME=worse1 size=10 maxlength=50></INPUT></TD></TR>		
+		<TR><TD>Relieved by</TD><TD><INPUT NAME=relieved1 size=10 maxlength=50></INPUT></TD></TR> 
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Any other feature</TD><TD><INPUT NAME=others1 size=40 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><INPUT NAME=tbxgeneralimp1 size=40 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p10')" style="color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+</table>
+
+</td></tr>
+</table>
+
+</DIV>
+
+</FORM>
+</BODY>
+</HTML>

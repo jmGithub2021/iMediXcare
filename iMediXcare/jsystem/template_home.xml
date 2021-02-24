@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Display>
+  <FrameTable type="frame" rows="25, *, 35">
+    <FrameRow>
+      <FrameData name="header1"  orientation="horizontal" contenttype="menu" link="headermenu.aspx" menuid="head1" style="head1" />
+    </FrameRow>
+    <FrameRow>
+      <FrameData name="content1" orientation="horizontal" contenttype="page" link="welcome.html" />
+    </FrameRow>
+    <FrameRow>
+      <FrameData name="footer1" orientation="horizontal" contenttype="page" link="footer.html" />
+    </FrameRow>
+  </FrameTable>
+</Display>

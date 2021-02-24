@@ -1,0 +1,308 @@
+<%@page contentType="text/html" import= "imedix.projinfo,imedix.rcDataEntryFrm,imedix.rcDisplayData,java.net.URLConnection,javax.net.ssl.*,java.io.*,java.util.ArrayList,org.json.simple.JSONObject,org.json.simple.parser.JSONParser,org.json.simple.JSONArray,java.nio.charset.Charset,java.io.BufferedReader,java.io.IOException ,java.io.InputStreamReader,java.io.OutputStream,java.net.HttpURLConnection,java.net.MalformedURLException,java.net.URL, org.json.simple.parser.JSONParser,org.json.simple.JSONArray"%>
+<%@ include file="..//includes/chkcook.jsp" %>
+<%
+
+	rcDataEntryFrm rd = new rcDataEntryFrm(request.getRealPath("/"));
+	rcDisplayData rdd = new rcDisplayData(request.getRealPath("/"));
+	String testId="",opdno="",patid="",studyUID="",synctype="";
+	String path = request.getRealPath("/");
+	testId = request.getParameter("testId");
+	opdno = request.getParameter("opdno");
+	patid= request.getParameter("patid");
+	studyUID = request.getParameter("studyUID");
+	synctype = request.getParameter("synctype");
+	
+%>
+<%!
+public int getstudyUID(String test_id, String path){
+	String result = "",studyUID="";
+	int status=0;
+	projinfo pinfo=new projinfo(path);
+	rcDataEntryFrm rdef = new rcDataEntryFrm(path);
+
+		 try{
+			String type = "application/json";
+			String serviceURL = (pinfo.PACSServiceURL);
+			String serializedTest_id = "\""+test_id+"\"";
+			URL url = new URL(serviceURL+"GetStudyUID");			
+			OutputStreamWriter osw ;
+			
+			
+			
+			URLConnection connection = url.openConnection();
+			if (connection instanceof HttpsURLConnection)
+			{
+				HttpsURLConnection httpCon = (HttpsURLConnection) connection;
+				TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager()
+				{
+					public java.security.cert.X509Certificate[] getAcceptedIssuers()
+					{
+						return null;
+					}
+
+					public void checkClientTrusted(
+						java.security.cert.X509Certificate[] certs, String authType)
+					{
+					}
+
+					public void checkServerTrusted(
+						java.security.cert.X509Certificate[] certs, String authType)
+					{
+					}
+				} };
+
+				SSLContext sc = SSLContext.getInstance("TLSv1.2");
+				sc.init(null, trustAllCerts, new java.security.SecureRandom());
+				httpCon.setSSLSocketFactory(sc.getSocketFactory());
+				HostnameVerifier allHostsValid = new HostnameVerifier() {
+					public boolean verify(String hostname, SSLSession session) {
+						return true;
+					}
+				};
+				httpCon.setHostnameVerifier(allHostsValid);
+	
+				httpCon.setDoOutput(true);
+				httpCon.setRequestMethod("POST");
+				httpCon.setRequestProperty( "Content-Type", type);
+				osw = new OutputStreamWriter(
+				httpCon.getOutputStream());
+				//String test_id = request.getParameter("test_id");
+				OutputStream os = httpCon.getOutputStream();
+				os.write(serializedTest_id.getBytes());
+				os.flush();
+				BufferedReader br = new BufferedReader(new InputStreamReader(httpCon.getInputStream())); 
+					String output="";
+				while ((output = br.readLine()) != null) {
+					result = output.replaceAll("^\"|\"$", "").replaceAll("\\\\", "");
+				}
+
+			}
+			
+			else{		
+				HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+				httpCon.setDoOutput(true);
+				httpCon.setRequestMethod("POST");
+				httpCon.setRequestProperty( "Content-Type", type);
+				osw = new OutputStreamWriter(
+				httpCon.getOutputStream());
+				//String test_id = request.getParameter("test_id");
+				OutputStream os = httpCon.getOutputStream();
+				os.write(serializedTest_id.getBytes());
+				os.flush();
+				BufferedReader br = new BufferedReader(new InputStreamReader(httpCon.getInputStream())); 
+					String output="";
+				while ((output = br.readLine()) != null) {
+					result = output.replaceAll("^\"|\"$", "").replaceAll("\\\\", "");
+				}	
+			}
+			//out.println(result);
+			JSONParser parser = new JSONParser();
+			JSONArray array = (JSONArray)parser.parse(result);
+			if (array.size()>0){
+				studyUID = (String)((JSONObject)array.get(0)).get("StudyUID");
+				//out.println(studyUID);
+				if(rdef.updateStudyUID(test_id,studyUID))
+					status=1;
+				else
+					status = 0;
+			}
+			else{
+				status = 0;
+			}
+			//out.println(httpCon.getResponseCode());
+			//out.println(httpCon.getResponseMessage());
+			osw.close();
+		}catch(Exception ex){status=0;}
+	return status;
+}
+
+public String getstudyUIDList(String opdno, String path){
+	String studyUID="",modality="";
+	String result = "";
+	projinfo pinfo=new projinfo(path);
+	rcDataEntryFrm rdef = new rcDataEntryFrm(path);
+
+		 try{
+			String type = "application/json";
+			String serviceURL = (pinfo.PACSServiceURL);
+			String serializedTest_id = "\""+opdno+"\"";
+			URL url = new URL(serviceURL+"GetStudyUID");			
+			OutputStreamWriter osw ;
+			
+			
+			
+			URLConnection connection = url.openConnection();
+			if (connection instanceof HttpsURLConnection)
+			{
+				HttpsURLConnection httpCon = (HttpsURLConnection) connection;
+				TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager()
+				{
+					public java.security.cert.X509Certificate[] getAcceptedIssuers()
+					{
+						return null;
+					}
+
+					public void checkClientTrusted(
+						java.security.cert.X509Certificate[] certs, String authType)
+					{
+					}
+
+					public void checkServerTrusted(
+						java.security.cert.X509Certificate[] certs, String authType)
+					{
+					}
+				} };
+
+				SSLContext sc = SSLContext.getInstance("TLSv1.2");
+				sc.init(null, trustAllCerts, new java.security.SecureRandom());
+				httpCon.setSSLSocketFactory(sc.getSocketFactory());
+				HostnameVerifier allHostsValid = new HostnameVerifier() {
+					public boolean verify(String hostname, SSLSession session) {
+						return true;
+					}
+				};
+				httpCon.setHostnameVerifier(allHostsValid);
+	
+				httpCon.setDoOutput(true);
+				httpCon.setRequestMethod("POST");
+				httpCon.setRequestProperty( "Content-Type", type);
+				osw = new OutputStreamWriter(
+				httpCon.getOutputStream());
+				OutputStream os = httpCon.getOutputStream();
+				os.write(serializedTest_id.getBytes());
+				os.flush();
+				BufferedReader br = new BufferedReader(new InputStreamReader(httpCon.getInputStream())); 
+					String output="";
+				while ((output = br.readLine()) != null) {
+					result = output.replaceAll("^\"|\"$", "").replaceAll("\\\\", "");
+				}
+
+			}
+			
+			else{		
+				HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+				httpCon.setDoOutput(true);
+				httpCon.setRequestMethod("POST");
+				httpCon.setRequestProperty( "Content-Type", type);
+				osw = new OutputStreamWriter(
+				httpCon.getOutputStream());
+				OutputStream os = httpCon.getOutputStream();
+				os.write(serializedTest_id.getBytes());
+				os.flush();
+				BufferedReader br = new BufferedReader(new InputStreamReader(httpCon.getInputStream())); 
+					String output="";
+				while ((output = br.readLine()) != null) {
+					result = output.replaceAll("^\"|\"$", "").replaceAll("\\\\", "");
+				}	
+			}
+			//out.println(result);
+			/*JSONParser parser = new JSONParser();
+			JSONArray array = (JSONArray)parser.parse(result);
+			for (int i=0;i<array.size();i++){
+				studyUID = (String)((JSONObject)array.get(i)).get("StudyUID");
+				modality = (String)((JSONObject)array.get(i)).get("modality");
+				//out.println(studyUID);
+			}
+			else{
+				status = 0;
+			}*/
+			//out.println(httpCon.getResponseCode());
+			//out.println(httpCon.getResponseMessage());
+			osw.close();
+		}catch(Exception ex){}
+	return result;
+}
+public ArrayList getPendingStudyUIDList(String opdno, String path){
+	rcDisplayData rdd = new rcDisplayData(path);
+	String syncedStudyList = "";
+	ArrayList<String> studyUIDFromPACS = new ArrayList<String>();
+	ArrayList<String> modalityList = new ArrayList<String>();
+	ArrayList<String> syncedStudyUID = new ArrayList<String>();
+	ArrayList<String> newStudyUID = new ArrayList<String>();
+	ArrayList<ArrayList<String>> resultList = new ArrayList<ArrayList<String>>();
+	try{
+		//syncedStudyList = rdd.getSyncedStudyList(opdno);
+		syncedStudyUID = rdd.getSyncedStudyIDList(opdno);
+	}catch(Exception ex){}
+	try{
+		String result = getstudyUIDList(opdno,path);
+		JSONParser parser = new JSONParser();
+		JSONArray array = (JSONArray)parser.parse(result);
+		for (int i=0;i<array.size();i++){
+			studyUIDFromPACS.add(i,(String)((JSONObject)array.get(i)).get("StudyUID"));
+			modalityList.add(i,(String)((JSONObject)array.get(i)).get("Modality"));
+			//out.println(studyUID);
+		}	
+	}catch(Exception ex){}
+	
+	for(int i=0;i<syncedStudyUID.size();i++){
+		if(studyUIDFromPACS.contains(syncedStudyUID.get(i))){
+			int index = studyUIDFromPACS.indexOf(syncedStudyUID.get(i));
+			modalityList.remove(index);
+			studyUIDFromPACS.remove(index);
+		}
+	}	
+	newStudyUID = studyUIDFromPACS;
+	resultList.add(0,newStudyUID);
+	resultList.add(1,modalityList);
+	
+	return resultList;
+}
+%>
+<%
+if ("POST".equalsIgnoreCase(request.getMethod()) && testId != null && studyUID == null){
+	if(rd.isValidTestId(testId))
+		out.println(getstudyUID(testId,path));
+	else
+		out.println("0");
+}
+if("POST".equalsIgnoreCase(request.getMethod()) && testId != null && studyUID !=null){
+	if(rd.isValidTestId(testId) && studyUID.length()>10){
+		if(rd.updateStudyUID(testId,studyUID))
+			out.println("1");
+		else
+			out.println("02");
+	}
+	else{
+		out.println("04");
+		}
+}
+if ("POST".equalsIgnoreCase(request.getMethod()) && opdno != null){
+	/*JSONArray jarray = new JSONArray();
+	jarray.add(rdd.getPendingStudyList(opdno));
+	jarray.add(getPendingStudyUIDList(opdno,path));*/
+		JSONObject jobj = new JSONObject();
+	//jobj.put("studyList",rdd.getPendingStudyList(opdno));
+	jobj.put("studyList",rdd.getPendingStudyListPAT(opdno,patid));
+	jobj.put("pacsStudyList",getPendingStudyUIDList(opdno,path));
+	out.println(jobj.toString());
+}
+if(synctype!=null){
+    StringBuilder buffer = new StringBuilder();
+    BufferedReader reader = request.getReader();
+    String line;
+    while ((line = reader.readLine()) != null) {
+        buffer.append(line);
+    }
+    String data = buffer.toString();
+	JSONArray jarray = new JSONArray();
+	JSONParser parser = new JSONParser(); 
+	Object ob = parser.parse(data);
+	jarray = (JSONArray)ob;
+	JSONArray newjsarr = new JSONArray();
+	int counter = 0;
+	//out.println(jarray);
+	//out.println("LL"+rd.isValidTestId(testId));
+	for(int i=0;i<jarray.size();i++){
+		if(rd.isValidTestId(String.valueOf(jarray.get(i)))){
+			counter += getstudyUID(String.valueOf(jarray.get(i)),path);
+		}			
+	}
+	int notsync = jarray.size()-counter;
+	newjsarr.add(counter);
+	newjsarr.add(notsync);
+	out.println(newjsarr);
+}
+
+%>
+

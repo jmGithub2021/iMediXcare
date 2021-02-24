@@ -1,0 +1,8 @@
+/* AUTOMATICALLY GENERATED ON Fri Jun 23 16:32:36 GMT+05:30 2006*/
+/* DO NOT EDIT */
+
+grant {
+  permission java.security.AllPermission;
+  permission java.net.SocketPermission "*:1024-", "accept, connect, listen, resolve";
+};
+

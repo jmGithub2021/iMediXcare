@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<Display>
+	<FrameTable type="frame" rows="25, *">
+		<FrameRow>
+      <FrameData name="header2" orientation="horizontal" contenttype="menu" link="./../Template/headermenu.aspx?template=GEN_template_display.xml" menuid="head2" style="head2" />
+		</FrameRow>
+		<FrameRow>
+			<FrameData name="body1">
+				<FrameTable type="frame" cols="150, *, 190">
+					<FrameRow>
+            <FrameData name="leftpanel" orientation="vertical" contenttype="menu" link="./../Template/lpanelmenu.aspx?template=GEN_template_display.xml" menuid="ADM=lpanel1;DOC=lpanel1;USR=lpanel2" style="lpanel1" />
+            <FrameData name="content2" orientation="horizontal" contenttype="page" link="./../displaydata/Summary.aspx?" />
+            <FrameData name="rightpanel" orientation="vertical" contenttype="menu" link="./../Template/rpanelmenu.aspx?template=GEN_template_display.xml" menuid="rpanel1" style="rpanel1" />
+					</FrameRow>
+				</FrameTable>
+			</FrameData>
+		</FrameRow>
+  </FrameTable>
+
+	<MenuList>
+    <menu id="head2" role="ADM">      
+      <item name="" caption="Summary" link="./../DisplayData/totalsummary.aspx?calledby=TPL" target="content2" />
+      <item name="" menuid="lpanel1" caption="Records" link="lpanelmenu.aspx" target="leftpanel" />
+      <item name="" caption="Emergency" link="./../private/t02.asp" target="content2" />
+      <item name="" menuid="lpanel2" caption="Encounter" link="lpanelmenu.aspx" target="leftpanel" />
+      <item name="" menuid="lpanel7" caption="Investigations" link="lpanelmenu.aspx" target="leftpanel" />
+      <item name="" menuid="lpanel6" caption="Other Tasks" link="lpanelmenu.aspx" target="leftpanel" />
+    </menu>
+
+	<menu id="head2" role="CON">      
+      <item name="" caption="Summary" link="./../DisplayData/totalsummary.aspx?calledby=TPL" target="content2" />
+      <item name="" menuid="lpanel1" caption="Records" link="lpanelmenu.aspx" target="leftpanel" />
+    </menu>
+
+    <menu id="head2" role="DOC">
+      <item name="" caption="Summary" link="./../DisplayData/totalsummary.aspx?calledby=TPL" target="content2" />
+      <item name="" menuid="lpanel1" caption="Records" link="lpanelmenu.aspx" target="leftpanel" />
+      <item name="" caption="Emergency" link="./../private/t02.asp" target="content2" />
+      <item name="" menuid="lpanel2" caption="Encounter" link="lpanelmenu.aspx" target="leftpanel" />
+      <item name="" menuid="lpanel3" caption="Prescribe" link="lpanelmenu.aspx" target="leftpanel" />
+      <item name="" menuid="lpanel7" caption="Investigations" link="lpanelmenu.aspx" target="leftpanel" />
+      <item name="" menuid="lpanel6" caption="Other Tasks" link="lpanelmenu.aspx" target="leftpanel" />
+    </menu>
+    <menu id="head2" role="USR">      
+      <item name="" caption="Form Records" link="./../DataEntry/Showlist.aspx?calledby=PQ" target="content2" />
+      <item name="" caption="Emergency" link="./../private/t02.asp" target="content2" />
+      <item name="" menuid="lpanel2" caption="Encounter" link="lpanelmenu.aspx" target="leftpanel" />
+      <item name="" menuid="lpanel7" caption="Investigations" link="lpanelmenu.aspx" target="leftpanel" />
+    </menu>
+    <menu id="lpanel1" role="ADM,DOC,CON">
+      <item name="" caption="Complaints" link="./../DisplayData/complaints.aspx" target="content2" />
+      <item name="" caption="Visit Summary" link="./../DisplayData/visitsummary.aspx" target="content2" />
+      <item name="" caption="Visit Records" link="./../DisplayData/recordmenu.aspx" target="rightpanel" />
+      <item name="" caption="Form Records" link="./../DataEntry/showlist.aspx" target="content2" />
+      <item name="" caption="Gen. Graphs" link="./../Template/linegraph.aspx" target="rightpanel" />
+      <item name="" caption="Gen. Information" link="./../displaydata/Summary.aspx" target="content2" />
+      <item name="" caption="Gen. Impression" link="./../displaydata/generalImpression.aspx" target="content2" />
+      <item name="" caption="Immuzination" link="./../displaydata/immuzination.aspx" target="content2" />
+      <item name="" menuid="rpanel1" caption="Laboratory" link="" target="rightpanel" />
+      <item name="" caption="Radiology" link="./../DisplayData/radiomenu.aspx" target="rightpanel" />
+      <item name="" caption="Medication" link="./../Displaydata/medication.aspx" target="content2" />
+    </menu>
+    <menu id="lpanel2" role="ADM">
+      <item name="" caption="Chief Complaint" link="./../private/a14.asp" target="content2" />
+      <separator/>
+      <item name="" menuid="rpanel9" caption="History" link="" target="rightpanel" />
+      <separator/>
+      <item name="" menuid="rpanel6" caption="Physical Exam." link="" target="rightpanel" />
+      <separator/>
+      <item name="" caption="Procedure" link="./../private/a17.asp" target="content2" />
+      <item name="" caption="Assessment" link="./../private/a15.asp" target="content2" />
+      <item name="" caption="Problem List" link="./../dataentry/problemList.aspx" target="content2" />
+    </menu>
+    <menu id="lpanel2" role="DOC">
+      <item name="" caption="Chief Complaint" link="./../private/a14.asp" target="content2" />
+      <separator/>
+      <item name="" menuid="rpanel9" caption="History" link="" target="rightpanel" />
+      <separator/>
+      <item name="" menuid="rpanel6" caption="Physical Exam." link="" target="rightpanel" />
+      <separator/>
+      <item name="" caption="Procedure" link="./../private/a17.asp" target="content2" />
+      <item name="" caption="Assessment" link="./../private/a15.asp" target="content2" />
+      <item name="" caption="Problem List" link="./../dataentry/problemList.aspx" target="content2" />
+      <item name="" menuid="rpanel8"  caption="Diagnosis" link="" target="rightpanel" />
+    </menu>
+    <menu id="lpanel2" role="USR">
+      <item name="" caption="Chief Complaint" link="./../private/a14.asp" target="content2" />
+      <separator/>
+      <item name="" menuid="rpanel9" caption="History" link="" target="rightpanel" />
+      <separator/>
+      <item name="" menuid="rpanel6" caption="Physical Exam." link="" target="rightpanel" />
+      <separator/>
+      <item name="" caption="Procedure" link="./../private/a17.asp" target="content2" />
+    </menu>
+    <menu id="lpanel3" role="DOC">
+      <item name="" caption="General" link="./../dataentry/preframe.aspx" target="content2" />
+    </menu>
+    <menu id="lpanel6" role="ADM,DOC">
+      <item name="" caption="Personal Info." link="./../dataentry/editpatientinfo.aspx" target="content2" />
+      <item name="" caption="Tele-Consultation" link="./../DisplayData/teleconsultForm.aspx" target="content2" />
+      <item name="" caption="Next Visit" link="./../DisplayData/setAppointment.aspx" target="content2" />
+      <item name="" caption="Report" link="./../private/tsr.asp" target="content2" />
+      <item name="" caption="Summary" link="./../private/smr.asp" target="content2" />
+      <item name="" caption="Mark Patch" link="./../ImageMarking/Thumbnails/AnatomyList.html" target="content2" />
+      <item name="" caption="Give Consent" link="./../DataEntry/concent.aspx" target="content2" />
+    </menu>
+    <menu id="rpanel1" role="ADM,DOC">
+      <item name="" caption="Red Cell" link="./../Template/comparativestudy.aspx?id=rbc" target="content2" />
+      <item name="" caption="White Cell" link="./../Template/comparativestudy.aspx?id=wbc" target="content2" />
+      <item name="" caption="Platelets" link="./../Template/comparativestudy.aspx?id=plt" target="content2" />
+      <item name="" caption="LFT" link="./../Template/comparativestudy.aspx?id=lft" target="content2" />
+      <item name="" caption="Glucose" link="./../Template/comparativestudy.aspx?id=glu" target="content2" />
+      <item name="" caption="Lipid" link="./../Template/comparativestudy.aspx?id=lpd" target="content2" />
+      <item name="" caption="Enzyme" link="./../Template/comparativestudy.aspx?id=enz" target="content2" />
+      <item name="" caption="Electrolyte" link="./../Template/comparativestudy.aspx?id=elc" target="content2" />
+      <item name="" caption="Renal" link="./../Template/comparativestudy.aspx?id=rnl" target="content2" />
+      <item name="" caption="Serology" link="./../Template/comparativestudy.aspx?id=ser" target="content2" />
+      <item name="" caption="Pathology" link="./../Template/comparativestudy.aspx?id=pth" target="content2" />
+    </menu>
+    <menu id="lpanel7" role="ALL">
+      <item name="" caption="Blood R/E" link="./../DataEntry/Delimages.aspx?frm=i00" target="content2" />
+      <item name="" caption="Blood C/S" link="./../private/s01.asp" target="content2" />
+      <item name="" caption="Urine R/E" link="./../private/s03.asp" target="content2" />
+      <item name="" caption="Urine C/S" link="./../private/s04.asp" target="content2" />
+      <item name="" caption="Stool R/E" link="./../private/s05.asp" target="content2" />
+      <item name="" caption="Stool C/S" link="./../private/s06.asp" target="content2" />
+      <item name="" menuid="rpanel11" caption="Biochemistry" link="" target="rightpanel" />
+      <item name="" caption="Serology" link="./../private/s34.asp" target="content2" />
+      <item name="" caption="Pathology" link="./../private/s35.asp" target="content2" />
+      <item name="" caption="Radiology" link="./../DataEntry/Delimages.aspx?frm=i30" target="content2" />
+      <separator/>
+      <item name="" menuid="rpanel10" caption="Special Test" link="" target="rightpanel" />
+      <separator/>
+      <item name="" caption="File Upload" link="./../private/imageload.asp" target="content2" />
+      <item name="" caption="Large File Upload" link="./../DisplayData/showLargeFileuploadApplet.aspx" target="content2" />
+    </menu>
+    <menu id="rpanel6" role="ALL">
+      <item name="" caption="Vital Signs" link="./../ud.htm" target="content2" />
+      <item name="" caption="Growth Record" link="./../private/h15.asp" target="content2" />
+      <item name="" caption="HEENT" link="./../ud.htm" target="content2" />
+      <item name="" caption="Respiratory" link="./../phivdataentryform/resp.aspx" target="content2" />
+      <item name="" caption="Cardiovascular" link="./../private/p18.asp" target="content2" />
+      <item name="" caption="Abdomen" link="./../phivdataentryform/abdomen.aspx" target="content2" />
+      <item name="" caption="Dermatology" link="./../phivdataentryform/skin.aspx" target="content2" />
+      <item name="" caption="Nervous" link="./../private/p26.asp" target="content2" />
+      <item name="" caption="Ophthalmology" link="./../private/p09.asp" target="content2" />
+      <item name="" caption="GI &amp; Hepatobiliary" link="./../private/p19.asp" target="content2" />
+      <item name="" caption="Genito Urinary" link="./../private/p23.asp" target="content2" />
+      <item name="" caption="Gynaecological" link="./../private/p32.asp" target="content2" />
+      <item name="" caption="Psychiatric" link="./../private/p29.asp" target="content2" />
+      <item name="" caption="Lymph Nodes" link="./../ud.htm" target="content2" />
+      <item name="" caption="General" link="./../private/p00.asp" target="content2" />
+    </menu>
+    <menu id="rpanel8" role="DOC">
+      <item name="" caption="Provisional" link="./../private/d00.asp" target="content2" />
+      <item name="" caption="Final" link="./../private/d01.asp" target="content2" />
+    </menu>
+    <menu id="rpanel9" role="ALL">
+      <item name="" caption="Present History" link="./../private/h00.asp" target="content2" />
+      <item name="" caption="Past History" link="./../private/h04.asp" target="content2" />
+      <item name="" caption="Birth History" link="./../phivdataentryform/birth.aspx" target="content2" />
+      <item name="" caption="Social History" link="./../private/h05.asp" target="content2" />
+      <item name="" caption="Allergy History" link="./../private/h13.asp" target="content2" />
+      <item name="" caption="Immuzination" link="./../private/a13.asp" target="content2" />
+      <item name="" caption="Gynaecological" link="./../private/h07.asp" target="content2" />
+      <item name="" caption="Paediatrics" link="./../private/h08.asp" target="content2" />
+      <item name="" caption="Neonatal" link="./../private/h09.asp" target="content2" />
+    </menu>
+    <menu id="rpanel10" role="ALL">
+      <item name="" caption="Abnormal Cells" link="./../DataEntry/Delimages.aspx?frm=i16" target="content2" />
+      <item name="" caption="Coagulation" link="./../private/s17.asp" target="content2" />
+      <item name="" caption="Bone Marrow" link="./../DataEntry/Delimages.aspx?frm=i18" target="content2" />
+      <item name="" caption="Urine Chemistry" link="./../private/s19.asp" target="content2" />
+      <item name="" caption="Electrophysiology" link="./../DataEntry/Delimages.aspx?frm=i29" target="content2" />
+      <item name="" caption="CSF(LP)" link="./../private/s28.asp" target="content2" />
+      <item name="" caption="Histopathology" link="./../private/s29.asp" target="content2" />
+    </menu>
+    <menu id="rpanel11" role="ALL">
+      <item name="" caption="Hematology" link="./../private/s36.asp" target="content2" />
+      <item name="" caption="Liver Tests" link="./../private/s11.asp" target="content2" />
+      <item name="" caption="Renal Tests" link="./../private/s09.asp" target="content2" />
+      <item name="" caption="Glycemia/Lipid" link="./../private/s10.asp" target="content2" />
+      <item name="" caption="Glucose" link="./../private/s08.asp" target="content2" />
+      <item name="" caption="Enzyme" link="./../private/s12.asp" target="content2" />
+      <item name="" caption="Electrolyte" link="./../private/s13.asp" target="content2" />
+      <item name="" caption="Pancreas" link="./../private/s14.asp" target="content2" />
+    </menu>
+  </MenuList>
+</Display>

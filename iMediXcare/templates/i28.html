@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>ECG</TITLE>
+<link rel="stylesheet" type="text/css" href="../style/style2.css">
+<SCRIPT LANGUAGE="JavaScript" SRC="deb.asp">
+</SCRIPT>
+</head>
+<BODY>
+<h3>ECG</h3>
+<form name="i28">
+<INPUT TYPE="hidden" name="frmnam" value="i28">
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="100%" class='tableb'>
+
+<TR><TD>
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD valign=top>
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD>Rate</TD><TD><INPUT NAME=f_rate size=20 maxlength=10>beats per minute (bpm)</INPUT></TD></TR>
+<TR><TD>Rhythm</TD><TD><INPUT NAME=rhythm size=20 maxlength=50></INPUT></TD></TR>
+<TR><TD>Axis</TD><TD><INPUT NAME=axis size=20 maxlength=50></INPUT></TD></TR>
+<TR><TD>P wave</TD><TD><INPUT NAME=pwave size=20 maxlength=50></INPUT></TD></TR>
+<TR><TD>PR interval</TD><TD><INPUT NAME=printerval size=20 maxlength=50></INPUT></TD></TR>
+<TR><TD>Q wave</TD><TD><INPUT NAME=quwave size=20 maxlength=50></INPUT></TD></TR>
+</CENTER></TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD>QRS complex</TD><TD><INPUT NAME=f_qrscomplex size=20 maxlength=10>seconds</INPUT></TD></TR>
+<TR><TD>QT interval</TD><TD><INPUT NAME=qtinterval size=20 maxlength=50></INPUT></TD></TR>
+<TR><TD>ST segment</TD><TD><INPUT NAME=stsegment size=20 maxlength=50></INPUT></TD></TR>
+<TR><TD>T wave</TD><TD><INPUT NAME=twave size=20 maxlength=50></INPUT></TD></TR> 
+<TR><TD>U wave</TD><TD><INPUT NAME=uwave size=20 maxlength=50></INPUT></TD></TR>
+</CENTER>
+</TABLE></TD></TR>
+
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD>Any other tests</TD><TD><TEXTAREA NAME=tbxothers rows=2 cols=50></TEXTAREA></TD></TR>
+<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp rows=2 cols=50></TEXTAREA></TD></TR>
+</CENTER></TABLE>
+
+<TABLE BORDER=0 ALIGN=center>
+<INPUT TYPE="hidden" NAME=nofimg>
+
+<TR><TD>Test date</TD><TD><INPUT NAME=testdate size=8 maxlength=8></INPUT></TD>
+<TD>Entry date</TD><TD><INPUT NAME=entrydate size=8 maxlength=8></INPUT></TD></TR>
+</CENTER></TABLE>
+
+</TD></TR>
+</CENTER></TABLE>
+</FORM>
+</BODY>
+</HTML>

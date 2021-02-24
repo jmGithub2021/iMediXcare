@@ -1,0 +1,67 @@
+[
+ {"fname":"Prasanta","mname":"Kumar","lname":"Das","code":"87034","category":"Staff","gender":"M","district":"345","state":"19","country":"IN","dob":"18041962","emailid":"pkd@mech.iitkgp.ac.in","phone":"9434035266",
+  "familymembers":[
+    {"fname":"Gargi","mname":"","lname":"Das","gender":"F","relation":"Wife","district":"345","state":"19","country":"IN","dob":"10071965"
+	},
+    {"fname": "Ritopa","mname": "","lname": "Das","gender": "F","relation":"Daughter","district":"345","state":"19","country":"IN","dob":"06051991"
+	},  
+	{"fname": "Pratyoy","mname": "","lname": "Das","gender": "M","relation":"Son","district":"345","state":"19","country":"IN","dob":"18081997"
+	}
+	]
+  },
+  
+  {"fname":"Arun","mname":"Kumar","lname":"Majumder","code":"10016","category":"Staff","gender":"M","district":"335","state":"19","country":"IN","dob":"22011965","emailid":"arunmajumder@hotmail.com","phone":"9476481268",
+  "familymembers":[
+    {"fname":"Susmita","mname":"","lname":"Majumder","gender":"F","relation":"Wife","district":"335","state":"19","country":"IN","dob":"30121970"
+	},
+    {"fname": "Ayan","mname": "","lname": "Majumder","gender": "M","relation":"Daughter","district":"335","state":"19","country":"IN","dob":"10061996"
+	},
+	{"fname": "Monalisa","mname": "","lname": "Majumder","gender": "F","relation":"Son","district":"335","state":"19","country":"IN","dob":"07122006"
+	}
+	]
+  },
+  
+  {"fname":"Aradhna","mname":"","lname":"Malik","code":"9050","category":"Staff","gender":"F","district":"24","state":"02","country":"IN","dob":"13111973","emailid":"malik.vgsom@gmail.com","phone":"9647182743",
+  "familymembers":[]
+  },
+  
+  {"fname":"Prabina","mname":"","lname":"Rajib","code":"104","category":"Staff","gender":"F","district":"381","state":"21","country":"IN","dob":"04071968","emailid":"prabina@vgsom.iitkgp.ac.in","phone":"9434004940",
+  "familymembers":[]
+  },
+  
+  {"fname":"Biswajit","mname":"","lname":"Mahanty","code":"90077","category":"Staff","gender":"M","district":"337","state":"19","country":"IN","dob":"14011961","emailid":"bm@hijli.iitkgp.ac.in","phone":"9434704873",
+  "familymembers":[
+    {"fname":"Amita","mname":"","lname":"Mahanty","gender":"F","relation":"Wife","district":"337","state":"19","country":"IN","dob":"25051965"
+	},
+    {"fname":"Avrangshu","mname":"","lname":"Mahanty","gender":"M","relation":"Son","district":"337","state":"19","country":"IN","dob":"22051997"
+	},
+	{"fname":"Bhakta","mname":"Ranjan","lname":"Mahanty","gender":"M","relation":"Father","district":"337","state":"19","country":"IN","dob":""
+	},
+	{"fname":"Bela","mname":"Rani","lname":"Mahanty","gender":"F","relation":"Mother","district":"337","state":"19","country":"IN","dob":""
+	}
+	]
+  },
+  
+  {"fname":"Poornachandra","mname":"Sekhar","lname":"Burada","code":"14020","category":"Staff","gender":"M","district":"344","state":"19","country":"IN","dob":"25051980","emailid":"psburada@gmail.com","phone":"8373842188",
+  "familymembers":[]
+  },
+  
+  {"fname":"Sujit","mname":"Kumar","lname":"Dash","code":"12007","category":"Staff","gender":"M","district":"381","state":"21","country":"IN","dob":"27051971","emailid":"sujit@civil.iitkgp.ac.in","phone":"9475838112",
+  "familymembers":[
+     {"fname":"NANDITA","mname":"","lname":"MISHRA","gender":"F","relation":"Wife","district":"381","state":"21","country":"IN","dob":"30061980"
+	 },
+     {"fname":"SHYAMA","mname":"STUTI","lname":"DASH","gender":"F","relation":"Daughter","district":"381","state":"21","country":"IN","dob":"07012013"
+	 }	 
+    ]
+  },
+  {"fname":"KRIPA","mname":"NAND","lname":"PANDEY","code":"97034","category":"Staff","gender":"M","district":"219","state":"10","country":"IN","dob":"24091961","emailid":"pandeyk6666@gmail.com","phone":"9434944344",
+  "familymembers":[
+     {"fname":"MALA","mname":"","lname":"PANDEY","gender":"F","relation":"Wife","district":"219","state":"10","country":"IN","dob":"26121965"
+	 },
+     {"fname":"NIRNAY","mname":"","lname":"PANDEY","gender":"M","relation":"Son","district":"219","state":"10 ","country":"IN","dob":"11021997"
+	 },
+     {"fname":"NANDINI","mname":"","lname":"PANDEY","gender":"F","relation":"Daughter","district":"219","state":"10","country":"IN","dob":"13122000"
+	 }	 
+    ]
+  }
+ ]

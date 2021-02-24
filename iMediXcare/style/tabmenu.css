@@ -1,0 +1,42 @@
+a { 
+	  color: #3300CC;
+	  text-decoration: none;
+	  font-weight: bold;
+	  font-size: 10pt;
+	  font-family: tahoma;
+	  background-image:url(../images/gradient_8.gif);
+	  display: relative;
+	  text-align: center;
+	  padding-top: 4px;
+	  padding-bottom: 4px;
+	  padding-left: 12px;
+	  padding-right: 12px;
+	  font-weight:bold;
+	  text-decoration:none;
+	  border-width:1px 1px 1px 1px;
+	  border-style:solid;
+	  border-color:#3EAAB3;
+	  vertical-align: middle;
+	  /* width:12%;*/
+	}
+a:hover
+	{
+		color: #FF0000;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 10pt;
+		font-family: tahoma;
+		background:url(../images/center_tile_green.gif);
+		vertical-align: middle;
+	}
+
+a.active{
+	color: #FF0000;
+	background:url(../images/center_tile_blue.gif);
+}
+
+a:focus {
+	color: #FF0000;
+	/*background:url(../../images/center_tile_blue.gif);*/
+	background:url();
+}

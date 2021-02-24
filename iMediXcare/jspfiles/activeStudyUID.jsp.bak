@@ -1,0 +1,199 @@
+<%@page contentType="text/html" import= "imedix.projinfo,imedix.rcDataEntryFrm,java.text.*,imedix.projinfo,imedix.PACSEncryption,imedix.rcDisplayData,java.io.*,java.util.*,org.json.simple.JSONObject,org.json.simple.parser.JSONParser,org.json.simple.JSONArray,java.nio.charset.Charset,java.io.BufferedReader,java.io.IOException ,java.io.InputStreamReader,java.io.OutputStream,java.net.HttpURLConnection,java.net.MalformedURLException,java.net.URL"%>
+<%@ include file="..//includes/chkcook.jsp" %>
+<%
+	rcDataEntryFrm rd = new rcDataEntryFrm(request.getRealPath("/"));
+	rcDisplayData rdd = new rcDisplayData(request.getRealPath("/"));
+	PACSEncryption penc = new PACSEncryption(request.getRealPath("/"));
+	projinfo pinfo=new projinfo(request.getRealPath("/"));
+	String pacsUrl = pinfo.PACSurl;
+	String uid = pinfo.PACSuid;
+	String pass = pinfo.PACSpass;
+	
+String path = request.getRealPath("/");
+String testId = "",activeStudyUID="0";
+String patId="",testType="",fromDate="",toDate="";
+if ("POST".equalsIgnoreCase(request.getMethod()) && request.getParameter("getactiveStudyUID") != null) {
+	patId = request.getParameter("patId");
+	testType = request.getParameter("type");
+	fromDate = request.getParameter("fromDate");
+	toDate = request.getParameter("toDate");
+	String extra = testType+"#"+fromDate+"#"+toDate;
+	//out.println(fromDate+" : "+toDate);
+	activeStudyUID = rdd.activeStudyUID(patId,extra);
+}
+//out.println(activeStudyUID);
+Date cur_date = new Date();
+SimpleDateFormat dde = new SimpleDateFormat("YYYY-MM-dd");
+String today = dde.format(cur_date);
+%>
+<html>
+<head>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/iMediX/bootstrap/bootstrap-datetimepicker.min.css">
+<script src="../bootstrap/jquery-2.2.1.min.js"></script>
+	<script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/iMediX/bootstrap/bootstrap-datetimepicker.min.js"></script>
+	<script src="/iMediX/bootstrap/bootstrap-datetimepicker.pt-BR.js"></script>
+<style>
+.bootstrap-datetimepicker-widget ul{padding:0px;}
+#from-datepicker span, #to-datepicker span{
+	left: 0px !important;
+    border-radius: 0px;
+}
+#from-datepicker input, #to-datepicker input{
+    border-radius: 0px;
+}
+.create{float:left}
+.view{float:right}
+.create:hover,.view:hover,.dicomView:hover{
+text-decoration: none;
+    color: #092df5;
+	}
+</style>
+</head>
+<script>
+$(document).ready(function(){
+var obj ;
+var obj_size=0;
+try{
+	obj = <%=activeStudyUID%>	
+	obj_size = Object.keys(obj).length;
+	if(obj_size>0){
+		$(".activeStudyUIDList").append("<table class='table table-bordered'><thead><tr><td>Test Id</td><td>Test Name</td><td>Description</td><td>Reffered By</td><td>Type</td><td>Entrydate</td><td>Reports</td><td>Notes</td><td>Viewer</td></tr></thead><tbody align='center'></tbody></table>")
+	}
+	else{
+		//$(".pendingStudyUIDList").append("<div>No data found</div>");
+	}
+}
+catch(err){console.log(err);$(".activeStudyUIDList").append("<div>No data found</div>");}
+for(var i=0;i<obj_size-1;i++){
+	var row = $("tbody").get(0).insertRow(i);
+	var td1 = row.insertCell(0);
+	var td2 = row.insertCell(1);
+	var td3 = row.insertCell(2);
+	var td4 = row.insertCell(3);
+	var td5 = row.insertCell(4);
+	var td6 = row.insertCell(5);
+	var td7 = row.insertCell(6);
+	var td8 = row.insertCell(7);
+	var td9 = row.insertCell(8);
+	td1.innerHTML=obj[i].testId;
+	td2.innerHTML=obj[i].test_name;
+	td3.innerHTML=obj[i].description;
+	td4.innerHTML=obj[i].reffered_by;
+	td5.innerHTML=obj[i].type;
+	if(obj[i].entrydate.length>10)
+		td6.innerHTML=obj[i].entrydate.substring(0,10);
+	
+	//if()	
+	var createReportUrl = "<%=pacsUrl%>ReportsExt.aspx?studyUID="+obj[i].studyUID+"&uid=<%=penc.PACSEncryptionString(uid,pass)%>&pwd=<%=penc.PACSEncryptionString(uid,pass)%>";
+	var createNoteUrl = "<%=pacsUrl%>NotesExt.aspx?studyUID="+obj[i].studyUID+"&uid=<%=penc.PACSEncryptionString(uid,pass)%>&pwd=<%=penc.PACSEncryptionString(uid,pass)%>";
+	var pacsViewUrl =  "<%=pacsUrl%>ShowViewerExt.aspx?studyUID="+obj[i].studyUID+"&uid=<%=penc.PACSEncryptionString(uid,pass)%>&pwd=<%=penc.PACSEncryptionString(uid,pass)%>";
+
+	var viewReportUrl = "",viewNoteUrl="",viewReportHTML = "",viewNoteHTML="";
+	if(obj[i].isReport=="1"){
+		viewReportUrl = "<%=pacsUrl%>ViewReportExt.aspx?studyUID="+obj[i].studyUID+"&uid=<%=penc.PACSEncryptionString(uid,pass)%>&pwd=<%=penc.PACSEncryptionString(uid,pass)%>";
+		if(viewReportUrl.length>0)
+			viewReportHTML = "<a class='view viewR' target='_blank' href="+viewReportUrl+">View</a>";
+	}
+	if(obj[i].isNote=="1"){
+		viewNoteUrl = "<%=pacsUrl%>/ViewNotesExt.aspx?studyUID="+obj[i].studyUID+"&uid=<%=penc.PACSEncryptionString(uid,pass)%>&pwd=<%=penc.PACSEncryptionString(uid,pass)%>";
+		if(viewNoteUrl.length>0)
+			viewNoteHTML = "<a class='view viewR' target='_blank' href="+viewNoteUrl+">View</a>";
+	}
+	td7.innerHTML=viewReportHTML;
+	//td7.innerHTML="<a class='create createR' target='_blank' href="+createReportUrl+">Create</a>"+viewReportHTML;
+	td8.innerHTML=viewNoteHTML;
+	//td8.innerHTML="<a class='create createN' target='_blank' href="+createNoteUrl+">Create</a>"+viewNoteHTML;
+	td9.innerHTML="<a class='dicomView' target='_blank' href="+pacsViewUrl+">PACSView</a>";
+	//td7.setAttribute("testId", obj[i].testId);
+	//td7.setAttribute("class", "syncStudyUID "+obj[i].testId);
+}
+
+	
+		var d = new Date();
+	$(function () {
+    var startDate = new Date("1995-10-10"),
+        endDate = new Date("<%=today%>");
+		$('#from-datepicker').datetimepicker({
+			weekStart: 1,
+			todayBtn: 1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 4,
+			keyboardNavigation: 1,
+			minView: 2,
+			forceParse: 0,
+			startDate: startDate,
+			endDate: endDate,
+			setDate: startDate
+		});
+		
+		var startDateTo= new Date("1995-10-10");
+        endDateTo = new Date("<%=today%>");
+		$('#to-datepicker').datetimepicker({
+			weekStart: 1,
+			todayBtn: 1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 4,
+			keyboardNavigation: 1,
+			minView: 2,
+			forceParse: 0,
+			startDate: startDateTo,
+			endDate: endDateTo,
+			setDate: endDateTo
+		});	
+		
+
+	});	
+
+	
+	
+});
+</script>
+<body>
+
+<div class="container-fluid">
+	<form method="POST" class="activeStudyUID">
+	<div class="row">
+		<div class="col-sm-3">
+			<label>Patient ID</label>
+			<input class="form-control" type="text" name="patId" placeholder="Patient Id" value="<%=patId%>"/>
+		</div>
+	<div class="col-sm-2">
+		<label>Investigation Type</label>
+		<select class="form-control" name="type">
+			<option value="">Select</option>
+			<option value="Radiology">Radiology</option>
+			<option value="Pathology">Pathology</option>
+		</select>
+	</div>
+	<div class="col-sm-4">
+		<label>By Date</label>
+		<div class="input-group">
+				<div id="from-datepicker" class="input-append date input-group" style="margin:auto;max-width:320px;">
+					<input data-format="yyyy-MM-dd" type="text" name="fromDate" value="FROM" class="form-control fromTest" required><span class="add-on glyphicon glyphicon-calendar input-group-addon fromTestspan" style="cursor: pointer;top:0px;padding:6px;left:-4px"></span>
+				</div>
+			<span class="input-group-addon">To</span>
+				<div id="to-datepicker" class="input-append date input-group" style="margin:auto;max-width:320px;">
+					<input data-format="yyyy-MM-dd" type="text" name="toDate" value="To" class="form-control toTest" required><span class="add-on glyphicon glyphicon-calendar input-group-addon toTestspan" style="cursor: pointer;top:0px;padding:6px;left:-4px"></span>
+				</div>
+
+		</div>
+	</div>
+	<div class="col-sm-1">
+	</div>
+	<div class="col-sm-2">
+	<label>Submit</label>
+		<input class="form-control btn-primary" type="submit" name="getactiveStudyUID" class="getactiveStudyUID" value="Active studyUID" />
+	</div>
+
+	</div>
+	</form>
+	<div class="activeStudyUIDList">
+	</div>
+</div>
+
+</body>
+</html>

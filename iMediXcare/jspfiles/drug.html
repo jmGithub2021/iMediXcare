@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Prescribe Medicine </TITLE>
+
+<!--<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+	<script src="../bootstrap/jquery-2.2.1.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="../style/style1.css">-->
+
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+
+
+<style>
+.ui-widget.ui-widget-content{z-index:1055 !important;}
+</style>
+<!--  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Autocomplete - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<script language=javascript>
+ $(document).ready(function(){
+    var availableTags = [];
+    $.ajax({
+           type: "POST",
+           url: "druglist.jsp",
+           success: function(data)
+           {
+              availableTags = JSON.parse(data);
+           },
+		   complete:function(){
+				$(".drug-c").keydown(function(){
+					$( this).autocomplete({
+					  source: availableTags
+					});			
+				});		   
+		   }
+         });
+
+	 
+  } );
+
+
+
+$('#drug').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+        url:'notedrug.jsp',
+        type:'get',
+        data:$('#drug').serialize(),
+        success:function(ss){
+           $(".add-drug").html(ss);
+           //console.log(ss);
+        }
+    });
+});
+
+
+function chkempt(sec)
+{
+	i = sec
+
+	if(document.drug.elements[i-1].value.length != 0)
+		{
+		document.drug.elements[i].disabled = false;
+		document.drug.elements[i].value = "";
+		document.drug.elements[i+1].disabled = false;
+		document.drug.elements[i+2].disabled = false;
+		document.drug.elements[i+3].disabled = false;
+		document.drug.elements[i+4].disabled = false;
+	}
+	else 
+	{	
+		document.drug.elements[i].disabled = true;
+		document.drug.elements[i+1].disabled = true;
+		document.drug.elements[i+2].disabled = true;
+		document.drug.elements[i+3].disabled = true;
+		document.drug.elements[i].value = "";
+		document.drug.elements[i+1].value = "";
+		document.drug.elements[i+2].value = "";
+		document.drug.elements[i+3].value = "";
+	}
+
+}
+
+</script>
+</HEAD>
+<BODY>
+<CENTER><U><font color=#666600 size='4'>Course Of Medicine</font></U></CENTER><BR>
+
+<form role="form" name="drug" id="drug">
+	<div class="table-responsive">
+ <TABLE class="table" bordercolor=YELLOW bgcolor="#99CC66" style="text-align:center;font-weight:bold;color=WHITE" >
+ <TR>
+	<TD>Sl No.</TD>
+ 	<TD>Drug(s)</TD>
+ 	<TD>Quantity</TD>
+ 	<TD>Dose</TD>
+ 	<TD>Duration</TD>
+ 	<TD>Comments</TD>
+ </TR>
+  <TR>
+	<TD>1</TD>
+ 	<TD><INPUT class="form-control input-sm drug-c" NAME="drg1" id='drg1' size=15 onblur="chkempt(1);" onkeypress="chkempt(1);" maxlength=50></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="qty1" id='qty1' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="dos1" id='dos1' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="drt1" id='drt1' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="com1" id='com1' size=15 maxlength=100 disabled=true ></TD>
+ </TR>
+  <TR>
+	<TD>2</TD>
+ 	<TD><INPUT class="form-control input-sm drug-c" NAME="drg2" id='drg2' size=15 maxlength=50 disabled=true  onkeypress="chkempt(6);" onblur="chkempt(6);"></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="qty2" id='qty2' size=10maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="dos2" id='dos2' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="drt2" id='drt2' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="com2" id='com2' size=15 maxlength=100 disabled=true ></TD>
+ </TR>
+ <TR>
+	<TD>3</TD>
+ 	<TD><INPUT class="form-control input-sm drug-c" NAME="drg3" id='drg3' size=15 maxlength=50 disabled=true   onkeypress="chkempt(11);" onblur="chkempt(11);"></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="qty3" id='qty3' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="dos3" id='dos3' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="drt3" id='drt3' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="com3" id='com3' size=15 maxlength=100 disabled=true ></TD>
+ </TR>
+ <TR>
+	<TD>4</TD>
+ 	<TD><INPUT class="form-control input-sm drug-c" NAME="drg4" id='drg4' size=15 maxlength=50 disabled=true  onkeypress="chkempt(16);" onblur="chkempt(16);"></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="qty4" id='qty4' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="dos4" id='dos4' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="drt4" id='drt4' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="com4" id='com4' size=15 maxlength=100 disabled=true ></TD>
+ </TR>
+ <TR>
+	<TD>5</TD>
+ 	<TD><INPUT class="form-control input-sm drug-c" NAME="drg5" id='drg5' size=15 maxlength=50 disabled=true  onkeypress="chkempt(21;" onblur="chkempt(21);"></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="qty5" id='qty5' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="dos5" id='dos5' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="drt5" id='drt5' size=10 maxlength=15 disabled=true ></TD>
+ 	<TD><INPUT class="form-control input-sm" NAME="com5" id='com5' size=15 maxlength=100 disabled=true ></TD>
+ </TR>
+ 
+ </TABLE>
+ </div>
+<CENTER><INPUT class="form-control" TYPE="SUBMIT" NAME="b1" value="ACCEPT" style="background-color: rgb(0,0,128); font-family: serif; color: WHITE; font-weight:BOLD; "></CENTER>
+ </form>
+</BODY>
+</HTML>

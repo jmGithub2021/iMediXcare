@@ -1,0 +1,28 @@
+/usr/local/jdk18/bin/javac -d `pwd` *.java
+#/usr/local/jdk18/bin/jar -cf  imedix.jar imedix/*.class
+#/usr/local/jdk18/bin/jar -cf  tuberculosis.jar tuberculosis/*.class
+#/usr/local/jdk18/bin/jar -cf  phiv.jar phiv/*.class
+#/usr/local/jdk18/bin/jar -cf  logger.jar logger/*.class
+#/usr/local/jdk18/bin/jar -cf  onlinegc.jar onlinegc/*.class
+#/usr/local/jdk18/bin/jar -cf  ftp.jar ftp/*.class
+#/usr/local/jdk18/bin/jar -cmf imedixserver.txt iMediXBusinessLogic.jar imedixserver/*.class
+
+#/usr/local/jdk18/bin/rmic imedix.dbGenOperations
+#/usr/local/jdk18/bin/rmic imedix.CentreInfo
+#/usr/local/jdk18/bin/rmic imedix.UserInfo
+#/usr/local/jdk18/bin/rmic imedix.PatqueueInfo
+#/usr/local/jdk18/bin/rmic imedix.ItemlistInfo
+#/usr/local/jdk18/bin/rmic imedix.DataEntryFrm
+#/usr/local/jdk18/bin/rmic imedix.DisplayData
+#/usr/local/jdk18/bin/rmic imedix.AdminJobs
+#/usr/local/jdk18/bin/rmic imedix.SmsApi
+#/usr/local/jdk18/bin/rmic phiv.phivdataentry
+#/usr/local/jdk18/bin/rmic imedix.graphsinfo
+#/usr/local/jdk18/bin/rmic tuberculosis.tbOperations
+#/usr/local/jdk18/bin/rmic logger.imedixlogger
+
+#cp *.jar /home/mithun/iMediX/iMediX-BL/lib/
+#cp iMediXBusinessLogic.jar /home/mithun/iMediX/iMediX-BL/
+
+echo done
+

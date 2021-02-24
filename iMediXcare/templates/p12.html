@@ -1,0 +1,274 @@
+<HTML>
+<HEAD>   
+	<TITLE>ENT Exam</TITLE>
+<link rel="stylesheet" type="text/css" href="../style/style2.css">
+
+<SCRIPT>
+// Function to show and hide layers
+function SHOWLAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'visible';
+			document.getElementById("main").style.visibility= 'hidden';
+}
+function HIDELAYER(nam)
+{
+			document.getElementById(nam).style.visibility= 'hidden';
+			document.getElementById("main").style.visibility= 'visible';
+
+}
+// End of functions
+</SCRIPT>
+
+</head>
+<BODY>
+<form NAME="p12">
+<DIV id="main" ALIGN="center" border=2 style="left:50;top:95;position:absolute;visibility:visible;background-color:'#EDDBCB'">
+
+<TABLE BORDER=0 ALIGN=center class='tableb'>
+<TR><TD COLSPAN=3><CENTER><h3>ENT Exam</h3></CENTER></TD></TR>
+<TR><TD valign=top>
+		<TABLE BORDER=0 ALIGN=center>
+		<TR><TD COLSPAN=2> <FONT COLOR="green"><b>History & Present complaints</b></FONT></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p13')" value="Pain in" style="color: black; font-weight:BOLD; font-style:oblique"></TD>
+		<TD><INPUT NAME=pain size=18 maxlength=50></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p14')" value="Discharge from" style="color: black; font-weight:BOLD; font-style:oblique"></TD>
+		<TD><INPUT NAME=discharge size=16 maxlength=50></TD></TR>
+		<TR><TD>Deafness</TD><TD><INPUT NAME=deafness  size=10 maxlength=50></TD></TR>
+		<TR><TD>Tinnitus</TD><TD><INPUT NAME=tinnitus size=10 maxlength=50></TD></TR>
+		<TR><TD>Otalgia</TD><TD><INPUT NAME=otalgia size=10 maxlength=50></TD></TR>
+		<TR><TD>Otorrhea</TD><TD><INPUT NAME=otorrhea  size=10 maxlength=50></TD></TR>
+		<TR><TD>Nasal obst./ drip</TD><TD><INPUT NAME=nasal_obstruction size=10 maxlength=50></TD></TR>
+		<TR><TD>Epistaxis</TD><TD><INPUT NAME=epistaxis size=10 maxlength=50></TD></TR>
+		<TR><TD>Smell disturbances</TD><TD><INPUT NAME=smell_disturbances  size=10 maxlength=50></TD></TR>
+		<TR><TD>Sneezing</TD><TD><INPUT NAME=sneezing size=10 maxlength=50></TD></TR>
+		<TR><TD>Regional symptoms</TD><TD><INPUT NAME=regional_symptoms size=10 maxlength=50></TD></TR>
+		<TR><TD>Sore throat</TD><TD><INPUT NAME=sore_throat size=10 maxlength=50></TD></TR>
+		<TR><TD>Dysphagia</TD><TD><INPUT NAME=dysphagia size=10 maxlength=50></TD></TR>
+		<TR><TD>Aphonia</TD><TD><INPUT NAME=aphonia size=10 maxlength=50></TD></TR>
+		<TR><TD>Lump</TD><TD><INPUT NAME=lump  size=10 maxlength=50></TD></TR>
+		<TR><TD>Cough</TD><TD><INPUT NAME=cough  size=10 maxlength=50></TD></TR>
+		<TR><TD>Voice Hoarseness</TD><TD><INPUT NAME=hoarseness size=10 maxlength=50></TD></TR>
+		<TR><TD>Vertigo</TD><TD><INPUT NAME=vertigo size=10 maxlength=50></TD></TR>
+		<TR><TD>Nystagmus</TD><TD><INPUT NAME=nystagmus size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Any other</TD><TD><INPUT NAME=anyoth size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD><H4>Physical examination</H4></TD></TR>
+		<TR><TD><FONT COLOR="green">General</FONT></TD></TR>
+		<TR><TD>Head</TD><TD><INPUT NAME=head size=16 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Face</TD><TD><INPUT NAME=face size=14 maxlength=50></INPUT></TD></TR>
+		<TR><TD><FONT COLOR="green">Throat :</FONT></TD></TR>
+		<TR><TD><INPUT TYPE="button" onclick="SHOWLAYER('p15')" value="Endoscopy" style="color: black; font-weight:BOLD; font-style:oblique"></TD>
+		    <TD><INPUT NAME=torch size=10 maxlength=50></TD></TR>
+		</TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+
+		<TABLE BORDER=0 ALIGN=center>
+		<TR><TD><FONT COLOR="green"><b>Ear left</b></FONT></TD></TR>
+		<TR><TD>Conversation</TD><TD><INPUT NAME=l_conversation size=11 maxlength=50></TD></TR>
+		<TR><TD>Color of TM</TD><TD><INPUT NAME=l_color size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Membrane</TD><TD><INPUT NAME=l_membrane size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Perforation position</TD><TD><INPUT NAME=l_perforation size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>State of TM</TD><TD><INPUT NAME=l_state size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Fluid level/air bubble</TD><TD><INPUT NAME=l_fluid size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mobility of TM</TD><TD><INPUT NAME=l_mobility size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Rinne's</TD><TD><INPUT NAME=l_rinne size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Weber's</TD><TD><INPUT NAME=l_weber size=11 maxlength=50></INPUT></TD></TR> 
+		<TR><TD>abc</TD><TD><INPUT NAME=l_abc size=10 maxlength=50></TD></TR>
+		<TR><TD>E tube patency</TD><TD><INPUT NAME=l_teubs size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Otomicroscopy</TD><TD><INPUT NAME=l_otomicroscopy size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Fistula test</TD><TD><INPUT NAME=l_fistula size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Audiometry</TD><TD><INPUT NAME=l_audiometry size=10 maxlength=50></TD></TR>
+		<TR><TD>Tympanometry</TD><TD><INPUT NAME=l_tympanometry size=10 maxlength=50></TD></TR>
+		<TR><TD>Intra-aural Reflex</TD><TD><INPUT NAME=l_reflex size=10 maxlength=50></TD></TR>
+		<TR><TD>BAER</TD><TD><INPUT NAME=l_baer size=10 maxlength=50></TD></TR>
+		<TR><TD>Vestibular</TD><TD><INPUT NAME=l_vestibular size=10 maxlength=100></TD></TR>
+		<TR><TD><FONT COLOR="green">Nose :</FONT></TD></TR>
+		<TR><TD>Nasal speculum</TD><TD><INPUT NAME=l_nasal_speculum size=10 maxlength=50></TD></TR>
+		<TR><TD>X rays</TD><TD><INPUT NAME=l_x_rays size=10 maxlength=50></TD></TR>
+		<TR><TD>Conversation</TD><TD><INPUT NAME=l_nconversation size=10 maxlength=50></TD></TR>
+		</TABLE>
+</TD>
+
+<TD VALIGN=TOP>
+		<TABLE BORDER=0 ALIGN=center>
+		<TR><TD><FONT COLOR="green"><b>Ear right</b></FONT></TD></TR>
+		<TR><TD>Conversation</TD><TD><INPUT NAME=r_conversation size=10 maxlength=50></TD></TR>
+		<TR><TD>Color of TM</TD><TD><INPUT NAME=r_color size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Membrane</TD><TD><INPUT NAME=r_membrane size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Perforation position</TD><TD><INPUT NAME=r_perforation size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>State of TM</TD><TD><INPUT NAME=r_state size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Fluid level/air bubble</TD><TD><INPUT NAME=r_fluid size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mobility of TM</TD><TD><INPUT NAME=r_mobility size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Rinne's</TD><TD><INPUT NAME=r_rinne size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Weber's</TD><TD><INPUT NAME=r_weber size=11 maxlength=50></INPUT></TD></TR>
+		<TR><TD>abc</TD><TD><INPUT NAME=r_abc size=10 maxlength=50></TD></TR>
+		<TR><TD>E tube patency</TD><TD><INPUT NAME=r_e_tube size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Otomicroscopy</TD><TD><INPUT NAME=r_otomicroscopy size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Fistula test</TD><TD><INPUT NAME=r_fistula size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Audiometry</TD><TD><INPUT NAME=r_audiometry size=10 maxlength=50></TD></TR>
+		<TR><TD>Tympanometry</TD><TD><INPUT NAME=r_tympanometry size=10 maxlength=50></TD></TR>
+		<TR><TD>Intra-aural Reflex</TD><TD><INPUT NAME=r_reflex size=10 maxlength=50></TD></TR>
+		<TR><TD>BAER</TD><TD><INPUT NAME=r_baer size=10 maxlength=50></TD></TR>
+		<TR><TD>Vestibular</TD><TD><INPUT NAME=r_vestibular size=10 maxlength=50></TD></TR>
+		<TR><TD><FONT COLOR="green">Nose :</FONT></TD></TR>
+		<TR><TD>Nasal speculum</TD><TD><INPUT NAME=r_nasal_speculum size=10 maxlength=50></TD></TR>
+		<TR><TD>X rays</TD><TD><INPUT NAME=r_x_rays size=10 maxlength=50></TD></TR>
+		<TR><TD>Conversation</TD><TD><INPUT NAME=r_nconversation size=10 maxlength=50></TD></TR>
+		</TABLE>
+
+</TD></TR>
+<TR><TD ColSpan=3>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Any other tests</TD><TD><INPUT NAME=others size=58 maxlength=50></TD></TR>
+		<TR><TD>General impression</TD><TD><TEXTAREA NAME=tbxgeneralimp rows=2 cols=50></textarea></TD></TR>
+	</TABLE>
+</TD></TR>
+<TR><TD ColSpan=3>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR>
+		<TD>Test date</TD><TD><INPUT NAME=testdate size=8 maxlength=8></INPUT></TD>
+		<TD>Entry date</TD><TD><INPUT name=entrydate size=8 maxlength=8></INPUT></TD>
+		</TR>
+	</TABLE>
+</TD></TR>
+</TABLE>
+</Div>
+<!-- Div for p13 -->
+<DIV id="P13" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=2 >
+<TR><TD>
+<TABLE ALIGN=center BORDER=0 BorderColor=RED CELLSPACING=0 CELLPADDING=0 WIDTH="50%">
+<TR> <TD ColSpan=2>
+<H3>Pain</H3>
+</TD></TR>
+<TR><TD valign=top>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Site</TD><TD><INPUT NAME=site size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Time of onset</TD><TD><INPUT NAME=time_onset size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mode of onset</TD><TD><INPUT NAME=mode_onset size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Duration</TD><TD><INPUT NAME=duration size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Shifting</TD><TD><INPUT NAME=shifting size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Radiation</TD><TD><INPUT NAME=radiation size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Referral</TD><TD><INPUT NAME=referral size=10 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+
+</TD>
+<TD VALIGN=TOP>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Character</TD><TD><INPUT NAME=characters size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Pressure</TD><TD><INPUT NAME=effect_pressure size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Walking</TD><TD><INPUT NAME=effect_walking size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Jolting</TD><TD><INPUT NAME=jolting size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Breathing</TD><TD><INPUT NAME=breathing size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Effect of Micturition</TD><TD><INPUT NAME=micturition size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Worsens by</TD><TD><INPUT NAME=worse size=10 maxlength=50></INPUT></TD></TR>		
+		<TR><TD>Relieved by</TD><TD><INPUT NAME=relieved size=10 maxlength=50></INPUT></TD></TR> 
+	</TABLE>
+</TD></TR>
+<TR><TD colspan=2>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Any other feature</TD><TD><INPUT NAME=others1 size=40 maxlength=50></INPUT></TD></TR>
+		<TR><TD>General impression</TD><TD><INPUT NAME=tbxgeneralimp1 size=40 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+</TD></TR>
+
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p13')"  style="color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+</TABLE>
+
+</TD></TR>
+</TABLE>
+
+</DIV>
+
+
+<!-- Div for p14 -->
+<DIV id="P14" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=2 >
+<TR><TD>
+	<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="50%">
+	<TR><TD colspan=2>
+	<CENTER><H3>Discharge</H3>
+</CENTER>	</TD></TR>
+	<TR><TD valign=top>
+	<TABLE BORDER=0 ALIGN=center>
+		<TR><TD>Site</TD><TD><INPUT NAME=site2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Character</TD><TD><INPUT NAME=character2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Time of onset</TD><TD><INPUT NAME=time_onset2 size=10 maxlength=50></INPUT></TD></TR>
+		<TR><TD>Mode of onset</TD><TD><INPUT NAME=mode_onset2 size=10 maxlength=50></INPUT></TD></TR>
+	</TABLE>
+	</TD>
+	<TD VALIGN=TOP>
+		<TABLE BORDER=0 ALIGN=center>
+			<TR><TD>Duration</TD><TD><INPUT NAME=duration2 size=10 maxlength=50></INPUT></TD></TR>
+			<TR><TD>Worsens by</TD><TD><INPUT NAME=worse2 size=10 maxlength=50></INPUT></TD></TR>		
+			<TR><TD>Relieved by</TD><TD><INPUT NAME=relieved2 size=10 maxlength=50></INPUT></TD></TR> 
+			<TR><TD>Culture/Sensitivity</TD><TD><INPUT NAME=culture2 size=10 maxlength=50></INPUT></TD></TR>	
+		</TABLE>
+	</TD></TR>
+	<TR><TD colspan=2>
+		<TABLE BORDER=0 ALIGN=center>
+			<TR><TD>Any other feature</TD><TD><INPUT NAME=anyoth2 size=50 maxlength=50></INPUT></TD></TR>
+			<TR><TD>General impression</TD><TD><INPUT NAME=tbxgeneralimp2 size=50 maxlength=50></INPUT></TD></TR>
+		</TABLE>
+	</TD></TR>
+	<TR><TD colspan=2>
+			<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p14')"  style="color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+	</TD></TR>
+	</TABLE>
+
+ </TD></TR>
+</TABLE>
+</DIV>
+
+<!-- Div for p15 -->
+<DIV id="P15" ALIGN="center" border=2 style="position:absolute; left:100;top:120;visibility:hidden;background-color:'#EDDBCB'">
+<TABLE ALIGN=center BORDER=2 >
+<tr><td>
+
+
+<TABLE ALIGN=center BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="50%">
+
+<TR><TD Colspan=2>
+<H3>Endoscopy</H3>
+</TD></TR>
+<TR><TD>
+
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD valign=top>
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD>Gastroscopy</TD><TD><INPUT NAME=gastroscopy size=15 maxlength=50></INPUT></TD></TR>
+<TR><TD>ERCP</TD><TD><INPUT NAME=ercp size=15 maxlength=50></INPUT></TD></TR>
+<TR><TD>Proctoscopy & sigmoidoscopy</TD><TD><INPUT NAME=proctoscopy size=15 maxlength=50></INPUT></TD></TR>
+<TR><TD>Colonoscopy</TD><TD><INPUT NAME=colonoscopy size=15 maxlength=50></INPUT></TD></TR>
+</CENTER></TABLE>
+
+</TD>
+
+<TD VALIGN=TOP>
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD>Esophagoscopy</TD><TD><INPUT NAME=esophagoscopy size=15 maxlength=50></INPUT></TD></TR>
+<tr><td>Indirect laryngoscopy</td><td><INPUT name=laryngoscopy size=15 maxlength=20></td></tr>
+<tr><td>Posterior Pharyngoscopy</td><td><INPUT name=Posterior size=15 maxlength=20></INPUT></td></tr>
+<tr><td>Bronchoscopy</td><td><INPUT name=bronchoscopy size=15 maxlength=20></INPUT></td></tr>
+</CENTER>
+</TABLE></TD></TR>
+
+<TABLE BORDER=0 ALIGN=center>
+<TR><TD>Laparoscopy</td><td><INPUT name=Laparoscopy size=50 maxlength=100></INPUT></td></tr>
+<TR><TD>Any other tests</TD><TD><INPUT NAME=others3 size=50 maxlength=100></INPUT></TD></TR>
+<TR><TD>General impression</TD><TD><INPUT NAME=tbxgeneralimp3 size=50 maxlength=50></INPUT></TD></TR>
+</CENTER></TABLE>
+<TR><TD colspan=2>
+		<CENTER><INPUT TYPE="button" value='Close' onclick="HIDELAYER('p15')"  style="color: black; font-weight:BOLD; font-style:oblique"></CENTER>
+</TD></TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+</DIV>
+</FORM>
+</BODY>
+</HTML>

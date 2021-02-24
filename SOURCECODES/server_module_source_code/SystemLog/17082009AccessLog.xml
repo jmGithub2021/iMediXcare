@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<imedixlog>
+<log>
+<datetime>Mon Aug 17 11:07:46 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090817110746</entrydate>
+</key>
+<description>
+<table>s34</table>
+<details>Serology</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 11:11:54 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090817111154</entrydate>
+</key>
+<description>
+<table>p45</table>
+<details>Cardiac Exam</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 11:13:29 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090817111329</entrydate>
+</key>
+<description>
+<table>p45</table>
+<details>Cardiac Exam</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:26:44 IST 2009</datetime>
+<type>Authentication</type>
+<action>Authentication</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:28:21 IST 2009</datetime>
+<type>Authentication</type>
+<action>Authentication</action>
+<userid>admin</userid>
+<usertype>Unknown</usertype>
+<description>
+<details>Login Failed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:28:22 IST 2009</datetime>
+<type>Authentication</type>
+<action>Authentication</action>
+<userid/>
+<usertype/>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:28:30 IST 2009</datetime>
+<type>Authentication</type>
+<action>Authentication</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:29:28 IST 2009</datetime>
+<type>Authentication</type>
+<action>Authentication</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:29:30 IST 2009</datetime>
+<type>Authentication</type>
+<action>Authentication</action>
+<userid>ww</userid>
+<usertype>Unknown</usertype>
+<description>
+<details>Login Failed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:29:34 IST 2009</datetime>
+<type>Authentication</type>
+<action>Authentication</action>
+<userid/>
+<usertype/>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:31:34 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>aa</userid>
+<usertype>Unknown</usertype>
+<description>
+<details>Login Failed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:31:39 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>aa</userid>
+<usertype>Unknown</usertype>
+<description>
+<details>Login Failed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:32:27 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>Unknown</usertype>
+<description>
+<details>Login Failed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 12:33:02 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:27:53 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid/>
+<usertype/>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:30:43 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:31:19 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<patid>EXTR1708090000</patid>
+<entrydate>20090817143119</entrydate>
+</key>
+<description>
+<table>MED</table>
+<details>Personnel Information</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:36:22 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:36:26 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>nrshadmin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:36:36 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>nrshadmin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:40:19 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:45:53 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:45:57 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>nrshdoc</userid>
+<usertype>doc</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:46:03 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>nrshdoc</userid>
+<usertype>doc</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 14:48:28 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:07:50 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docEXTR0001','docEXTR0000','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:07:50 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docEXTR0001','docEXTR0000','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:07:54 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docEXTR0001','docEXTR0000','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:07:54 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docEXTR0001','docEXTR0000','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:07:58 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docEXTR0001','docEXTR0000','docNRSH0001','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:07:58 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docEXTR0001','docEXTR0000','docNRSH0001','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:08:38 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docNRSH0001','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:08:38 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docNRSH0001','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:08:54 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docEXTR0001','docEXTR0000','docNRSH0001','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:08:54 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<rg_no>'docEXTR0001','docEXTR0000','docNRSH0001','docNRSH0000'</rg_no>
+</key>
+<description>
+<table>login</table>
+<details>Update Availability (available)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:09:03 IST 2009</datetime>
+<type>Information</type>
+<action>Delete</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<uid>dd</uid>
+</key>
+<description>
+<table>login</table>
+<details>Delete User</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:10:29 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<pat_id>EXTR2307090001</pat_id>
+</key>
+<description>
+<table>lpatq</table>
+<table>med</table>
+<assigneddoc>docEXTR0000</assigneddoc>
+<details>Update Local Physician</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:10:30 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<pat_id>EXTR2307090002</pat_id>
+</key>
+<description>
+<table>lpatq</table>
+<table>med</table>
+<assigneddoc>docEXTR0000</assigneddoc>
+<details>Update Local Physician</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 15:10:30 IST 2009</datetime>
+<type>Information</type>
+<action>Edit</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<key>
+<pat_id>EXTR2307090000</pat_id>
+</key>
+<description>
+<table>lpatq</table>
+<table>med</table>
+<assigneddoc>docEXTR0000</assigneddoc>
+<details>Update Local Physician</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 16:11:05 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 16:11:37 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 16:11:42 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>dd</userid>
+<usertype>Unknown</usertype>
+<description>
+<details>Login Failed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 16:11:47 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>aa</userid>
+<usertype>doc</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 16:11:50 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>aa</userid>
+<usertype>doc</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 16:11:53 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Successful login</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 16:12:35 IST 2009</datetime>
+<type>Information</type>
+<action>Insert</action>
+<userid>admin</userid>
+<usertype/>
+<key>
+<patid>EXTR2307090007</patid>
+<entrydate>20090817161235</entrydate>
+</key>
+<description>
+<table>patimages</table>
+<details>images Uploaded (SKP)</details>
+</description>
+</log>
+<log>
+<datetime>Mon Aug 17 16:20:45 IST 2009</datetime>
+<type>Authentication</type>
+<action>Select</action>
+<userid>admin</userid>
+<usertype>adm</usertype>
+<description>
+<details>Session Closed</details>
+</description>
+</log>
+</imedixlog>

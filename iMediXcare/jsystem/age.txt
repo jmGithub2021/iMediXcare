@@ -1,0 +1,6 @@
+A>Adult
+E>Teen-ager
+C>Child
+T>Toddler
+I>Infant
+N>Neonate
