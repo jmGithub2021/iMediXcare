@@ -1,6 +1,5 @@
 <%@page language="java" import="java.util.Date,java.util.HashMap,imedix.rcDisplayData,imedix.rcItemlistInfo,java.net.URLEncoder,imedix.cook,imedix.myDate,java.rmi.*,java.sql.*,imedix.dataobj,java.util.*,org.json.simple.JSONObject,org.json.simple.parser.JSONParser,org.json.simple.JSONArray, imedix.Crypto, javax.crypto.*, java.net.URLEncoder, java.nio.charset.StandardCharsets" %>
 <%@ include file="..//includes/chkcook.jsp" %>
-<script src="/iMediXcare/bootstrap/jquery-2.2.1.min.js"></script>
 <%
 	String id="";
 

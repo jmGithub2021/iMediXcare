@@ -762,8 +762,8 @@ function updatePatientInfo(firstTime = false){
             }
         }
     }else{
-        var pat_info = '<div class="alert alert-info" role="alert"><h4>You can make a new request for consultation.</h4></div>';
-        $('#pat-info').html(pat_info);
+        var pat_info = "";
+       // $('#pat-info').html(pat_info);
         dr_online_prev_msg = '';
     }
 }

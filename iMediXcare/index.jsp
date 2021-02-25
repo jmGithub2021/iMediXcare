@@ -90,12 +90,6 @@ else
 						<input class="login100-form-btn subm-btn" type="submit" value="Login"/>
 					</div>
 
-					<div class="text-center p-t-20">
-						<a class="txt2" href="forms/pat_reg.jsp">
-							New Patient Registration
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
 				</form>
 				<div class='welcome-title'><%=visitStatus%></div>
 					<div class='sys-details'>

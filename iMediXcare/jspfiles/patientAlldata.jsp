@@ -1,6 +1,7 @@
 <%@page contentType="text/html" import="java.util.Date,java.text.SimpleDateFormat,imedix.layout,java.io.*,java.text.*,imedix.cook,imedix.rcGenOperations,imedix.rcDisplayData,imedix.rcUserInfo,imedix.rcPatqueueInfo,imedix.dataobj,imedix.myDate,imedix.projinfo, java.util.*,org.json.simple.*,org.json.simple.parser.*,imedix.Crypto,javax.crypto.*" %>
 <%@ include file="_patientAlldata.jsp" %>
 
+
 <%!
 public String listOfFomrs(String patid,String ftype,String slno,String dt, rcDisplayData ddinfo) throws Exception{
 	String result="";
@@ -175,7 +176,6 @@ long timeMilli2 = date2.getTime();
 %>
 
 <html>
-
 		<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-datetimepicker.min.css">
 	<script src="<%=request.getContextPath()%>/bootstrap/bootstrap-datetimepicker.min.js"></script>
 	<script src="<%=request.getContextPath()%>/bootstrap/bootstrap-datetimepicker.pt-BR.js"></script>
@@ -733,14 +733,6 @@ $(document).ready(function(){
 
 	});
 
-<%if(Integer.parseInt(pq)>0 || !utype.equalsIgnoreCase("PAT")){%>
-	 $("#testdate").val($("#datepicker-testdate").val().replace(/\//g, ''));
-	$('#dot-datepicker')
-    .on('changeDate', function(e) {
-       $("#testdate").val($("#datepicker-testdate").val().replace(/\//g, ''));
-    });
-
-<% } %>
 $("#reportUpload").submit(function(e){
 	e.preventDefault();
 	if(testdt($(this).find("#testdate").val(),'<%=dat%>')) return false;
