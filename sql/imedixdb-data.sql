@@ -25,8 +25,6 @@ CREATE TABLE IF NOT EXISTS `center` (
 -- Dumping data for table `center`
 --
 */
-INSERT INTO `center` (`code`, `name`, `phone`, `ipaddress`, `centertype`, `ftpip`, `ftp_uname`, `ftp_pwd`) VALUES
-('EXTR', 'EXTERNAL HOSPITAL', '9999999999', '10.5.29.38', 'S', 'B.B.B..B', 'XXX', 'YYY');
 
 -- --------------------------------------------------------
 
