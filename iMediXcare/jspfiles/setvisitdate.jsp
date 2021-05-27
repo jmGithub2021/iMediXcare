@@ -1,10 +1,12 @@
-<%@page contentType="text/html" import= "imedix.rcUserInfo,imedix.cook,imedix.dataobj,imedix.myDate ,imedix.rcCentreInfo,java.util.*,java.io.*"%>
+<%@page contentType="text/html" import= "imedix.rcUserInfo,imedix.cook,imedix.dataobj,imedix.myDate ,imedix.rcCentreInfo, imedix.rcDataEntryFrm, imedix.rcUserInfo, java.util.*,java.io.*"%>
 <%@ include file="..//includes/chkcook.jsp" %>
 <%
-	
+	boolean isInQueue = false;
 	cook cookx = new cook();
 	rcUserInfo rcui=new rcUserInfo(request.getRealPath("/"));
 	rcCentreInfo cnfo = new rcCentreInfo(request.getRealPath("/"));
+	rcDataEntryFrm dataentry = new rcDataEntryFrm(request.getRealPath("/"));
+	rcUserInfo userinfo = new rcUserInfo(request.getRealPath("/"));
 	String  referring_doc,ccode="",patid="",patname="";
 	ccode =cookx.getCookieValue("center", request.getCookies ());
 	patid =cookx.getCookieValue("patid", request.getCookies ());
@@ -18,6 +20,8 @@
 			patid = request.getParameter("id");
 			patname = "";
 		}
+	isInQueue = dataentry.isInQueue(patid);	
+	//out.println(dataentry.isInQueue(patid));
 	//out.println("dddddddddddd : "+patid.substring(0,4));
 	
 	
@@ -26,7 +30,6 @@
 %>
 
 <HTML>
-<link rel="stylesheet" href="../style/style1.css" type="text/css" media="screen" />
 
 <HEAD>
 <TITLE>PATIENTS DATA-MED FORM....
@@ -36,8 +39,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-	<script src="../bootstrap/jquery-2.2.1.min.js"></script>
-	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">-->
+	<!--<script src="../bootstrap/jquery-2.2.1.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>-->
+	<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
 </HEAD>
 <style>
@@ -46,27 +51,83 @@
 	border: 1px solid #ccc;
     box-shadow: 0px 0px 1px 0px #ccc;
 }
+.ui-dialog-titlebar{
+    background: #45786d;
+    color: #f5f5f5;	
+}
 </style>
 <script>
+	  $( function() {
+
+	  });	
 	$(document).ready(function(){
+
+	  	if(<%=isInQueue%>==true){
+	  		$(".ui-dialog").remove(); 
+	  		$(".btn-setvisit").attr("disabled",true);
+		    $( "#oldpatreg-dialog" ).dialog({
+				resizable: false,
+				height: "auto",
+				width: 450,
+				modal: true,
+				body:"FFFFFF",
+				buttons : [
+				    {
+				        text:'Visit the Patient',
+				        class:'btn btn-info',
+				        click: function() {
+				        	window.location="?dest=patientAlldata&id=<%=patid%>";
+				            $(this).dialog("close");  
+				            $(this).remove();                      
+				        }                   
+				    },
+				    {
+				        text:'Remove the Patient',
+				        class:'btn btn-warning',
+				        click: function() {
+							  $.get("patLTreatmentSts.jsp?status=false&patid=<%=patid%>&patqtype=local", function(data, status){
+							  	if(status=="success")
+							    	alert("The patient is moved to treated queue.");
+						        	$(".btn-setvisit").attr("disabled",false);						    
+							  });
+							$(this).dialog("close");
+							$(this).remove(); 				        	
+				        }                   
+				    }
+				],
+				close: function(){
+					$(".ui-dialog").remove(); 
+				},       
+				my: 'top',
+		       	at: 'top'	      
+		    });
+		}
+
 		$(".setvisit-input").focus();
 		if($(".setvisit-input").val().length>0){
 			$(".setvisit-input").attr("readonly","true");		
 		}
-		
-		
 	$(".main-body form.setvisit").submit(function(e){
 	var url="savevisitdate.jsp";
 	//var formData = new FormData($("#newPres"));		 
 	e.preventDefault();
-	$.ajax({
+
+ 	registerOldPatient(url);
+	});		
+		
+		
+	});
+
+	function registerOldPatient(url){
+		$.ajax({
 		   type: "GET",
 		   url: url,
 		   data: $("form.setvisit").serialize(), 
 		   success: function(data)
 		   {
+		   	//alert(data);
 				//alert("Patient has been registered and visible in local patient queue.");
-				$(".main-body").html("<div style='color:blue;padding:10px;font-size:18px'>Patient has been registered and visible in local patient queue.</div>");
+				$(".main-body").html(data);
 				//window.location.reload();
 				//window.location='displaymed.jsp?templateid=1&menuid=head1&dest=patientAlldata&id=<%=patid%>&ty=med&sl=&dt =';
 		   },
@@ -74,13 +135,8 @@
 		   {
 				alert("ERROR");
 			}
-		 });
- 
-	});		
-		
-		
-	});
-
+		});		
+	}
 
 	
 </script>
@@ -89,7 +145,11 @@
 String action = "savevisitdate.jsp";
 //<%=action
 %>
-<FORM class="well setvisit" role="form" METHOD=Get ACTION="<%=action%>" name="setvisit" >
+
+<div id="oldpatreg-dialog" style="display: none" class="alert alert-warning" title="Already assigned" ><p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This patient(<%=patid%>) is already assigned to <%=userinfo.getName(dataentry.getAssignDoc(patid))%>. Please remove the patient from the queue for a new visit. You may also visit the patient for viewing records.</p>
+</div>
+
+<FORM class="well setvisit" role="form" METHOD=Get ACTION="<%=action%>" name="setvisit">
 <CENTER>
 <div class="title"><label>Old Patient Re-visit</label></div>
 <div><strong>Patient ID <strong></div> 
@@ -131,7 +191,7 @@ String action = "savevisitdate.jsp";
 <tr>
 	<td>
 	<!--<input class="form-control btn-primary" type="submit" value="Submit" onclick="return Otherdt(document.med.dateofbirth.value,'<%=dat%>')" >-->
-	<input class="form-control btn-primary" type="submit" value="Submit" >
+	<input class="form-control btn-primary btn-setvisit" type="submit" value="Submit" >
 	</td>
 </tr>
 </table>

@@ -145,7 +145,7 @@
 	<script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<%=request.getContextPath()%>/bootstrap/jquery.dataTables.min.js"></script>
 	<script src="<%=request.getContextPath()%>/bootstrap/dataTables.bootstrap.min.js"></script>
-	<script src="<%=request.getContextPath()%>/bootstrap/jquery-ui.min.js?"+n></script>
+	<script src="<%=request.getContextPath()%>/bootstrap/jquery-ui.min.js"></script>
 	<script src="https://<%=vidServerUrl%>/external_api.js"></script>
 
 

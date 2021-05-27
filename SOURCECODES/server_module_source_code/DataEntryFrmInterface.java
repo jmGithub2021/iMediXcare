@@ -218,6 +218,7 @@ public boolean isValidTestId(String testId) throws RemoteException, SQLException
 public boolean updateStudyUID(String testId, String studyUID) throws RemoteException, SQLException;
 public String checkIntigrity(dataobj obj) throws RemoteException, SQLException;
 public boolean isInQueue(String pat_id) throws RemoteException, SQLException;
+public String getAssignDoc(String pat_id) throws RemoteException, SQLException;
 public boolean isReport(dataobj obj) throws RemoteException,SQLException;
 public boolean isNote(dataobj obj) throws RemoteException,SQLException;
 public boolean uploadPathologydata(File file,dataobj obj) throws RemoteException,SQLException;

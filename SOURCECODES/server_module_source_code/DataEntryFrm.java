@@ -1606,6 +1606,12 @@ public class DataEntryFrm extends UnicastRemoteObject implements DataEntryFrmInt
 		else
 			return false;
 	}
+	public String getAssignDoc(String pat_id) throws RemoteException, SQLException{
+		String query = "select assigneddoc from lpatq where pat_id='"+pat_id+"'";
+		String assigneddoc = mydb.ExecuteSingle(query);
+		System.out.println("getAssignDoc(): "+assigneddoc);
+		return assigneddoc;
+	}
 	public boolean isReport(dataobj obj) throws RemoteException,SQLException{
 		String studyUID = obj.getValue("studyUID");
 		if(studyUID.length()>4){
@@ -1856,7 +1862,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public boolean updateDrug(int id, String field, String value) throws RemoteException, SQLException{
 		System.out.println("id:-"+id+" field:-"+field+" value:-"+value);
 		String sql="";
@@ -1890,7 +1895,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public boolean addDrug(String drug_name, String ccode) throws RemoteException, SQLException{
 		//String sql="insert into druglistbycenter (`drug_name`,ccode,active) values ('"+drug_name.replace("'","\\'")+"','"+ccode+"',1)";
 		String nm=drug_name.replace("'","^");
@@ -1913,7 +1917,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 				return result;
 	}
-	/*Soumyajit Das*/
 	public boolean addMultipleDrugCSV(String drug_name[], String ccode) throws RemoteException, SQLException{
 		boolean result=false;
 		String sql="insert into druglistbycenter (`drug_name`,ccode,active) values ";
@@ -1939,7 +1942,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 
 		return result;
 	}
-	/*Soumyajit Das*/
 	public boolean addMultipleDrug(String drug_id[], String ccode) throws RemoteException, SQLException{
 		boolean result=false;
 		//String sql="insert into druglistbycenter (drug_name,ccode,active) values ('"+drug_name+"','"+ccode+"',1)";
@@ -1992,7 +1994,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public boolean deleteDrug(int id) throws RemoteException, SQLException{
 		String sql = "delete from druglistbycenter where sl_no="+Integer.toString(id);
 
@@ -2012,7 +2013,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public boolean deleteIMEDIXDrug(int id) throws RemoteException, SQLException{
 		String sql = "delete from druglist where sl_no="+Integer.toString(id);
 		//String sql = "delete from druglist where sl_no= ?";
@@ -2035,7 +2035,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public boolean updateIMEDIXDrug(int id, String field, String value) throws RemoteException, SQLException{
 		String v=value.substring(1,value.length()-1).replace("'","^");
 		v=v.replace("\"","^");
@@ -2062,7 +2061,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public boolean addIMEDIXDrug(String drug_name) throws RemoteException, SQLException{
 		String nm=drug_name.replace("'","^");
 		nm=nm.replace("\"","^");
@@ -2088,8 +2086,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		return result;
 	}
 
-
-	/*Soumyajit Das*/
 	public boolean updateLoginConsent(String uid)throws RemoteException,SQLException
 	{
 		String sql = "update login set consent='Y' where uid='"+uid+"'";
@@ -2109,7 +2105,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public Object findLoginConsent(String uid)throws RemoteException,SQLException
 	{
 		String sql="select consent from login where uid='"+uid+"'";
@@ -2117,7 +2112,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		return mydb.ExecuteSingle(sql);
 		
 	}
-	/*Soumyajit Das*/
 	public Object findConsentAdm()throws RemoteException,SQLException
 	{
 		String sql="select * from consentform";
@@ -2125,14 +2119,12 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		return mydb.ExecuteQuary(sql);
 
 	}
-	/*Soumyajit Das*/
 	public Object findConsentByCenter(String center)throws RemoteException,SQLException
 	{
 		String sql="select * from consentdocmap where center='"+center+"'";
 		System.out.println("findConsentByCenter->"+sql);
 		return mydb.ExecuteQuary(sql);		
 	}
-	/*Soumyajit Das*/
 	public boolean insertConsentAdm(String conid,String comments,String type,String path)throws RemoteException,SQLException
 	{
 		String time=myDate.getCurrentDateMySql();
@@ -2154,7 +2146,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		return result;
 
 	}
-	/*Soumyajit Das*/
 	public boolean consentMap(String conid,String center,String type)throws RemoteException,SQLException
 	{
 		String path="";
@@ -2202,14 +2193,12 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		return result;
 
 	}
-	/*Soumyajit Das*/
 	public Object getSignedConsent(String uid)throws RemoteException,SQLException
 	{
 		String sql="select consentlogs.time,path from consentlogs join consentform on consentlogs.conid=consentform.conid  and uid='"+uid+"'";
 		System.out.println("getSignedConsent->"+sql);
 		return mydb.ExecuteQuary(sql);		
 	}
-	/*Soumyajit Das*/
 	public boolean makeConsentLog(String uid,String conid,String center)throws RemoteException,SQLException
 	{
 		boolean b=updateLoginConsent(uid);
@@ -2233,7 +2222,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 
 
 	}
-		/*Soumyajit Das*/
 	public boolean insertDocbanner(String rg_no,String name,String ccode,String path)throws RemoteException,SQLException
 	{
 		String sql = "insert into docbanner(rg_no,docname,center,path,avail) values('"+rg_no+"','"+name+"','"+ccode+"','"+path+"','Y')";
@@ -2253,7 +2241,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public boolean updateDocbanner(String rg_no,String path,String avail)throws RemoteException,SQLException
 	{
 		//String sql = "insert into docbanner(rg_no,docname,center,path,avail) values('"+rg_no+"','"+name+"','"+ccode+"','"+path+"','Y')";
@@ -2274,7 +2261,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 		return result;
 	}
-	/*Soumyajit Das*/
 	public Object findDocbanner(String rg_no)throws RemoteException,SQLException
 	{
 		//String sql = "insert into docbanner(rg_no,docname,center,path,avail) values('"+rg_no+"','"+name+"','"+ccode+"','"+path+"','Y')";
@@ -2284,7 +2270,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 	}
 
-	/*Soumyajit Das*/
 	public String findConsultStrategy(String ccode)throws RemoteException,SQLException
 	{
 		String sql = "select type from  consultstrategy where ccode ='"+ccode+"'";
@@ -2293,7 +2278,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		return res;
 
 	}
-	/*Soumyajit Das*/
 	public boolean updateConsultStrategy(int val,String ccode)throws RemoteException,SQLException
 	{
 		String q="select count(*) from consultstrategy where ccode= '"+ccode+"'";
@@ -2336,7 +2320,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		}
 	}
 
-	/*Soumyajit Das*/
 	public boolean existsHEXResult(String test_id)throws RemoteException,SQLException
 	{
 		String query="select count(test_id) from hexPathology where test_id='"+test_id+"'";
@@ -2350,7 +2333,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		
 	
 	}
-	/*Soumyajit Das*/
 	public boolean insertHEXResult(String test_id,String test_desc,String dateTime,String result)throws RemoteException,SQLException
 	{
 		
@@ -2380,7 +2362,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 
 		
 	}
-	/*Soumyajit Das*/
 	public String getHEXResult(String test_id)throws RemoteException,SQLException
 	{
 		String query="select Result from hexPathology where test_id='"+test_id+"'";
@@ -2389,7 +2370,6 @@ public boolean updateInvestigation(String test_id) throws RemoteException,SQLExc
 		System.out.println(query+": "+result);
 		return result;
 	}
-	/*Soumyajit Das*/
 	public String getServiceHex()throws RemoteException,SQLException
 	{
 		String query="select pat_id,test_id,test_name,description from ai0 where status='P' and type='Pathology'";

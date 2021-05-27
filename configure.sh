@@ -14,21 +14,21 @@ sed -i -e "/JRE_HOME/s/=.*/=$(echo $JAVA_DIR | sed -e 's/ /\\ /g ; s/\//\\\//g ;
 
 blip="127.0.0.1"
 gblroot="$CURDIR/$TOMCAT"
-gblhome="https://localhost/iMediX-Care"
-gbltemp="$CURDIR/$TOMCAT/webapps/iMediX-Care/temp"
+gblhome="https://localhost/iMediXcare"
+gbltemp="$CURDIR/$TOMCAT/webapps/iMediXcare/temp"
 EmailURL=""
 SMSURL=""
 vidServerUrl="meet.jit.si"
 
 
 
-sed -i -e "/blip/s/=.*/= $(echo $blip | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediX-Care/config.info"
-sed -i -e "/gblroot/s/=.*/= $(echo $gblroot | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediX-Care/config.info"
-sed -i -e "/gblhome/s/=.*/= $(echo $gblhome | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediX-Care/config.info"
-sed -i -e "/gbltemp/s/=.*/= $(echo $gbltemp | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediX-Care/config.info"
-sed -i -e "/EmailURL/s/=.*/= $(echo $EmailURL | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediX-Care/config.info"
-sed -i -e "/SMSURL/s/=.*/= $(echo $SMSURL | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediX-Care/config.info"
-sed -i -e "/vidServerUrl/s/=.*/= $(echo $vidServerUrl | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediX-Care/config.info"
+sed -i -e "/blip/s/=.*/= $(echo $blip | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediXcare/config.info"
+sed -i -e "/gblroot/s/=.*/= $(echo $gblroot | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediXcare/config.info"
+sed -i -e "/gblhome/s/=.*/= $(echo $gblhome | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediXcare/config.info"
+sed -i -e "/gbltemp/s/=.*/= $(echo $gbltemp | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediXcare/config.info"
+sed -i -e "/EmailURL/s/=.*/= $(echo $EmailURL | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediXcare/config.info"
+sed -i -e "/SMSURL/s/=.*/= $(echo $SMSURL | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediXcare/config.info"
+sed -i -e "/vidServerUrl/s/=.*/= $(echo $vidServerUrl | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/\./\\./g')/" "$CURDIR/$TOMCAT/webapps/iMediXcare/config.info"
 
 # BL config
 echo "Coniguring iMediX Business Logic"
@@ -66,10 +66,10 @@ sed -i -e "s/^.*\/iMediX-BL\/$/cp iMediXBusinessLogic.jar $(echo $CURDIR | sed -
 echo "Coniguring iMediX Source Code (Tomcat Module)"
 echo "---------------------------------------------"
 sed -i -e "s/^.*\/imedix\b/cp -r $(echo $CURDIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')SOURCECODES\/server_module_source_code\/imedix/g" "$CURDIR/SOURCECODES/tomcat_module_source_code/WEB-INF/classes/src/makeJar.sh"
-sed -i -e "s/^.*\`pwd\`[[:space:]]\*\.java$/$(echo $JAVA_DIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')bin\/javac -classpath \".:$(echo $CURDIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')External_library\/*:\" -d \'pwd\' *\.java /g" "$CURDIR/SOURCECODES/tomcat_module_source_code/WEB-INF/classes/src/makeJar.sh"
-sed -i -e "s/^.*\`pwd\`\/src_servlet[[:space:]]\*\.java$/$(echo $JAVA_DIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')bin\/javac -classpath \".:$(echo $CURDIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')External_library\/*:\" -d \'pwd\'\/src_servlet *\.java /g" "$CURDIR/SOURCECODES/tomcat_module_source_code/WEB-INF/classes/src/makeJar.sh"
+sed -i -e "s/^.*\`pwd\`[[:space:]]\*\.java$/$(echo $JAVA_DIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')bin\/javac -classpath \".:$(echo $CURDIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')External_library\/*:\" -d \`pwd\` *\.java /g" "$CURDIR/SOURCECODES/tomcat_module_source_code/WEB-INF/classes/src/makeJar.sh"
+sed -i -e "s/^.*\`pwd\`\/src_servlet[[:space:]]\*\.java$/$(echo $JAVA_DIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')bin\/javac -classpath \".:$(echo $CURDIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')External_library\/*:\" -d \`pwd\`\/src_servlet *\.java /g" "$CURDIR/SOURCECODES/tomcat_module_source_code/WEB-INF/classes/src/makeJar.sh"
 sed -i -e "s/^.*\/jar/$(echo $JAVA_DIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')bin\/jar/g" "$CURDIR/SOURCECODES/tomcat_module_source_code/WEB-INF/classes/src/makeJar.sh"
-sed -i -e "s/^.*\/lib/cp -r *.jar $(echo $CURDIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')$TOMCAT\/webapps\/iMediX-Care\/WEB-INF\/lib/g" "$CURDIR/SOURCECODES/tomcat_module_source_code/WEB-INF/classes/src/makeJar.sh"
+sed -i -e "s/^.*\/lib/cp -r *.jar $(echo $CURDIR | sed -e 's/ /\\ /g ; s/\//\\\//g ; s/ /\\ /g')$TOMCAT\/webapps\/iMediXcare\/WEB-INF\/lib/g" "$CURDIR/SOURCECODES/tomcat_module_source_code/WEB-INF/classes/src/makeJar.sh"
 
 
 

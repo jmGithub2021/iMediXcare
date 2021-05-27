@@ -12,11 +12,11 @@
 	"org.apache.jsp.jspfiles.recordmenu_005fnew_jsp" : ["adm", "doc", "usr", "pat"],
 	"org.apache.jsp.jspfiles.recordmenu_new_jsp" : ["adm", "doc", "usr"],
 	"org.apache.jsp.jspfiles.visitList_jsp" : ["adm", "doc", "usr", "pat"],
-	"org.apache.jsp.jspfiles.ai0_jsp" : ["adm", "doc", "usr", "pat"],
+	"org.apache.jsp.jspfiles.ai0_jsp" : ["adm", "doc", "usr"],
 	"org.apache.jsp.forms.a14_jsp" : ["adm", "doc", "usr"],
 	"org.apache.jsp.forms.p47_jsp" : ["adm", "doc", "usr"],
 	"org.apache.jsp.jspfiles.telepatqueue_jsp" : ["adm", "doc"],
-	"org.apache.jsp.jspfiles.dispres1_jsp" : ["adm", "doc", "pat","usr"],
+	"org.apache.jsp.jspfiles.dispres1_jsp" : ["adm", "doc", "pat"],
 	"org.apache.jsp.jspfiles.telepatrefqueue_jsp" : ["adm", "doc"],
 	"org.apache.jsp.jspfiles.jobadmin_jsp" : ["adm"],
 	"org.apache.jsp.jspfiles.editcenter2_jsp" : ["adm"],
@@ -38,7 +38,7 @@
 	"org.apache.jsp.jspfiles.repeatPrescription_jsp" : ["doc"],
 	"org.apache.jsp.jspfiles.druglist_jsp" : ["adm", "doc"],
 	"org.apache.jsp.jspfiles.adviced_005finvestigation_005fajax_jsp" : ["doc", "adm"],
-	"org.apache.jsp.jspfiles.displaymed_jsp" : ["adm","doc","usr","pat"],
+	"org.apache.jsp.jspfiles.displaymed_jsp" : ["adm","doc"],
 	"org.apache.jsp.jspfiles.telemedreq_jsp" : ["adm","doc"],
 	"org.apache.jsp.jspfiles.telepatwaitlist_jsp" : ["adm", "doc"],
 	"org.apache.jsp.jspfiles.departmentInfo_jsp" : ["adm","doc","usr"],
@@ -66,8 +66,8 @@
 	"org.apache.jsp.jspfiles.telebrowse_jsp" : ["adm", "doc"],
 	"org.apache.jsp.jspfiles.setFamilyMemberVisit_jsp" : ["pat"],
 	"org.apache.jsp.jspfiles.telepatwaitrejection_jsp" : ["doc"],
-	"org.apache.jsp.largefileupload.UploadFile_jsp" : ["doc", "pat", "adm","usr"],
-	"org.apache.jsp.jspfiles.savemed_jsp" : ["doc","adm","pat","usr"],
+	"org.apache.jsp.largefileupload.UploadFile_jsp" : ["doc", "pat", "adm"],
+	"org.apache.jsp.jspfiles.savemed_jsp" : ["doc","adm","pat"],
 	"org.apache.jsp.jspfiles.getFile_jsp" : ["pat","doc","adm","usr"],
 	"org.apache.jsp.jspfiles.patientAlldata_jsp" : ["pat","doc","adm","usr"],
 	"org.apache.jsp.jspfiles.viewlog_jsp" : ["adm", "doc"],
@@ -80,9 +80,7 @@
 	"org.apache.jsp.jspfiles.updatephysician_jsp" : ["adm"],
 	"org.apache.jsp.jspfiles.viewmovie_jsp" : ["adm", "doc", "pat", "usr"],
 	"org.apache.jsp.jspfiles.getStudyUID_jsp" : ["rop"],
-	"org.apache.jsp.jspfiles.showdicom_jsp" : ["rop", "adm", "pat"],
-	"org.apache.jsp.jspfiles.oldpatid_jsp" : ["adm","usr"],
-	"org.apache.jsp.jspfiles.editcenter1_jsp" : ["adm"]
+	"org.apache.jsp.jspfiles.showdicom_jsp" : ["rop", "adm", "pat"]
 
 }
 

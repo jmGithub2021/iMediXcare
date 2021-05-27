@@ -38,7 +38,9 @@
 	obj.add("userid",uid);
 	obj.add("opdno",opd_id);
 	
-	int ans = rcdef.setVisitDate(obj);
+	int ans = 0;
+	if(!rcdef.isInQueue(id))
+		ans = rcdef.setVisitDate(obj);
 
 	if(ans==1){
 		cookx.addCookie("patid",id,response);

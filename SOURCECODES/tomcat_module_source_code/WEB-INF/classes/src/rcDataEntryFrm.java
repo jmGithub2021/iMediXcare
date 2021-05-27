@@ -127,6 +127,9 @@ public class rcDataEntryFrm{
 	public boolean isInQueue(String pat_id) throws RemoteException,SQLException{	
 			return defserver.isInQueue(pat_id);
 	}
+	public String getAssignDoc(String pat_id) throws RemoteException, SQLException{
+			return defserver.getAssignDoc(pat_id);
+	}
 	public boolean isReport(dataobj obj) throws RemoteException,SQLException{
 			return defserver.isReport(obj);
 	}

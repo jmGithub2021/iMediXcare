@@ -63,4 +63,12 @@ TEXTAREA{
 	font-family: tahoma, arial, sans-serif;
 	font-size: 12px;
 }
-
+.assign-doc{padding:7px 12px;background: #ddd;}
+.setvisit span.phy{
+	border: 1px solid #ccc;
+    box-shadow: 0px 0px 1px 0px #ccc;
+}
+.ui-dialog-titlebar{
+    background: #45786d;
+    color: #f5f5f5;	
+}
