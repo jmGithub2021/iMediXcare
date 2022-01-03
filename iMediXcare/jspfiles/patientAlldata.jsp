@@ -98,7 +98,7 @@ if(patid != null && !patid.equals("")){
 	String r = uinfo.getreg_no(uid);
 
 Date cur_date = new Date();
-SimpleDateFormat dde = new SimpleDateFormat("dd/MM/YYYY");
+SimpleDateFormat dde = new SimpleDateFormat("dd/MM/yyyy");
 String today = dde.format(cur_date);
 //out.println(today);
 
