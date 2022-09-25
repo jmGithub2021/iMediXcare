@@ -20,6 +20,7 @@
 	"org.apache.jsp.jspfiles.telepatrefqueue_jsp" : ["adm", "doc"],
 	"org.apache.jsp.jspfiles.jobadmin_jsp" : ["adm"],
 	"org.apache.jsp.jspfiles.editcenter2_jsp" : ["adm"],
+	"org.apache.jsp.jspfiles.editcenter1_jsp" : ["adm"],
 	"org.apache.jsp.jspfiles.showregque_jsp" : ["adm"],
 	"org.apache.jsp.jspfiles.showusers_jsp" : ["adm"],
 	"org.apache.jsp.jspfiles.edtusr_jsp" : ["adm"],
