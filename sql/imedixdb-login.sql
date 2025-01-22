@@ -23,7 +23,7 @@ LOCK TABLES `login` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
 /*INSERT INTO `login` VALUES ('admin','Kãbw^¯/3 ,OÝÂc3>','System Administrator','2012-05-14 00:00:00','adm','9999999999','test','test','test','test','test','ADMXXXX0007','XXXX','Y',NULL,NULL,'N','N','A','N','N');
 */
-update login set pwd = "d033e22ae348aeb5660fc2140aec35850c4da997" where uid='admin';
+update login set pwd = UNHEX(SHA2('admin',256)) where uid='admin';
 
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
 UNLOCK TABLES;
