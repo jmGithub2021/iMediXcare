@@ -65,7 +65,7 @@ public class UserInfo extends UnicastRemoteObject implements UserInfoInterface {
 						if(qv.length()>0){
 							if(val.equalsIgnoreCase("CHAR") ||val.equalsIgnoreCase("VARCHAR")){
 								if(key.equalsIgnoreCase("pwd"))
-									qr = qr+"SHA1('"+qv+"'),";
+									qr = qr+"UNHEX(SHA2('"+qv+"',256)),";
 								else
 									qr = qr+"'"+qv+"',";
 							}		
@@ -229,7 +229,7 @@ public class UserInfo extends UnicastRemoteObject implements UserInfoInterface {
 
 		//String isql="Select uid,name,crtdate,type,phone,address,emailid,qualification,designation,dis,rg_no,center,active,verifemail,verifphone from login where ((binary uid=? and binary pwd=AES_ENCRYPT(?, UNHEX(SHA2(?,512)))) or (binary emailid=? and binary pwd=AES_ENCRYPT(?, UNHEX(SHA2((select uid from login where emailid=?),512))))) and verified=?";
 		//String isql="Select uid,name,crtdate,type,phone,address,emailid,qualification,designation,dis,rg_no,center,active,verifemail,verifphone from login where ((binary uid=? and binary pwd=AES_ENCRYPT(?, UNHEX(SHA2(?,512)))) or (binary emailid=? and binary pwd=AES_ENCRYPT(?, UNHEX(SHA2((select uid from login where emailid=?),512)))) or (binary phone=? and binary pwd=AES_ENCRYPT(?, UNHEX(SHA2((select uid from login where phone=?),512))))) and verified=?";
-		String isql="Select uid,name,crtdate,type,phone,address,emailid,qualification,designation,dis,rg_no,center,active,verifemail,verifphone from login where ((binary uid=? and binary pwd=SHA1(?)) or (binary emailid=? and binary pwd=SHA1(?)) or (binary phone=? and binary pwd=SHA1(?))) and verified=?";				
+		String isql="Select uid,name,crtdate,type,phone,address,emailid,qualification,designation,dis,rg_no,center,active,verifemail,verifphone from login where ((binary uid=? and binary pwd=UNHEX(SHA2(?,256))) or (binary emailid=? and binary pwd=UNHEX(SHA2(?,256))) or (binary phone=? and binary pwd=UNHEX(SHA2(?,256)))) and verified=?";				
 		
 		
 		//String isql="Select uid,name,crtdate,type,phone,address,emailid,qualification,designation,dis,rg_no,center,active from login where binary uid=? and binary pwd=?";
@@ -314,8 +314,8 @@ public class UserInfo extends UnicastRemoteObject implements UserInfoInterface {
 		String tpwd =obj.getValue("pwd");
 		
 		if (tpwd != null && !tpwd.isEmpty())
-			//pwd = "AES_ENCRYPT('"+obj.getValue("pwd").replaceAll("'","''")+"', UNHEX(SHA2('"+uid+"',512)))";
-			pwd = "SHA1('"+obj.getValue("pwd").replaceAll("'","''")+"')";
+			//pwd = "AES_ENCRYPT('"+obj.getValue("pwd").replaceAll("'","''")+"', UNHEX(SHA2('"+uid+",512)))";
+			pwd = "UNHEX(SHA2('"+obj.getValue("pwd").replaceAll("'","''")+"',256))";
 		else 
 			pwd = "";
 		if(!obj.getValue("userid").equals("admin"))
@@ -365,7 +365,7 @@ public class UserInfo extends UnicastRemoteObject implements UserInfoInterface {
      
      private String getPswd(String uid){
      	//String qSql="select pwd from login where uid='"+uid+"'";
-     	String qSql="select SHA1(pwd) pwd from login where uid='"+uid+"'";
+     	String qSql="select UNHEX(SHA2(pwd,256)) pwd from login where uid='"+uid+"'";
      	return mydb.ExecuteSingle(qSql);
      }
      
@@ -616,7 +616,7 @@ public class UserInfo extends UnicastRemoteObject implements UserInfoInterface {
 			fld += ", phone, verifphone";
 			vals += ", '"+ phone +"','Y' ";
 		} 
-		String pwd = "SHA1('"+obj.getValue("pwd")+"')";
+		String pwd = "UNHEX(SHA2('"+obj.getValue("pwd")+"',256))";
      	sql = "insert into login (uid, pwd, name, crtdate, type, rg_no, center, active, available, referral "+fld+",consent) VALUES ";
 		sql += "('"+obj.getValue("uid")+"',"+   pwd +",'"+obj.getValue("name")+"','"+crtdate+"','"+
 				type+"','"+regno+"','"+ccode+"','"+obj.getValue("active")+"','"+obj.getValue("available")+"','"+obj.getValue("referral")+"' "+vals+",'N')";
@@ -631,13 +631,13 @@ public class UserInfo extends UnicastRemoteObject implements UserInfoInterface {
 		return result;
 	}	
 	public Object getuserinfoByEmail(String emailid) throws RemoteException,SQLException{
-		String isql="Select uid,SHA1(pwd) as pwd, name, crtdate, type, phone, address, emailid, qualification, designation, dis, rg_no, center, active,verifemail,verifphone from login where (emailid='" +emailid+"' or uid='" +emailid+"') ";
+		String isql="Select uid,UNHEX(SHA2(pwd,256)) as pwd, name, crtdate, type, phone, address, emailid, qualification, designation, dis, rg_no, center, active,verifemail,verifphone from login where (emailid='" +emailid+"' or uid='" +emailid+"') ";
         //System.out.println("SQL = "+isql);
 		return mydb.ExecuteQuary(isql);
 	}
 	
 	public Object getuserinfoByAny(String serStr) throws RemoteException,SQLException{
-		String isql="Select uid,SHA1(pwd) as pwd, name, crtdate, type, phone, address, emailid, qualification, designation, dis, rg_no, center, active,verifemail,verifphone from login where (emailid='" +serStr+"' or uid='" +serStr+"'  or phone='" +serStr+"' ) ";
+		String isql="Select uid,UNHEX(SHA2(pwd,256)) as pwd, name, crtdate, type, phone, address, emailid, qualification, designation, dis, rg_no, center, active,verifemail,verifphone from login where (emailid='" +serStr+"' or uid='" +serStr+"'  or phone='" +serStr+"' ) ";
         //System.out.println("SQL = "+isql);
 		return mydb.ExecuteQuary(isql);
 	}
@@ -676,7 +676,7 @@ public class UserInfo extends UnicastRemoteObject implements UserInfoInterface {
 		return mydb.ExecuteSingle(sql);
 	}
 	public boolean resetPassword(String uid, String pass) throws RemoteException,SQLException{
-		String sql="update login set pwd = SHA1('"+pass+"') where uid='"+uid+"'";
+		String sql="update login set pwd = UNHEX(SHA2('"+pass+"',256)) where uid='"+uid+"'";
 		System.out.println("UserInfo -> resetPassword() > "+sql);
 		String ans = mydb.ExecuteSql(sql);
 		if(ans.equalsIgnoreCase("Done"))
